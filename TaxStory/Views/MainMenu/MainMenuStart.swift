@@ -12,6 +12,7 @@ struct MainMenuStart: View {
     @State private var isButtonPressed = false
     @State private var animationCount = 0
     @State var hold = false
+    let totalMovements = 6 // Total number of left and right movements
     var body: some View {
         // Background image
         Image("background")
@@ -48,34 +49,40 @@ struct MainMenuStart: View {
                 }
                 
                 VStack {
-                            Button(action: {
-                                // Start game action
-                                withAnimation(.interpolatingSpring(stiffness: 300, damping: 10)) {
-                                    startGame()
-                                    isButtonPressed = true // Set isButtonPressed to true when the button is pressed
-                                }
-                                
-                                // Reset isButtonPressed after a delay
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                    withAnimation {
-                                        isButtonPressed = false
-                                    }
-                                }
-                            }) {
-                                Image("StartButton")
-                                    .resizable()
-                                    .renderingMode(.original)
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: Constants.screenWidth * 0.4, height: Constants.screenWidth * 0.37)
-                                    .padding(.top, Constants.screenHeight * 0.5)
-                                    .scaleEffect(isButtonPressed ? 0.9 : 1.0) // Apply scale effect based on button press
-                            }
-                            .animation(.spring()) // Apply animation to the button press
-                        }            }
-        }
-    }
+                    Button(action: {
+                        // Start game action
+                        withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
+                            startGame()
+                            isButtonPressed = true // Set isButtonPressed to true when the button is pressed
+                        }
+                    }) {
+                        Image("StartButton")
+                            .resizable()
+                            .renderingMode(.original)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: Constants.screenWidth * 0.4, height: Constants.screenWidth * 0.37)
+                            .padding(.top, Constants.screenHeight * 0.5)
+                            .rotationEffect(.degrees(isButtonPressed ? 10 : -10)) // Apply rotation effect based on button press
+                    }
+                    .onAppear {
+                        withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
+                            isButtonPressed = true // Set isButtonPressed to true to start the initial animation
+                        }
+                    }
+                }
+
+                    }
+                
+            }
+    func calculateButtonOffset() -> CGFloat {
+        let totalOffset = Constants.screenWidth * 0.1 // Total offset for left and right movement
+        let movementDistance = totalOffset / CGFloat(totalMovements)
         
-    
+        let isMovingRight = animationCount % 2 == 0
+        
+        return isMovingRight ? movementDistance : -movementDistance
+    }
+        }
     
     
     
