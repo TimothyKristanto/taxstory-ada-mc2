@@ -8,50 +8,82 @@
 import SwiftUI
 
 struct ChooseFormView: View {
-    @State var calculatorResult = "0"
-    @State var hasCalculated = false
+    @State var calculatorResult = ""
+    @State var operation = ""
+    @State var lastNumber = 0
+    
+    let maxCalculatorChara = 11
+    
+    func calculate(){
+        switch operation{
+            case "+":
+                if calculatorResult == ""{
+                    calculatorResult = String(lastNumber + 0)
+                }else{
+                    calculatorResult = String(lastNumber + (Int(calculatorResult) ?? 0))
+                }
+            case "-":
+                
+            case "x":
+                
+            case "/":
+            
+        }
+    }
     
     var body: some View {
         VStack{
             HStack{
                 // task list
                 VStack{
-                    VStack{
-                        Text("Quest")
-                            .font(.largeTitle)
-                            .bold()
-                            .padding(.bottom, 5)
-                        
-                        VStack(alignment: .leading){
-                            HStack{
-                                Image(systemName: "circle.fill")
+                    Image("Quest")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: Constants.screenWidth / 5)
+                        .overlay(
+                            VStack{
+                                Text("Quest")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .padding(.bottom)
                                 
-                                Text("Pilih form")
-                                    .font(.title)
-                            }
-                            
-                            HStack{
-                                Image(systemName: "circle")
+                                HStack{
+                                    Image(systemName: "circle.fill")
+                                    
+                                    Text("Pilih Form")
+                                        .font(.title2)
+                                }
                                 
-                                Text("Lapor harta")
-                                    .font(.title)
-                            }
-                            
-                            HStack{
-                                Image(systemName: "circle")
+                                HStack{
+                                    Image(systemName: "circle")
+                                    
+                                    Text("Minta bukti potong")
+                                        .font(.title2)
+                                }
                                 
-                                Text("Pilih tipe PTKP")
-                                    .font(.title)
+                                HStack{
+                                    Image(systemName: "circle")
+                                    
+                                    Text("Isi formulir")
+                                        .font(.title2)
+                                }
+                                
+                                HStack{
+                                    Image(systemName: "circle")
+                                    
+                                    Text("PTKP")
+                                        .font(.title2)
+                                }
+                                
+                                HStack{
+                                    Image(systemName: "circle")
+                                    
+                                    Text("Result")
+                                        .font(.title2)
+                                }
                             }
-                        }
-                    }
-                    .padding(25)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 30)
-                            .stroke(.black, lineWidth: 3)
-                    )
-                    .padding(.leading)
-                    .padding(.top, 10)
+                                .padding(.top, 30)
+                        )
                     
                     Spacer()
                 }
@@ -84,11 +116,19 @@ struct ChooseFormView: View {
                                                         HStack{
                                                             Spacer()
                                                             
-                                                            Text(calculatorResult)
-                                                                .font(.largeTitle)
-                                                                .bold()
-                                                                .padding(.trailing, geo.size.width / 12)
-                                                                .padding(.top)
+                                                            if calculatorResult == ""{
+                                                                Text("0")
+                                                                    .font(.largeTitle)
+                                                                    .bold()
+                                                                    .padding(.trailing, geo.size.width / 12)
+                                                                    .padding(.top)
+                                                            }else{
+                                                                Text(calculatorResult)
+                                                                    .font(.largeTitle)
+                                                                    .bold()
+                                                                    .padding(.trailing, geo.size.width / 12)
+                                                                    .padding(.top)
+                                                            }
                                                         }
                                                     }
                                                 }
@@ -96,9 +136,7 @@ struct ChooseFormView: View {
                                         
                                         HStack{
                                             Button{
-                                                if !hasCalculated{
-                                                    calculatorResult = "0"
-                                                }
+                                                calculatorResult = ""
                                             }label: {
                                                 Image("ac")
                                                     .resizable()
@@ -107,11 +145,11 @@ struct ChooseFormView: View {
                                             }
                                             
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "%"
-                                                        }
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        operation = "%"
+                                                        
+                                                        
                                                     }
                                                 }
                                             }label: {
@@ -123,11 +161,9 @@ struct ChooseFormView: View {
                                             }
                                             
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "/"
-                                                        }
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        operation = "/"
                                                     }
                                                 }
                                             }label: {
@@ -140,15 +176,14 @@ struct ChooseFormView: View {
                                         
                                         HStack{
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "1"
-                                                        }
-                                                    }else if calculatorResult == "0"{
-                                                        calculatorResult = "1"
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        calculatorResult += "1"
                                                     }
+                                                }else if calculatorResult == ""{
+                                                    calculatorResult = "1"
                                                 }
+                                                
                                             }label: {
                                                 Image("1")
                                                     .resizable()
@@ -157,14 +192,12 @@ struct ChooseFormView: View {
                                             }
                                             
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "2"
-                                                        }
-                                                    }else if calculatorResult == "0"{
-                                                        calculatorResult = "2"
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        calculatorResult += "2"
                                                     }
+                                                }else if calculatorResult == ""{
+                                                    calculatorResult = "2"
                                                 }
                                             }label: {
                                                 Image("2")
@@ -174,15 +207,13 @@ struct ChooseFormView: View {
                                             }
                                             
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "3"
-                                                        }
-                                                        
-                                                    }else if calculatorResult == "0"{
-                                                        calculatorResult = "3"
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        calculatorResult += "3"
                                                     }
+                                                    
+                                                }else if calculatorResult == ""{
+                                                    calculatorResult = "3"
                                                 }
                                             }label: {
                                                 Image("3")
@@ -192,13 +223,11 @@ struct ChooseFormView: View {
                                             }
                                             
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "x"
-                                                        }
-                                                        
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        operation = "x"
                                                     }
+                                                    
                                                 }
                                             }label: {
                                                 Image("kali")
@@ -210,15 +239,13 @@ struct ChooseFormView: View {
                                         
                                         HStack{
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "4"
-                                                        }
-                                                        
-                                                    }else if calculatorResult == "0"{
-                                                        calculatorResult = "4"
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        calculatorResult += "4"
                                                     }
+                                                    
+                                                }else if calculatorResult == ""{
+                                                    calculatorResult = "4"
                                                 }
                                             }label: {
                                                 Image("4")
@@ -228,15 +255,13 @@ struct ChooseFormView: View {
                                             }
                                             
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "5"
-                                                        }
-                                                        
-                                                    }else if calculatorResult == "0"{
-                                                        calculatorResult = "5"
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        calculatorResult += "5"
                                                     }
+                                                    
+                                                }else if calculatorResult == ""{
+                                                    calculatorResult = "5"
                                                 }
                                             }label: {
                                                 Image("5")
@@ -246,15 +271,13 @@ struct ChooseFormView: View {
                                             }
                                             
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "6"
-                                                        }
-                                                        
-                                                    }else if calculatorResult == "0"{
-                                                        calculatorResult = "6"
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        calculatorResult += "6"
                                                     }
+                                                    
+                                                }else if calculatorResult == ""{
+                                                    calculatorResult = "6"
                                                 }
                                             }label: {
                                                 Image("6")
@@ -264,13 +287,11 @@ struct ChooseFormView: View {
                                             }
                                             
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "-"
-                                                        }
-                                                        
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        operation = "-"
                                                     }
+                                                    
                                                 }
                                             }label: {
                                                 Image("minus")
@@ -282,15 +303,13 @@ struct ChooseFormView: View {
                                         
                                         HStack{
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "7"
-                                                        }
-                                                        
-                                                    }else if calculatorResult == "0"{
-                                                        calculatorResult = "7"
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        calculatorResult += "7"
                                                     }
+                                                    
+                                                }else if calculatorResult == ""{
+                                                    calculatorResult = "7"
                                                 }
                                             }label: {
                                                 Image("7")
@@ -300,15 +319,13 @@ struct ChooseFormView: View {
                                             }
                                             
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "8"
-                                                        }
-                                                        
-                                                    }else if calculatorResult == "0"{
-                                                        calculatorResult = "8"
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        calculatorResult += "8"
                                                     }
+                                                    
+                                                }else if calculatorResult == ""{
+                                                    calculatorResult = "8"
                                                 }
                                             }label: {
                                                 Image("8")
@@ -318,15 +335,13 @@ struct ChooseFormView: View {
                                             }
                                             
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "9"
-                                                        }
-                                                        
-                                                    }else if calculatorResult == "0"{
-                                                        calculatorResult = "9"
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        calculatorResult += "9"
                                                     }
+                                                    
+                                                }else if calculatorResult == ""{
+                                                    calculatorResult = "9"
                                                 }
                                             }label: {
                                                 Image("9")
@@ -336,13 +351,11 @@ struct ChooseFormView: View {
                                             }
                                             
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "+"
-                                                        }
-                                                        
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        operation = "+"
                                                     }
+                                                    
                                                 }
                                             }label: {
                                                 Image("plus")
@@ -354,11 +367,9 @@ struct ChooseFormView: View {
                                         
                                         HStack{
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult != "0" {
-                                                        if calculatorResult.count < 10{
-                                                            calculatorResult += "0"
-                                                        }
+                                                if calculatorResult != "" {
+                                                    if calculatorResult.count < maxCalculatorChara{
+                                                        calculatorResult += "0"
                                                     }
                                                 }
                                             }label: {
@@ -379,12 +390,7 @@ struct ChooseFormView: View {
                                             }
                                             
                                             Button{
-                                                if !hasCalculated{
-                                                    if calculatorResult == "4500000x12"{
-                                                        calculatorResult = "54000000"
-                                                        hasCalculated = true
-                                                    }
-                                                }
+                                                
                                             }label: {
                                                 Image("equal")
                                                     .resizable()
@@ -409,30 +415,97 @@ struct ChooseFormView: View {
                 // pilih form
                 VStack{
                     VStack{
+                        Spacer()
+                        
                         Text("Pilih Form")
                             .font(.largeTitle)
                             .bold()
                         
+                        Button{
+                            
+                        }label: {
+                            HStack{
+                                Text("1770")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.black)
+                                
+                                Spacer()
+                                
+                                Text("Memiliki penghasilan dari usaha atau pekerjaan bebas.")
+                                    .foregroundColor(.black)
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .padding(15)
+                            .background(.gray)
+                            .cornerRadius(20)
+                            .padding(.top)
+                        }
+                        
+                        Button{
+                            
+                        }label: {
+                            HStack{
+                                Text("1770 S")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.black)
+                                
+                                Spacer()
+                                
+                                Text("Memiliki penghasilan sebagai karyawan perusahaan lebih dari/sama dengan 60 juta dalam 1 tahun.")
+                                    .foregroundColor(.black)
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .padding(15)
+                            .background(.gray)
+                            .cornerRadius(20)
+                            .padding(.top)
+                        }
+                        
+                        Button{
+                            
+                        }label: {
+                            HStack{
+                                Text("1770 SS")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.black)
+                                
+                                Spacer()
+                                
+                                Text("Memiliki penghasilan sebagai karyawan perusahaan kurang dari 60 juta dalam 1 tahun.")
+                                    .foregroundColor(.black)
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .padding(15)
+                            .background(.gray)
+                            .cornerRadius(20)
+                            .padding(.top)
+                        }
+                        
                         Spacer()
                     }
-                    .padding(25)
-                    .frame(width: Constants.screenWidth / 3.1, height: Constants.screenHeight / 1.5)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 30)
-                            .stroke(.black, lineWidth: 3)
-                    )
-                    .padding(.top, 10)
+                    .padding(20)
+                    .frame(width: Constants.screenWidth / 2.8, height: Constants.screenHeight / 1.6)
                     
                     Spacer()
                 }
+                .padding(.top)
                 
                 Spacer()
             }
             
             VStack{
                 // guide text
-                Text("Hello")
+                Text("Yuk bantu Bayu memilih form laporan SPT (Surat Pemberitahuan Tahunan) berdasarkan perhitungan penghasilannya tahun ini menggunakan kalkulator di atas ya. Pendapatan Bayu per bulannya sendiri dalah Rp 4.500.000.")
+                    .font(.title)
+                    .bold() 
             }
+            .padding(.top, 20)
+            .padding(.bottom, 15)
+            .frame(width: Constants.screenWidth)
+            .background(.gray)
         }
     }
 }
