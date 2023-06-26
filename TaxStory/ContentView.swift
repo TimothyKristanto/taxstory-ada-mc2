@@ -1,20 +1,20 @@
+////
+////  ContentView.swift
+////  TaxStory
+////
+////  Created by Timothy on 20/06/23.
+////
 //
-//  ContentView.swift
-//  TaxStory
+//import SwiftUI
 //
-//  Created by Timothy on 20/06/23.
+//struct ContentView: View {
+//    var body: some View {
+//        ContentView()
+//    }
+//}
 //
-
-import SwiftUI
-
-struct ContentView: View {
-    var body: some View {
-        ChooseFormView()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
