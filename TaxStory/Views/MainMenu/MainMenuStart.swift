@@ -12,7 +12,7 @@ struct MainMenuStart: View {
     @State private var isButtonPressed = false
     @State private var animationCount = 0
     @State var hold = false
-    let totalMovements = 6 // Total number of left and right movements
+    let totalMovements = 2 // Total number of left and right movements
     var body: some View {
         // Background image
         Image("background")
@@ -60,10 +60,10 @@ struct MainMenuStart: View {
                             .resizable()
                             .renderingMode(.original)
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: Constants.screenWidth * 0.4, height: Constants.screenWidth * 0.37)
-                            .padding(.top, Constants.screenHeight * 0.5)
-                            .rotationEffect(.degrees(isButtonPressed ? 10 : -10)) // Apply rotation effect based on button press
+                            .rotationEffect(.degrees(isButtonPressed ? 5 : -5)) // Apply rotation effect based on button press
                     }
+                    .frame(width: Constants.screenWidth * 0.4, height: Constants.screenWidth * 0.9)
+                    .padding(.top, Constants.screenHeight * 0.5)
                     .onAppear {
                         withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
                             isButtonPressed = true // Set isButtonPressed to true to start the initial animation
