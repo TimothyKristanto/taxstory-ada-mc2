@@ -180,7 +180,7 @@ struct ChooseFormView: View {
                                         Image("calculatorbody")
                                             .resizable()
                                             .scaledToFill()
-                                            .frame(width: geoTop.size.width / 3)
+                                            .frame(width: geoTop.size.width / 3.2)
                                             .overlay (
                                                 GeometryReader{ geo in
                                                     HStack{
@@ -589,7 +589,7 @@ struct ChooseFormView: View {
                                         Image("text-guide-pilih-form")
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(width: geoBot.size.width / 1.58)
+                                            .frame(width: geoBot.size.width / 1.58, height: geoBot.size.height / 3)
                                             .overlay(
                                                 Text("Yuk bantu Bayu memilih form laporan SPT (Surat Pemberitahuan Tahunan) berdasarkan perhitungan penghasilannya tahun ini menggunakan kalkulator di atas ya. Pendapatan Bayu per bulannya sendiri adalah Rp 4.500.000.")
                                                     .font(.title3)
