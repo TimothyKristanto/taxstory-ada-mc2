@@ -177,7 +177,7 @@ struct ChooseFormView: View {
                             Image("calculatorbody")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: Constants.screenHeight / 1.6)
+                                .frame(height: Constants.screenHeight / 1.55)
                                 .overlay (
                                     GeometryReader{ geo in
                                         HStack{
