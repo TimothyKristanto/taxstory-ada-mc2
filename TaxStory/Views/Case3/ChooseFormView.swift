@@ -15,6 +15,14 @@ struct ChooseFormView: View {
     
     let maxCalculatorChara = 11
     
+    func changeCalculatorResultToScientific(){
+        if calculatorResult.count > 10 {
+             var numberFormatter = NumberFormatter()
+             numberFormatter.numberStyle = .scientific
+            calculatorResult = numberFormatter.string(from: Double(calculatorResult.split(separator: ",").joined())! as NSNumber)!
+        }
+    }
+    
     func giveSeparatorNumDot(num: String)->String{
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
@@ -33,7 +41,9 @@ struct ChooseFormView: View {
     }
     
     func giveComma(){
-        
+        if calculatorResult.contains(".") == false && calculatorResult != "0"{
+            calculatorResult += "."
+        }
     }
     
     func calculate(){
@@ -85,6 +95,7 @@ struct ChooseFormView: View {
         }
         
         calculatorResult = giveSeparatorNumDot(num: calculatorResult)
+        changeCalculatorResultToScientific()
     }
     
     var body: some View {
@@ -556,7 +567,7 @@ struct ChooseFormView: View {
                                                                     
                                                                     if calculatorResult != ""{
                                                                         Text(calculatorResult)
-                                                                            .font(.largeTitle)
+                                                                            .font(.title)
                                                                             .bold()
                                                                             .padding(.trailing, geo.size.width / 12)
                                                                             .padding(.top)
@@ -844,7 +855,7 @@ struct ChooseFormView: View {
                                                     
                                                     Button{
                                                         if calculatorResult != "" || isResetNumber == false{
-                                                            
+                                                            giveComma()
                                                         }
                                                     }label: {
                                                         Image("koma")
@@ -890,7 +901,6 @@ struct ChooseFormView: View {
                             
                             Spacer()
                         }
-<<<<<<< HEAD
                     
                     Spacer()
                 }
@@ -898,86 +908,8 @@ struct ChooseFormView: View {
                 Spacer()
                 
                 // pilih form
-                VStack{
-                    VStack{
-                        Spacer()
-                        
-                        Text("Pilih Form")
-                            .font(.largeTitle)
-                            .bold()
-=======
->>>>>>> case-3-fix
-                        
-                        Button{
-                            
-                        }label: {
-                            HStack{
-                                Text("1770")
-                                    .font(.largeTitle)
-                                    .bold()
-                                    .foregroundColor(.black)
-                                
-                                Spacer()
-                                
-                                Text("Memiliki penghasilan dari usaha atau pekerjaan bebas.")
-                                    .foregroundColor(.black)
-                                    .multilineTextAlignment(.leading)
-                            }
-                            .padding(15)
-                            .background(.gray)
-                            .cornerRadius(20)
-                            .padding(.top)
-                        }
-                        
-                        Button{
-                            
-                        }label: {
-                            HStack{
-                                Text("1770 S")
-                                    .font(.largeTitle)
-                                    .bold()
-                                    .foregroundColor(.black)
-                                
-                                Spacer()
-                                
-                                Text("Memiliki penghasilan sebagai karyawan perusahaan lebih dari/sama dengan 60 juta dalam 1 tahun.")
-                                    .foregroundColor(.black)
-                                    .multilineTextAlignment(.leading)
-                            }
-                            .padding(15)
-                            .background(.gray)
-                            .cornerRadius(20)
-                            .padding(.top)
-                        }
-                        
-                        Button{
-                            
-                        }label: {
-                            HStack{
-                                Text("1770 SS")
-                                    .font(.largeTitle)
-                                    .bold()
-                                    .foregroundColor(.black)
-                                
-                                Spacer()
-                                
-                                Text("Memiliki penghasilan sebagai karyawan perusahaan kurang dari 60 juta dalam 1 tahun.")
-                                    .foregroundColor(.black)
-                                    .multilineTextAlignment(.leading)
-                            }
-                            .padding(15)
-                            .background(.gray)
-                            .cornerRadius(20)
-                            .padding(.top)
-                        }
-                        
-                        Spacer()
-                    }
-                    .padding(20)
-                    .frame(width: Constants.screenWidth / 2.8, height: Constants.screenHeight / 1.6)
-                    
-                    
-                    
+                  
+                  
                     VStack{
                         // guide text
                         Spacer()
@@ -1012,17 +944,6 @@ struct ChooseFormView: View {
                 
                 Spacer()
             }
-            
-            VStack{
-                // guide text
-                Text("Yuk bantu Bayu memilih form laporan SPT (Surat Pemberitahuan Tahunan) berdasarkan perhitungan penghasilannya tahun ini menggunakan kalkulator di atas ya. Pendapatan Bayu per bulannya sendiri dalah Rp 4.500.000.")
-                    .font(.title)
-                    .bold() 
-            }
-            .padding(.top, 20)
-            .padding(.bottom, 15)
-            .frame(width: Constants.screenWidth)
-            .background(.gray)
         }
     }
 }
