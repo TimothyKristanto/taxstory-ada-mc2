@@ -49,7 +49,7 @@ struct MainMenuStart: View {
                 }
                 
                 VStack {
-                    Button(action: {
+                    Button(action: {4
                         // Start game action
                         withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
                             startGame()

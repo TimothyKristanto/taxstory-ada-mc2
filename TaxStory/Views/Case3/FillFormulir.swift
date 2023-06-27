@@ -9,10 +9,7 @@
 import SwiftUI
 
 struct FillFormulir: View {
-    @State var calculatorResult = ""
-    @State var calculatorOperator = ""
-    @State var lastNumber: Double = 0
-    @State var isResetNumber = true
+    @State private var currentImageIndex = 0
     
     var body: some View {
         VStack{
@@ -153,8 +150,38 @@ struct FillFormulir: View {
                                     Spacer()
                                 }
                             )
+                            .overlay(
+                                VStack{
+                                    Spacer()
+                                        HStack{
+                                            Spacer()
+                                            Button(action: {
+                                                //                                currentImageIndex = (currentImageIndex - 1 + imageNames.count) % imageNames.count
+                                            }) {
+                                                Image(systemName: "chevron.left.circle")
+                                                    .font(.title)
+//                                                    .padding(.leading, Constants.screenWidth / 20)
+                                                    .foregroundColor(.brown)
+                                                    .padding(.bottom, Constants.screenHeight / 25)
+                                            }
+//                                            Spacer()
+                                            Button(action: {
+                                                //                                currentImageIndex = (currentImageIndex + 1) % imageNames.count
+                                            }) {
+                                                Image(systemName: "chevron.right.circle")
+                                                    .font(.title)
+//                                                    .padding(.leading, Constants.screenWidth / 20)
+                                                    .foregroundColor(.brown)
+                                                    .padding(.bottom, Constants.screenHeight / 25)
+                                            }
+                                            Spacer()
+                                        }
+                                }
+                            )
                             
                             Spacer()
+                        
+
                         }
                     
                     Spacer()
