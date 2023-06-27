@@ -16,5 +16,6 @@ struct RequestWitholdingTaxCertificateView: View {
 struct RequestWitholdingTaxCertificateView_Previews: PreviewProvider {
     static var previews: some View {
         RequestWitholdingTaxCertificateView()
+            .previewInterfaceOrientation(.landscapeRight)
     }
 }
