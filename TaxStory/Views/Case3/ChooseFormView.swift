@@ -111,7 +111,7 @@ struct ChooseFormView: View {
                                 Image("quest")
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: Constants.screenWidth / 4.5)
+                                    .frame(width: Constants.screenWidth / 5.5)
                             }
                             .overlay(
                                 VStack{
@@ -119,7 +119,7 @@ struct ChooseFormView: View {
                                         .font(.title2)
                                         .bold()
                                         .foregroundColor(.white)
-                                        .padding(.top, Constants.screenHeight / 160)
+                                        .padding(.top, Constants.screenHeight / 110)
                                     
                                     Spacer()
                                     
@@ -159,14 +159,14 @@ struct ChooseFormView: View {
                                                 .font(.title2)
                                         }
                                     }
-                                    .padding(.horizontal, Constants.screenWidth / 30)
-                                    .padding(.top, Constants.screenHeight / 46)
+                                    .padding(.horizontal, Constants.screenWidth / 25)
+                                    .padding(.top, Constants.screenHeight / 40)
                                     
                                     Spacer()
                                 }
                             )
-                            .padding(.leading, Constants.screenWidth / 8.5)
-                            .padding(.top, Constants.screenHeight / 15.5)
+                            .padding(.leading, Constants.screenWidth / 9.5)
+                            .padding(.top, Constants.screenHeight / 11)
                             
                             
                             Spacer()
@@ -177,7 +177,7 @@ struct ChooseFormView: View {
                             Image("calculatorbody")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: Constants.screenHeight / 2.05)
+                                .frame(height: Constants.screenHeight / 1.55)
                                 .overlay (
                                     GeometryReader{ geo in
                                         HStack{
@@ -519,7 +519,7 @@ struct ChooseFormView: View {
                                         }
                                     }
                                 )
-                                .padding(.top, Constants.screenHeight / 17.5)
+                                .padding(.top, Constants.screenHeight / 13.5)
                             
                             Spacer()
                         }
@@ -536,8 +536,6 @@ struct ChooseFormView: View {
                     
                     Spacer()
                 }
-                
-                Spacer()
                   
                 VStack{
                     // guide text
@@ -547,31 +545,27 @@ struct ChooseFormView: View {
                         Image("bayu-pilih-form")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: Constants.screenWidth / 6)
-                            .padding(.leading, Constants.screenWidth / 9)
-                            .padding(.top, Constants.screenHeight / 20)
+                            .frame(width: Constants.screenWidth / 8)
+                            .padding(.leading, Constants.screenWidth / 8)
+                            .padding(.top, Constants.screenHeight / 15)
                         
                         Image("text-guide-pilih-form")
                             .resizable()
                             .scaledToFit()
-                            .padding(.top, Constants.screenHeight / 10)
-                            .frame(width: Constants.screenWidth / 1.2)
+                            .padding(.top, Constants.screenHeight / 8)
+                            .frame(width: Constants.screenWidth / 1.48)
                             .overlay(
                                 Text("Yuk bantu Bayu memilih form laporan SPT (Surat Pemberitahuan Tahunan) berdasarkan perhitungan penghasilannya tahun ini menggunakan kalkulator di atas ya. Pendapatan Bayu per bulannya sendiri adalah Rp 4.500.000.  ")
                                     .font(.title2)
                                     .bold()
-                                    .padding(.top, Constants.screenHeight / 12)
+                                    .padding(.top, Constants.screenHeight / 10)
                                     .padding(.horizontal, Constants.screenWidth / 15)
                             )
-                        
-                        Spacer()
                     }
                 }
-                .padding(.bottom, Constants.screenHeight / 14)
-                .padding(.leading, Constants.screenWidth / 20)
+                .padding(.bottom, Constants.screenHeight / 10)
+                .padding(.trailing, Constants.screenWidth / 9)
             }
-                
-            Spacer()
             
             }
         .ignoresSafeArea()
