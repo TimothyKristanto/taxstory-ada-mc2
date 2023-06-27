@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF10C9B52A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B22A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift */; };
+		BF10C9B62A4A776A004F3BA3 /* ChooseFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */; };
+		BF10C9B72A4A776A004F3BA3 /* Case3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B42A4A776A004F3BA3 /* Case3View.swift */; };
 		BFEB79B72A4135CE002A1A0B /* TaxStoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB79B62A4135CE002A1A0B /* TaxStoryApp.swift */; };
 		BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB79B82A4135CE002A1A0B /* ContentView.swift */; };
 		BFEB79BB2A4135CF002A1A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEB79BA2A4135CF002A1A0B /* Assets.xcassets */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF10C9B22A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestWitholdingTaxCertificateView.swift; sourceTree = "<group>"; };
+		BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFormView.swift; sourceTree = "<group>"; };
+		BF10C9B42A4A776A004F3BA3 /* Case3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Case3View.swift; sourceTree = "<group>"; };
 		BFEB79B32A4135CE002A1A0B /* TaxStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEB79B62A4135CE002A1A0B /* TaxStoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxStoryApp.swift; sourceTree = "<group>"; };
 		BFEB79B82A4135CE002A1A0B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +44,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF10C9B12A4A776A004F3BA3 /* Case3 */ = {
+			isa = PBXGroup;
+			children = (
+				BF10C9B22A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift */,
+				BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */,
+				BF10C9B42A4A776A004F3BA3 /* Case3View.swift */,
+			);
+			path = Case3;
+			sourceTree = "<group>";
+		};
 		BFEB79AA2A4135CE002A1A0B = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF697482A493B2A009D7441 /* FillFormulir */,
+				BF10C9B12A4A776A004F3BA3 /* Case3 */,
 				FAF697432A455262009D7441 /* MainMenu */,
 			);
 			path = Views;
@@ -170,11 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF10C9B72A4A776A004F3BA3 /* Case3View.swift in Sources */,
 				BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */,
+				BF10C9B62A4A776A004F3BA3 /* ChooseFormView.swift in Sources */,
 				FAF697472A4553E6009D7441 /* Constants.swift in Sources */,
 				BFEB79B72A4135CE002A1A0B /* TaxStoryApp.swift in Sources */,
 				FAF697452A455272009D7441 /* MainMenuStart.swift in Sources */,
 				FAF6974A2A493B3A009D7441 /* FillFormulir.swift in Sources */,
+				BF10C9B52A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +328,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,8 +355,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
