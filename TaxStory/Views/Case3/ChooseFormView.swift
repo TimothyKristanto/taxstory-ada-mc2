@@ -108,7 +108,7 @@ struct ChooseFormView: View {
                         // task list
                         VStack{
                             VStack{
-                                Image("quest")
+                                Image("Quest")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: Constants.screenWidth / 5.5)

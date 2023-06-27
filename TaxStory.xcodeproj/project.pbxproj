@@ -14,9 +14,9 @@
 		BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB79B82A4135CE002A1A0B /* ContentView.swift */; };
 		BFEB79BB2A4135CF002A1A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEB79BA2A4135CF002A1A0B /* Assets.xcassets */; };
 		BFEB79BE2A4135CF002A1A0B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEB79BD2A4135CF002A1A0B /* Preview Assets.xcassets */; };
+		FA18C2022A4A887A0070FA8D /* FillFormulir.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF697492A493B3A009D7441 /* FillFormulir.swift */; };
 		FAF697452A455272009D7441 /* MainMenuStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF697442A455272009D7441 /* MainMenuStart.swift */; };
 		FAF697472A4553E6009D7441 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF697462A4553E6009D7441 /* Constants.swift */; };
-		FAF6974A2A493B3A009D7441 /* FillFormulir.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF697492A493B3A009D7441 /* FillFormulir.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +50,7 @@
 				BF10C9B22A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift */,
 				BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */,
 				BF10C9B42A4A776A004F3BA3 /* Case3View.swift */,
+				FAF697492A493B3A009D7441 /* FillFormulir.swift */,
 			);
 			path = Case3;
 			sourceTree = "<group>";
@@ -94,7 +95,6 @@
 		FAF697422A45525C009D7441 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FAF697482A493B2A009D7441 /* FillFormulir */,
 				BF10C9B12A4A776A004F3BA3 /* Case3 */,
 				FAF697432A455262009D7441 /* MainMenu */,
 			);
@@ -107,14 +107,6 @@
 				FAF697442A455272009D7441 /* MainMenuStart.swift */,
 			);
 			path = MainMenu;
-			sourceTree = "<group>";
-		};
-		FAF697482A493B2A009D7441 /* FillFormulir */ = {
-			isa = PBXGroup;
-			children = (
-				FAF697492A493B3A009D7441 /* FillFormulir.swift */,
-			);
-			path = FillFormulir;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,9 +183,9 @@
 				BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */,
 				BF10C9B62A4A776A004F3BA3 /* ChooseFormView.swift in Sources */,
 				FAF697472A4553E6009D7441 /* Constants.swift in Sources */,
+				FA18C2022A4A887A0070FA8D /* FillFormulir.swift in Sources */,
 				BFEB79B72A4135CE002A1A0B /* TaxStoryApp.swift in Sources */,
 				FAF697452A455272009D7441 /* MainMenuStart.swift in Sources */,
-				FAF6974A2A493B3A009D7441 /* FillFormulir.swift in Sources */,
 				BF10C9B52A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
