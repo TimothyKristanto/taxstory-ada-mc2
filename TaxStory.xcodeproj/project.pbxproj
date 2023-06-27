@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BFE0A5F32A42B2EE003C555B /* Case3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0A5F22A42B2EE003C555B /* Case3View.swift */; };
-		BFE0A5F82A43DFAA003C555B /* ChooseFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0A5F72A43DFAA003C555B /* ChooseFormView.swift */; };
-		BFE0A5FD2A43F84D003C555B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0A5FC2A43F84D003C555B /* Constants.swift */; };
-		BFE0A6042A480E34003C555B /* RequestWitholdingTaxCertificateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0A6032A480E34003C555B /* RequestWitholdingTaxCertificateView.swift */; };
+		BF10C9B52A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B22A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift */; };
+		BF10C9B62A4A776A004F3BA3 /* ChooseFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */; };
+		BF10C9B72A4A776A004F3BA3 /* Case3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B42A4A776A004F3BA3 /* Case3View.swift */; };
 		BFEB79B72A4135CE002A1A0B /* TaxStoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB79B62A4135CE002A1A0B /* TaxStoryApp.swift */; };
 		BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB79B82A4135CE002A1A0B /* ContentView.swift */; };
 		BFEB79BB2A4135CF002A1A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEB79BA2A4135CF002A1A0B /* Assets.xcassets */; };
@@ -20,12 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
-		BFE0A5F22A42B2EE003C555B /* Case3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case3View.swift; sourceTree = "<group>"; };
-		BFE0A5F72A43DFAA003C555B /* ChooseFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFormView.swift; sourceTree = "<group>"; };
-		BFE0A5FC2A43F84D003C555B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		BFE0A6032A480E34003C555B /* RequestWitholdingTaxCertificateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestWitholdingTaxCertificateView.swift; sourceTree = "<group>"; };
-
+		BF10C9B22A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestWitholdingTaxCertificateView.swift; sourceTree = "<group>"; };
+		BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFormView.swift; sourceTree = "<group>"; };
+		BF10C9B42A4A776A004F3BA3 /* Case3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Case3View.swift; sourceTree = "<group>"; };
 		BFEB79B32A4135CE002A1A0B /* TaxStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEB79B62A4135CE002A1A0B /* TaxStoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxStoryApp.swift; sourceTree = "<group>"; };
 		BFEB79B82A4135CE002A1A0B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,43 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BFE0A5F12A42B06B003C555B /* Views */ = {
+		BF10C9B12A4A776A004F3BA3 /* Case3 */ = {
 			isa = PBXGroup;
 			children = (
-				BFE0A5F62A43DF49003C555B /* Case3 */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		BFE0A5F62A43DF49003C555B /* Case3 */ = {
-			isa = PBXGroup;
-			children = (
-				BFE0A5F22A42B2EE003C555B /* Case3View.swift */,
-				BFE0A5F72A43DFAA003C555B /* ChooseFormView.swift */,
-				BFE0A6032A480E34003C555B /* RequestWitholdingTaxCertificateView.swift */,
+				BF10C9B22A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift */,
+				BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */,
+				BF10C9B42A4A776A004F3BA3 /* Case3View.swift */,
 			);
 			path = Case3;
-			sourceTree = "<group>";
-		};
-		BFE0A5FA2A43EEBE003C555B /* Layouts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Layouts;
-			sourceTree = "<group>";
-		};
-		BFE0A5FB2A43EEC8003C555B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		BFE0A6002A45374C003C555B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		BFEB79AA2A4135CE002A1A0B = {
@@ -125,6 +92,7 @@
 		FAF697422A45525C009D7441 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF10C9B12A4A776A004F3BA3 /* Case3 */,
 				FAF697432A455262009D7441 /* MainMenu */,
 			);
 			path = Views;
@@ -208,11 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF10C9B72A4A776A004F3BA3 /* Case3View.swift in Sources */,
 				BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */,
+				BF10C9B62A4A776A004F3BA3 /* ChooseFormView.swift in Sources */,
 				FAF697472A4553E6009D7441 /* Constants.swift in Sources */,
 				BFEB79B72A4135CE002A1A0B /* TaxStoryApp.swift in Sources */,
 				FAF697452A455272009D7441 /* MainMenuStart.swift in Sources */,
-				BFE0A6042A480E34003C555B /* RequestWitholdingTaxCertificateView.swift in Sources */,
+				BF10C9B52A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,8 +316,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,8 +343,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -17,7 +17,7 @@ struct ChooseFormView: View {
     
     func changeCalculatorResultToScientific(){
         if calculatorResult.count > 10 {
-             var numberFormatter = NumberFormatter()
+             let numberFormatter = NumberFormatter()
              numberFormatter.numberStyle = .scientific
             calculatorResult = numberFormatter.string(from: Double(calculatorResult.split(separator: ",").joined())! as NSNumber)!
         }
@@ -100,377 +100,9 @@ struct ChooseFormView: View {
     
     var body: some View {
         VStack{
-            HStack{
-                // task list
-                VStack{
-                    Image("Quest")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: Constants.screenWidth / 5)
-                        .overlay(
-                            VStack{
-                                Text("Quest")
-                                    .font(.largeTitle)
-                                    .bold()
-                                    .padding(.bottom)
-                                
-                                HStack{
-                                    Image(systemName: "circle.fill")
-                                    
-                                    Text("Pilih Form")
-                                        .font(.title2)
-                                }
-                                
-                                HStack{
-                                    Image(systemName: "circle")
-                                    
-                                    Text("Minta bukti potong")
-                                        .font(.title2)
-                                }
-                                
-                                HStack{
-                                    Image(systemName: "circle")
-                                    
-                                    Text("Isi formulir")
-                                        .font(.title2)
-                                }
-                                
-                                HStack{
-                                    Image(systemName: "circle")
-                                    
-                                    Text("PTKP")
-                                        .font(.title2)
-                                }
-                                
-                                HStack{
-                                    Image(systemName: "circle")
-                                    
-                                    Text("Result")
-                                        .font(.title2)
-                                }
-                            }
-                                .padding(.top, 30)
-                        )
-                    
-                    Spacer()
-                }
-                .padding(.leading, 20)
-                
-                Spacer()
-                
-                // calculator
-                VStack{
-                    Image("calculatorbody")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: Constants.screenHeight / 1.35)
-                        .overlay {
-                            GeometryReader{ geo in
-                                HStack{
-                                    Spacer()
-                                    
-                                    VStack{
-                                        Spacer()
-                                        
-                                        ZStack{
-                                            Image("calculatorresult")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: Constants.screenWidth / 3.83)
-                                                .padding(.top)
-                                                .overlay {
-                                                    VStack{
-                                                        HStack{
-                                                            Spacer()
-                                                            
-                                                            if calculatorResult == ""{
-                                                                Text("0")
-                                                                    .font(.largeTitle)
-                                                                    .bold()
-                                                                    .padding(.trailing, geo.size.width / 12)
-                                                                    .padding(.top)
-                                                            }else{
-                                                                Text(calculatorResult)
-                                                                    .font(.largeTitle)
-                                                                    .bold()
-                                                                    .padding(.trailing, geo.size.width / 12)
-                                                                    .padding(.top)
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                        }
-                                        
-                                        HStack{
-                                            Button{
-                                                calculatorResult = ""
-                                            }label: {
-                                                Image("ac")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 3.5)
-                                            }
-                                            
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        operation = "%"
-                                                        
-                                                        
-                                                    }
-                                                }
-                                            }label: {
-                                                Image("persen")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                                    .padding(.horizontal, 5)
-                                            }
-                                            
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        operation = "/"
-                                                    }
-                                                }
-                                            }label: {
-                                                Image("bagi")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                            }
-                                        }
-                                        
-                                        HStack{
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        calculatorResult += "1"
-                                                    }
-                                                }else if calculatorResult == ""{
-                                                    calculatorResult = "1"
-                                                }
-                                                
-                                            }label: {
-                                                Image("1")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                            }
-                                            
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        calculatorResult += "2"
-                                                    }
-                                                }else if calculatorResult == ""{
-                                                    calculatorResult = "2"
-                                                }
-                                            }label: {
-                                                Image("2")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                            }
-                                            
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        calculatorResult += "3"
-                                                    }
-                                                    
-                                                }else if calculatorResult == ""{
-                                                    calculatorResult = "3"
-                                                }
-                                            }label: {
-                                                Image("3")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                            }
-                                            
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        operation = "x"
-                                                    }
-                                                    
-                                                }
-                                            }label: {
-                                                Image("kali")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                            }
-                                        }
-                                        
-                                        HStack{
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        calculatorResult += "4"
-                                                    }
-                                                    
-                                                }else if calculatorResult == ""{
-                                                    calculatorResult = "4"
-                                                }
-                                            }label: {
-                                                Image("4")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                            }
-                                            
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        calculatorResult += "5"
-                                                    }
-                                                    
-                                                }else if calculatorResult == ""{
-                                                    calculatorResult = "5"
-                                                }
-                                            }label: {
-                                                Image("5")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                            }
-                                            
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        calculatorResult += "6"
-                                                    }
-                                                    
-                                                }else if calculatorResult == ""{
-                                                    calculatorResult = "6"
-                                                }
-                                            }label: {
-                                                Image("6")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                            }
-                                            
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        operation = "-"
-                                                    }
-                                                    
-                                                }
-                                            }label: {
-                                                Image("minus")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                            }
-                                        }
-                                        
-                                        HStack{
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        calculatorResult += "7"
-                                                    }
-                                                    
-                                                }else if calculatorResult == ""{
-                                                    calculatorResult = "7"
-                                                }
-                                            }label: {
-                                                Image("7")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                            }
-                                            
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        calculatorResult += "8"
-                                                    }
-                                                    
-                                                }else if calculatorResult == ""{
-                                                    calculatorResult = "8"
-                                                }
-                                            }label: {
-                                                Image("8")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                            }
-                                            
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        calculatorResult += "9"
-                                                    }
-                                                    
-                                                }else if calculatorResult == ""{
-                                                    calculatorResult = "9"
-                                                }
-                                            }label: {
-                                                Image("9")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                            }
-                                            
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        operation = "+"
-                                                    }
-                                                    
-                                                }
-                                            }label: {
-                                                Image("plus")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                            }
-                                        }
-                                        
-                                        HStack{
-                                            Button{
-                                                if calculatorResult != "" {
-                                                    if calculatorResult.count < maxCalculatorChara{
-                                                        calculatorResult += "0"
-                                                    }
-                                                }
-                                            }label: {
-                                                Image("0")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 3.5)
-                                            }
-                                            
-                                            Button{
-                                                
-                                            }label: {
-                                                Image("koma")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                                    .padding(.horizontal, 5)
-                                            }
-                                            
-                                            Button{
-                                                
-                                            }label: {
-                                                Image("equal")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: geo.size.width / 7)
-                                            }
-                                        }
-                                        
-                                        Spacer()
             Image("bg-pilih-form")
                 .resizable()
                 .scaledToFill()
-                .frame(width: Constants.screenWidth, height: Constants.screenHeight)
                 .overlay {
                     HStack{
                         // task list
@@ -479,7 +111,7 @@ struct ChooseFormView: View {
                                 Image("quest")
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: Constants.screenWidth / 5.5)
+                                    .frame(width: Constants.screenWidth / 4.5)
                             }
                             .overlay(
                                 VStack{
@@ -487,7 +119,7 @@ struct ChooseFormView: View {
                                         .font(.title2)
                                         .bold()
                                         .foregroundColor(.white)
-                                        .padding(.top, Constants.screenHeight / 110)
+                                        .padding(.top, Constants.screenHeight / 160)
                                     
                                     Spacer()
                                     
@@ -528,13 +160,13 @@ struct ChooseFormView: View {
                                         }
                                     }
                                     .padding(.horizontal, Constants.screenWidth / 30)
-                                    .padding(.top, Constants.screenHeight / 35)
+                                    .padding(.top, Constants.screenHeight / 46)
                                     
                                     Spacer()
                                 }
                             )
-                            .padding(.leading, Constants.screenWidth / 12.5)
-                            .padding(.top, Constants.screenHeight / 12.5)
+                            .padding(.leading, Constants.screenWidth / 8.5)
+                            .padding(.top, Constants.screenHeight / 15.5)
                             
                             
                             Spacer()
@@ -545,7 +177,7 @@ struct ChooseFormView: View {
                             Image("calculatorbody")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: Constants.screenHeight / 1.5)
+                                .frame(height: Constants.screenHeight / 2.05)
                                 .overlay (
                                     GeometryReader{ geo in
                                         HStack{
@@ -887,7 +519,7 @@ struct ChooseFormView: View {
                                         }
                                     }
                                 )
-                                .padding(.top, Constants.screenHeight / 13.5)
+                                .padding(.top, Constants.screenHeight / 17.5)
                             
                             Spacer()
                         }
@@ -906,56 +538,50 @@ struct ChooseFormView: View {
                 }
                 
                 Spacer()
-                
-                // pilih form
                   
-                  
-                    VStack{
-                        // guide text
-                        Spacer()
+                VStack{
+                    // guide text
+                    Spacer()
+                    
+                    HStack{
+                        Image("bayu-pilih-form")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: Constants.screenWidth / 6)
+                            .padding(.leading, Constants.screenWidth / 9)
+                            .padding(.top, Constants.screenHeight / 20)
                         
-                        HStack{
-                            Image("bayu-pilih-form")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: Constants.screenWidth / 8)
-                                .padding(.leading, Constants.screenWidth / 9)
-                                .padding(.bottom, Constants.screenHeight / 35)
-                            
-                            Image("text-guide-pilih-form")
-                                .resizable()
-                                .scaledToFit()
-                                .padding(.top, Constants.screenWidth / 15)
-                                .frame(width: Constants.screenWidth / 1.6)
-                                .overlay(
-                                    Text("Yuk bantu Bayu memilih form laporan SPT (Surat Pemberitahuan Tahunan) berdasarkan perhitungan penghasilannya tahun ini menggunakan kalkulator di atas ya. Pendapatan Bayu per bulannya sendiri adalah Rp 4.500.000.  ")
-                                        .font(.title2)
-                                        .bold()
-                                        .padding(.top, Constants.screenHeight / 15)
-                                        .padding(.horizontal, Constants.screenWidth / 15)
-                                )
-                            
-                            Spacer()
-                        }
+                        Image("text-guide-pilih-form")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(.top, Constants.screenHeight / 10)
+                            .frame(width: Constants.screenWidth / 1.2)
+                            .overlay(
+                                Text("Yuk bantu Bayu memilih form laporan SPT (Surat Pemberitahuan Tahunan) berdasarkan perhitungan penghasilannya tahun ini menggunakan kalkulator di atas ya. Pendapatan Bayu per bulannya sendiri adalah Rp 4.500.000.  ")
+                                    .font(.title2)
+                                    .bold()
+                                    .padding(.top, Constants.screenHeight / 12)
+                                    .padding(.horizontal, Constants.screenWidth / 15)
+                            )
+                        
+                        Spacer()
                     }
-                    .padding(.bottom, Constants.screenHeight / 12)
                 }
-                .padding(.top)
-                
-                Spacer()
+                .padding(.bottom, Constants.screenHeight / 14)
+                .padding(.leading, Constants.screenWidth / 20)
             }
+                
+            Spacer()
+            
+            }
+        .ignoresSafeArea()
         }
-    }
 }
 
 struct ChooseFormView_Previews: PreviewProvider {
     static var previews: some View {
         ChooseFormView()
-            .previewDevice("iPad Pro (12.9-inch) (6th geneeration)")
-            .previewInterfaceOrientation(.landscapeLeft)
-        
-        ChooseFormView()
-            .previewDevice("iPad Pro (11-inch) (4th generation)")
+            .previewDevice("iPad Pro (12.9-inch) (6th generation)")
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }
