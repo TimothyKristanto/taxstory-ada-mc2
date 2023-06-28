@@ -10,7 +10,8 @@ import SwiftUI
 
 struct FillFormulir: View {
     @State private var currentImageIndex = 0
-    
+    @State var dragAmount = CGSize.zero
+    @State private var dropTargetText = ""
     var body: some View {
         VStack{
             Image("bg-pilih-form")
@@ -32,7 +33,7 @@ struct FillFormulir: View {
                                         .font(.title2)
                                         .bold()
                                         .foregroundColor(.white)
-                                        .padding(.top, Constants.screenHeight / 110)
+                                        .padding(.top, Constants.screenHeight / 111)
                                     
                                     Spacer()
                                     
@@ -120,6 +121,7 @@ struct FillFormulir: View {
                                             .frame(width: Constants.screenWidth / 12)
                                             .padding(.leading, Constants.screenWidth / 39)
                                             .padding(.top, Constants.screenHeight / 3.68)
+                                        
                                     }
                                     Spacer()
                                 }

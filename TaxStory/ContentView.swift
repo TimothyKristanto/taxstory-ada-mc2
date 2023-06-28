@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var vm : AnswerViewModel
     var body: some View {
-        FillFormulir()
+        FillForm(vm: AnswerViewModel())
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(vm: AnswerViewModel())
     }
 }
