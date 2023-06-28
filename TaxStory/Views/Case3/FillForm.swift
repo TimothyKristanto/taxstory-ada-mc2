@@ -108,11 +108,11 @@ struct FillForm: View {
                     VStack() {
                         VStack() {
                             DropView(vm: vm)
-                                .offset(x: geometry.size.height / 1.74)
-                                .offset(y: geometry.size.height / 3.4)
+                                .offset(x: geometry.size.height / 2.13)
+                                .offset(y: geometry.size.height / 3.21)
                             DragView(vm: vm)
-                                .offset(x: geometry.size.height / 0.988)
-                                .offset(y: geometry.size.height / 7)
+                                .offset(x: geometry.size.height / 1.12)
+                                .offset(y: -geometry.size.height / 6.7)
 
                         }
                         Spacer()
@@ -144,25 +144,6 @@ struct FillForm: View {
 //                        .padding(.top, geometry.size.height / 8)
 //                        .offset(y: -geometry.size.height / 1.815)
                     
-                
-                VStack{
-                    Image("page1puzzle1")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: geometry.size.width / 12)
-                        .offset(y: -geometry.size.height / 1.85)
-                        .offset(x: geometry.size.height / 2.55)
-
-                }
-                VStack{
-                    Image("page1puzzle3")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: geometry.size.width / 12)
-                        .offset(y: -geometry.size.height / 1.83)
-                        .offset(x: geometry.size.height / 2.55)
-
-                }
             }
                     VStack {
                         // guide text

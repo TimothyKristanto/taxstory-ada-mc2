@@ -10,7 +10,7 @@ import SwiftUI
 class AnswerViewModel:NSObject, ObservableObject {
     
     @Published var progress : CGFloat = 0
-    @Published var characters: [Word] = [Word(value: "page1puzzle2", offsiteX: 1, offsiteY: 1),] //ganti goal penempatan aaaaaa contoh lanjut --> Word(value: "page1puzzle2", offsiteX: 10, offsiteY: -10)
+    @Published var characters: [Word] = [Word(value: "page1puzzle2", offsiteX: 1, offsiteY: 1), Word(value: "page1puzzle1", offsiteX: -152, offsiteY: -115), Word(value: "page1puzzle3", offsiteX: -305, offsiteY: -60)] //ganti goal penempatan aaaaaa contoh lanjut --> Word(value: "page1puzzle2", offsiteX: 10, offsiteY: -10)
 //               Word(value: "is"),
 //               Word(value: "playing"),
 //               Word(value: "football"),

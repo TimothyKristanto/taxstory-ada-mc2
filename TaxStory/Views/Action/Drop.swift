@@ -24,7 +24,7 @@ struct DropView: View {
                                 .renderingMode( item.isShowing ? .none : .template)
                                 .resizable()
                                 .foregroundColor(.gray)
-                                .frame(width: geometry.size.width / 12.7, height: geometry.size.height / 15.7)
+                                .frame(width: geometry.size.width / 10.9, height: geometry.size.height / 34.7)
                                 .padding(.vertical,5)
                                 .padding(.horizontal,item.padding)
                                 .opacity(item.isShowing ? 1 : 0)
