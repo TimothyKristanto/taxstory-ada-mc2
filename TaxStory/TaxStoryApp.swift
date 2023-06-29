@@ -11,7 +11,7 @@ import SwiftUI
 struct TaxStoryApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(vm: AnswerViewModel())
+            ContentView()
         }
     }
 }
