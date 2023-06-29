@@ -101,9 +101,8 @@ struct ChooseFormView: View {
     var body: some View {
         GeometryReader{ geoScreen in
             VStack{
-                Image("bg-pilih-form")
+                Image("bg")
                     .resizable()
-                    .frame(width: geoScreen.size.width, height: geoScreen.size.height)
                     .scaledToFill()
                     .overlay {
                         VStack{
@@ -115,12 +114,12 @@ struct ChooseFormView: View {
                                             Image("Quest")
                                                 .resizable()
                                                 .scaledToFit()
-                                                .frame(width: geoTop.size.width / 5.3)
+                                                .frame(width: geoTop.size.width / 5.8)
                                         }
                                         .overlay(
                                             VStack{
                                                 Text("Quest")
-                                                    .font(.title2)
+                                                    .font(.system(size: geoTop.size.width / 60, design: .rounded))
                                                     .bold()
                                                     .foregroundColor(.white)
                                                     .padding(.top, geoTop.size.height / 55)
@@ -132,35 +131,35 @@ struct ChooseFormView: View {
                                                         Image(systemName: "circle.fill")
                                                         
                                                         Text("Pilih form")
-                                                            .font(.title2)
+                                                            .font(.system(size: geoTop.size.width / 55, design: .rounded))
                                                     }
                                                     
                                                     HStack{
                                                         Image(systemName: "circle")
                                                         
                                                         Text("Minta bukti potong")
-                                                            .font(.title2)
+                                                            .font(.system(size: geoTop.size.width / 55, design: .rounded))
                                                     }
                                                     
                                                     HStack{
                                                         Image(systemName: "circle")
                                                         
                                                         Text("Isi formulir")
-                                                            .font(.title2)
+                                                            .font(.system(size: geoTop.size.width / 55, design: .rounded))
                                                     }
                                                     
                                                     HStack{
                                                         Image(systemName: "circle")
                                                         
                                                         Text("PTKP")
-                                                            .font(.title2)
+                                                            .font(.system(size: geoTop.size.width / 55, design: .rounded))
                                                     }
                                                     
                                                     HStack{
                                                         Image(systemName: "circle")
                                                         
                                                         Text("Result")
-                                                            .font(.title2)
+                                                            .font(.system(size: geoTop.size.width / 55, design: .rounded))
                                                     }
                                                 }
                                                 .padding(.horizontal, geoTop.size.width / 30)
@@ -538,40 +537,40 @@ struct ChooseFormView: View {
                                         Image("form-pilih-spt")
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(width: geoTop.size.width / 2.5, height: geoTop.size.height * 1.2)
+                                            .frame(width: geoTop.size.width / 2.55, height: geoTop.size.height * 1.3)
                                             .overlay(
                                                 VStack{
                                                     Button{
-                                                        
+                                                        // wrong
                                                     }label: {
                                                         Image("pilihan-1770")
                                                             .resizable()
                                                             .scaledToFit()
-                                                            .frame(height: geoTop.size.height / 3.7)
+                                                            .frame(height: geoTop.size.height / 3.4)
                                                     }
                                                     
                                                     Button{
-                                                        
+                                                        // wrong
                                                     }label: {
                                                         Image("pilihan-1770s")
                                                             .resizable()
                                                             .scaledToFit()
-                                                            .frame(height: geoTop.size.height / 3.7)
+                                                            .frame(height: geoTop.size.height / 3.4)
                                                     }
                                                     
                                                     Button{
-                                                        
+                                                        // correct
                                                     }label: {
                                                         Image("pilihan-1770ss")
                                                             .resizable()
                                                             .scaledToFit()
-                                                            .frame(height: geoTop.size.height / 3.7)
+                                                            .frame(height: geoTop.size.height / 3.4)
                                                     }
                                                 }
                                             )
                                     }
                                     .padding(.leading, geoTop.size.width / 1.83)
-                                    .padding(.top, geoTop.size.height / 6)
+                                    .padding(.top, geoTop.size.height / 10)
                                 }
                                 
                             }
@@ -591,8 +590,8 @@ struct ChooseFormView: View {
                                             .scaledToFit()
                                             .frame(width: geoBot.size.width / 1.58, height: geoBot.size.height / 3)
                                             .overlay(
-                                                Text("Yuk bantu Bayu memilih form laporan SPT (Surat Pemberitahuan Tahunan) berdasarkan perhitungan penghasilannya tahun ini menggunakan kalkulator di atas ya. Pendapatan Bayu per bulannya sendiri adalah Rp 4.500.000.")
-                                                    .font(.title3)
+                                                Text("Yuk bantu Bayu memilih form laporan SPT (Surat Pemberitahuan Tahunan) berdasarkan perhitungan penghasilannya tahun ini menggunakan kalkulator di atas ya. Pendapatan Bayu per bulannya sendiri adalah Rp 4,500,000.")
+                                                    .font(.system(size: geoBot.size.width / 65, design: .rounded))
                                                     .bold()
                                                     .padding(.horizontal, geoBot.size.width / 18)
                                                     .padding(.bottom, geoBot.size.height / 25)
