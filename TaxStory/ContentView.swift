@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var vm : AnswerViewModel
     var body: some View {
-        RequestWitholdingTaxCertificateView()
+        FillForm(vm: vm)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(vm: AnswerViewModel())
+//        ContentView()
+            .previewInterfaceOrientation(.landscapeRight)
     }
 }

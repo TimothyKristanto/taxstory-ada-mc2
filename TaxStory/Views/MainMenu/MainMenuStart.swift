@@ -45,7 +45,7 @@ struct MainMenuStart: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: Constants.screenWidth * 1, height: Constants.screenWidth * 0.37)
-                        .padding(.bottom, Constants.screenHeight * 0.45)
+                        .padding(.bottom, Constants.screenHeight * 0.25)
                 }
                 
                 VStack {
