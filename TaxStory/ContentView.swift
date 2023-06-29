@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var vm : AnswerViewModel
     var body: some View {
-        MapCase()
+        ChooseFormView()
 //        FillForm(vm: vm)
     }
 }
