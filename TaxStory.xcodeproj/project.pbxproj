@@ -14,7 +14,6 @@
 		BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB79B82A4135CE002A1A0B /* ContentView.swift */; };
 		BFEB79BB2A4135CF002A1A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEB79BA2A4135CF002A1A0B /* Assets.xcassets */; };
 		BFEB79BE2A4135CF002A1A0B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEB79BD2A4135CF002A1A0B /* Preview Assets.xcassets */; };
-		FA18C2022A4A887A0070FA8D /* FillFormulir.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF697492A493B3A009D7441 /* FillFormulir.swift */; };
 		FA72FFF02A4BEA2500834A19 /* AnswerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFEF2A4BEA2500834A19 /* AnswerViewModel.swift */; };
 		FA72FFF22A4BEA4A00834A19 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFF12A4BEA4A00834A19 /* Word.swift */; };
 		FA72FFF42A4BEBE800834A19 /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFF32A4BEBE800834A19 /* Drop.swift */; };
@@ -40,7 +39,6 @@
 		FAF23A342A4ADFEB00AC2C6D /* FillForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillForm.swift; sourceTree = "<group>"; };
 		FAF697442A455272009D7441 /* MainMenuStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuStart.swift; sourceTree = "<group>"; };
 		FAF697462A4553E6009D7441 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		FAF697492A493B3A009D7441 /* FillFormulir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillFormulir.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +58,6 @@
 				BF10C9B22A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift */,
 				BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */,
 				BF10C9B42A4A776A004F3BA3 /* Case3View.swift */,
-				FAF697492A493B3A009D7441 /* FillFormulir.swift */,
 				FAF23A342A4ADFEB00AC2C6D /* FillForm.swift */,
 			);
 			path = Case3;
@@ -209,7 +206,6 @@
 				BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */,
 				BF10C9B62A4A776A004F3BA3 /* ChooseFormView.swift in Sources */,
 				FAF697472A4553E6009D7441 /* Constants.swift in Sources */,
-				FA18C2022A4A887A0070FA8D /* FillFormulir.swift in Sources */,
 				BFEB79B72A4135CE002A1A0B /* TaxStoryApp.swift in Sources */,
 				FAF697452A455272009D7441 /* MainMenuStart.swift in Sources */,
 				BF10C9B52A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift in Sources */,
