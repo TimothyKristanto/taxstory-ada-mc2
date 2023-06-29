@@ -28,7 +28,7 @@ struct RequestWitholdingTaxCertificateView: View {
                             .scaledToFit()
                             .frame(width: geo.size.width / 1.15)
                             .overlay(
-                                Image("awan")
+                                Image("Awan")
                                     .resizable()
                                     .scaledToFit()
                                     .offset(x: cloudIsMoving ? geo.size.width / 25 : geo.size.width / 40)
@@ -133,7 +133,7 @@ struct RequestWitholdingTaxCertificateView: View {
                             )
                             .overlay{
                                 if isCorrect{
-                                    Image("mobil")
+                                    Image("Mobil")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: geo.size.width / 16)
@@ -174,7 +174,7 @@ struct RequestWitholdingTaxCertificateView: View {
                                 }
                             .overlay{
                                 if isCorrect == false{
-                                    Image("hospital")
+                                    Image("Hospital")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: geo.size.width / 7.5)
