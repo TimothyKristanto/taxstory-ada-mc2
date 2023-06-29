@@ -110,7 +110,7 @@ struct FillForm: View {
                             DropView(vm: vm)
                                 .offset(x: geometry.size.height / 2.13)
                                 .offset(y: geometry.size.height / 3.21)
-                            DragView(vm: vm)
+                            Drag(vm: vm)
                                 .offset(x: geometry.size.height / 1.12)
                                 .offset(y: -geometry.size.height / 6.7)
 
@@ -143,6 +143,7 @@ struct FillForm: View {
 //                        .padding(.leading, geometry.size.width / 1.65)
 //                        .padding(.top, geometry.size.height / 8)
 //                        .offset(y: -geometry.size.height / 1.815)
+                    
                     
             }
                     VStack {
