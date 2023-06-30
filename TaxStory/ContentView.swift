@@ -9,8 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var vm : AnswerViewModel
+    @State var page: String = "mainMenu"
+    
     var body: some View {
-        FillForm(vm: vm)
+        if page == "mainMenu"{
+            MainMenuStart(page: $page)
+        }else if page == "mapCase"{
+            MapCase(page: $page)
+        }else if page == "case3"{
+            Case3View()
+        }
+//        ChooseFormView()
+//        FillForm(vm: vm)
     }
 }
 

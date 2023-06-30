@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct Case3View: View {
+    @State var page: String = "pilihFormSPT"
+    
     var body: some View {
-        HStack{
-            
+        if page == "pilihFormSPT"{
+            ChooseFormView(page: $page)
+        }else if page == "mintaBuktiPotong"{
+            RequestWitholdingTaxCertificateView(page: $page)
+        }else if page == "isiBuktiPotong"{
+            FillForm(vm: AnswerViewModel())
         }
     }
 }

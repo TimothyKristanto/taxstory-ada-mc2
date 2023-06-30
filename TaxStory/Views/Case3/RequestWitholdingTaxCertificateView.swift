@@ -16,6 +16,8 @@ struct RequestWitholdingTaxCertificateView: View {
     @State var carX: CGFloat = 0
     @State var carY: CGFloat = 0
     
+    @Binding var page: String
+    
     var body: some View {
         Image("bg")
             .resizable()
@@ -254,6 +256,12 @@ struct RequestWitholdingTaxCertificateView: View {
                                                 carY = -geo.size.height / 4.8
                                             }
                                         }
+                                        
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 5.5){
+                                            withAnimation{
+                                                page = "isiBuktiPotong"
+                                            }
+                                        }
                                     })
                             )
                             .overlay{
@@ -289,7 +297,7 @@ struct RequestWitholdingTaxCertificateView: View {
 
 struct RequestWitholdingTaxCertificateView_Previews: PreviewProvider {
     static var previews: some View {
-        RequestWitholdingTaxCertificateView()
+        RequestWitholdingTaxCertificateView(page: .constant("mintaBuktiPotong"))
             .previewInterfaceOrientation(.landscapeRight)
     }
 }
