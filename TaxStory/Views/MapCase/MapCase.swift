@@ -14,6 +14,8 @@ struct MapCase: View {
     @State private var isButtonPressed = false
     @State private var animationCount = 0
     @State var hold = false
+    @Binding var page: String
+    
     var body: some View {
         ZStack{
             GeometryReader { geometry in
@@ -27,7 +29,7 @@ struct MapCase: View {
                             Button(action: {
                                 // Start game action
                                 withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-                                    startGame()
+//                                    startGame()
                                     isButtonPressed = true // Set isButtonPressed to true when the button is pressed
                                 }
                             }) {Image("point1")
@@ -37,9 +39,10 @@ struct MapCase: View {
                                     .rotationEffect(.degrees(isButtonPressed ? 10 : -10))
                                     .scaledToFit()
                                     .frame(width: geometry.size.width/10)
-                                    .offset(y: -geometry.size.height / 3.5)
-                                    .offset(x: -geometry.size.height / 3)
+                                    
                             }
+                            .offset(y: -geometry.size.height / 3.5)
+                            .offset(x: -geometry.size.height / 3)
                         }
                         .onAppear {
                             withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
@@ -52,7 +55,7 @@ struct MapCase: View {
                             Button(action: {
                                 // Start game action
                                 withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-                                    startGame()
+//                                    startGame()
                                     isButtonPressed = true // Set isButtonPressed to true when the button is pressed
                                 }
                             }) {Image("point2")
@@ -62,9 +65,10 @@ struct MapCase: View {
                                     .rotationEffect(.degrees(isButtonPressed ? -10 : 10))
                                     .scaledToFit()
                                     .frame(width: geometry.size.width/10)
-                                    .offset(y: -geometry.size.height / 12.5)
-                                    .offset(x: -geometry.size.height / 5)
+                                    
                             }
+                            .offset(y: -geometry.size.height / 12.5)
+                            .offset(x: -geometry.size.height / 5)
                         }
                         .onAppear {
                             withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
@@ -75,9 +79,13 @@ struct MapCase: View {
                         VStack{
                             // Building image
                             Button(action: {
+                                withAnimation{
+                                    page = "case3"
+                                }
+                                
                                 // Start game action
                                 withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-                                    startGame()
+//                                    startGame()
                                     isButtonPressed = true // Set isButtonPressed to true when the button is pressed
                                 }
                             }) {Image("point3")
@@ -87,9 +95,10 @@ struct MapCase: View {
                                     .rotationEffect(.degrees(isButtonPressed ? 10 : -10))
                                     .scaledToFit()
                                     .frame(width: geometry.size.width/10)
-                                    .offset(y: -geometry.size.height / 8.5)
-                                    .offset(x: geometry.size.height / 15)
+                                    
                             }
+                            .offset(y: -geometry.size.height / 8.5)
+                            .offset(x: geometry.size.height / 15)
                         }
                         .onAppear {
                             withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
@@ -102,7 +111,7 @@ struct MapCase: View {
                             Button(action: {
                                 // Start game action
                                 withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-                                    startGame()
+//                                    startGame()
                                     isButtonPressed = true // Set isButtonPressed to true when the button is pressed
                                 }
                             }) {Image("point4")
@@ -112,9 +121,10 @@ struct MapCase: View {
                                     .rotationEffect(.degrees(isButtonPressed ? -10 : 10))
                                     .scaledToFit()
                                     .frame(width: geometry.size.width/10)
-                                    .offset(y: geometry.size.height / 60.5)
-                                    .offset(x: geometry.size.height / 3.4)
+                                    
                             }
+                            .offset(y: geometry.size.height / 60.5)
+                            .offset(x: geometry.size.height / 3.4)
                         }
                         .onAppear {
                             withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
@@ -161,8 +171,7 @@ struct MapCase: View {
 
 struct MapCase_Previews: PreviewProvider {
     static var previews: some View {
-        MapCase()
-            .previewDevice("iPad Pro (12.9-inch) (6th generation)")
-            .previewInterfaceOrientation(.landscapeLeft)
+        MapCase(page: .constant("mapCase"))
+            .previewInterfaceOrientation(.landscapeRight)
     }
 }
