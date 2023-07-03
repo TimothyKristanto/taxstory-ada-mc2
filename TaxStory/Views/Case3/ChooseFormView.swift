@@ -27,7 +27,7 @@ struct ChooseFormView: View {
     func giveSeparatorNumDot(num: String)->String{
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        formatter.locale = Locale.current
+        formatter.locale = Locale(identifier: "en")
         formatter.maximumFractionDigits = 2
         let formattedNum = formatter.string(from: Double(num)! as NSNumber) ?? ""
         return formattedNum
