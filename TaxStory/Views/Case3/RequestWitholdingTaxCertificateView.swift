@@ -16,6 +16,8 @@ struct RequestWitholdingTaxCertificateView: View {
     @State var carX: CGFloat = 0
     @State var carY: CGFloat = 0
     
+    @Binding var page: String
+    
     var body: some View {
         Image("bg")
             .resizable()
@@ -158,14 +160,14 @@ struct RequestWitholdingTaxCertificateView: View {
                                 }
                             .overlay{
                                 if isCorrect == false{
-                                    Image("cafe")
+                                    Image("Cafe")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: geo.size.width / 18)
                                         .offset(x: geo.size.width / 7.5, y: -geo.size.height / 22)
                                         .shadow(color: Color("Cream"), radius: shadowIsShining ? 20 : 10)
                                 }else{
-                                    Image("cafe")
+                                    Image("Cafe")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: geo.size.width / 18)
@@ -181,7 +183,7 @@ struct RequestWitholdingTaxCertificateView: View {
                                         .offset(x: geo.size.width / 10.6, y: -geo.size.height / 5.98)
                                         .shadow(color: Color("Cream"), radius: shadowIsShining ? 20 : 10)
                                 }else{
-                                    Image("hospital")
+                                    Image("Hospital")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: geo.size.width / 7.5)
@@ -262,6 +264,12 @@ struct RequestWitholdingTaxCertificateView: View {
                                                 }
                                             }
                                         }
+                                        
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 5.5){
+                                            withAnimation{
+                                                page = "isiBuktiPotong"
+                                            }
+                                        }
                                     })
                             )
                             .overlay{
@@ -297,7 +305,7 @@ struct RequestWitholdingTaxCertificateView: View {
 
 struct RequestWitholdingTaxCertificateView_Previews: PreviewProvider {
     static var previews: some View {
-        RequestWitholdingTaxCertificateView()
+        RequestWitholdingTaxCertificateView(page: .constant("mintaBuktiPotong"))
             .previewInterfaceOrientation(.landscapeRight)
     }
 }

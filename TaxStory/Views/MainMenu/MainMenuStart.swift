@@ -12,7 +12,26 @@ struct MainMenuStart: View {
     @State private var isButtonPressed = false
     @State private var animationCount = 0
     @State var hold = false
+    @Binding var page: String
+    
     let totalMovements = 2 // Total number of left and right movements
+    
+    func startGame() {
+        // Code to start the game
+        withAnimation{
+            page = "mapCase"
+        }
+    }
+    
+    func calculateButtonOffset() -> CGFloat {
+        let totalOffset = Constants.screenWidth * 0.1 // Total offset for left and right movement
+        let movementDistance = totalOffset / CGFloat(totalMovements)
+        
+        let isMovingRight = animationCount % 2 == 0
+        
+        return isMovingRight ? movementDistance : -movementDistance
+    }
+    
     var body: some View {
         // Background image
         Image("background")
@@ -50,9 +69,10 @@ struct MainMenuStart: View {
                 
                 VStack {
                     Button(action: {
+                        startGame()
                         // Start game action
                         withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-                            startGame()
+                            
                             isButtonPressed = true // Set isButtonPressed to true when the button is pressed
                         }
                     }) {
@@ -74,28 +94,11 @@ struct MainMenuStart: View {
                     }
                 
             }
-    func calculateButtonOffset() -> CGFloat {
-        let totalOffset = Constants.screenWidth * 0.1 // Total offset for left and right movement
-        let movementDistance = totalOffset / CGFloat(totalMovements)
-        
-        let isMovingRight = animationCount % 2 == 0
-        
-        return isMovingRight ? movementDistance : -movementDistance
+}
+    
+struct MainMenuStart_Previews: PreviewProvider {
+    static var previews: some View {
+        MainMenuStart(page: .constant("mainMenu"))
+            .previewInterfaceOrientation(.landscapeRight)
     }
-        }
-    
-    
-    
-    func startGame() {
-        // Code to start the game
-        print("Starting the game...")
-    }
-    
-    
-
-    struct MainMenuStart_Previews: PreviewProvider {
-        static var previews: some View {
-            MainMenuStart()
-                .previewInterfaceOrientation(.landscapeLeft)
-        }
-    }
+}

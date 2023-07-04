@@ -12,6 +12,7 @@ struct ChooseFormView: View {
     @State var calculatorOperator = ""
     @State var lastNumber: Double = 0
     @State var isResetNumber = true
+    @Binding var page: String
     
     let maxCalculatorChara = 11
     
@@ -26,7 +27,7 @@ struct ChooseFormView: View {
     func giveSeparatorNumDot(num: String)->String{
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        formatter.locale = Locale.current
+        formatter.locale = Locale(identifier: "en")
         formatter.maximumFractionDigits = 2
         let formattedNum = formatter.string(from: Double(num)! as NSNumber) ?? ""
         return formattedNum
@@ -560,6 +561,9 @@ struct ChooseFormView: View {
                                                     
                                                     Button{
                                                         // correct
+                                                        withAnimation{
+                                                            page = "mintaBuktiPotong"
+                                                        }
                                                     }label: {
                                                         Image("pilihan-1770ss")
                                                             .resizable()
@@ -615,7 +619,7 @@ struct ChooseFormView: View {
 
 struct ChooseFormView_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseFormView()
-            .previewInterfaceOrientation(.landscapeLeft)
+        ChooseFormView(page: .constant("pilihFormSPT"))
+            .previewInterfaceOrientation(.landscapeRight)
     }
 }

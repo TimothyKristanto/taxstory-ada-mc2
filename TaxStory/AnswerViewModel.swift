@@ -26,7 +26,7 @@ class AnswerViewModel:NSObject, ObservableObject {
     func generateGrid() -> [[Word]] {
         var gridArray: [[Word]] = []
         var tempArray: [Word] = []
-        var currentWidth: CGFloat = 0
+        let currentWidth: CGFloat = 0
         let totalScreenWidth:CGFloat = CGFloat(UIScreen.main.bounds.width - 30)
         
         for character in characters {
