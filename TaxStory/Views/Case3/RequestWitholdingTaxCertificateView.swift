@@ -232,28 +232,36 @@ struct RequestWitholdingTaxCertificateView: View {
                                     .onTapGesture(perform: {
                                         // coordinate: (-geo.size.width / 24, -geo.size.width / 8.5), (-geo.size.width / 60, -geo.size.width / 7.9), (geo.size.width / 10.5, -geo.size.height / 13), (geo.size.width / 3.8, -geo.size.height / 4.8)
                                         
-                                        isCorrect = true
-                                        carX = -geo.size.width / 24
-                                        carY = -geo.size.width / 8.5
-                                        
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                            withAnimation(.easeIn(duration: 1)) {
-                                                        carX = -geo.size.width / 60
-                                                        carY = -geo.size.width / 7.9
+                                        if isCorrect == false{
+                                            isCorrect = true
+                                            carX = -geo.size.width / 24
+                                            carY = -geo.size.width / 8.5
+                                            
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                                withAnimation(.easeIn(duration: 1)) {
+                                                            carX = -geo.size.width / 60
+                                                            carY = -geo.size.width / 7.9
+                                                        }
                                                     }
+                                            
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
+                                                withAnimation(.easeInOut(duration: 2)) {
+                                                    carX = geo.size.width / 10.5
+                                                    carY = -geo.size.height / 13
                                                 }
-                                        
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
-                                            withAnimation(.easeInOut(duration: 2)) {
-                                                carX = geo.size.width / 10.5
-                                                carY = -geo.size.height / 13
                                             }
-                                        }
-                                        
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5){
-                                            withAnimation(.easeInOut(duration: 2)) {
-                                                carX = geo.size.width / 3.8
-                                                carY = -geo.size.height / 4.8
+                                            
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5){
+                                                withAnimation(.easeInOut(duration: 2)) {
+                                                    carX = geo.size.width / 3.8
+                                                    carY = -geo.size.height / 4.8
+                                                }
+                                            }
+                                            
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 5.5){
+                                                withAnimation{
+                                                    page = "isiBuktiPotong"
+                                                }
                                             }
                                         }
                                         
