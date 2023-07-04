@@ -40,19 +40,19 @@ struct FillForm: View {
                                 
                                 VStack(alignment: .leading) {
                                     HStack {
-                                        Image(systemName: "circle.fill")
+                                        Image(systemName: "checkmark.circle.fill")
                                         Text("Pilih form")
                                             .font(.title2)
                                     }
                                     
                                     HStack {
-                                        Image(systemName: "circle.fill")
+                                        Image(systemName: "checkmark.circle.fill")
                                         Text("Minta bukti potong")
                                             .font(.title2)
                                     }
                                     
                                     HStack {
-                                        Image(systemName: "circle")
+                                        Image(systemName: "circle.fill")
                                         Text("Isi formulir")
                                             .font(.title2)
                                     }
@@ -107,7 +107,7 @@ struct FillForm: View {
                         .offset(y: geometry.size.height / 65)
                     VStack() {
                         VStack() {
-                            DropView(vm: vm)
+                            Drop(vm: vm)
                                 .offset(x: geometry.size.height / 2.13)
                                 .offset(y: geometry.size.height / 3.21)
                             Drag(vm: vm)

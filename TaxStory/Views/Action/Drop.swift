@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DropView: View {
+struct Drop: View {
     
     @ObservedObject var vm : AnswerViewModel
     
@@ -20,22 +20,22 @@ struct DropView: View {
                     HStack(spacing:10) {
                         
                         ForEach($row) { $item in
-                            Image(item.value)
-                                .renderingMode( item.isShowing ? .none : .template)
-                                .resizable()
-                                .foregroundColor(.gray)
+                            Text(item.value)
+//                                .renderingMode( item.isShowing ? .none : .template)
+//                                .resizable()
+                                .foregroundColor(.brown)
                                 .frame(width: geometry.size.width / 10.9, height: geometry.size.height / 34.7)
                                 .padding(.vertical,5)
                                 .padding(.horizontal,item.padding)
                                 .opacity(item.isShowing ? 1 : 0)
                                 .background {
                                     RoundedRectangle(cornerRadius: 6, style: .continuous)
-                                        .fill(item.isShowing ? .clear : .gray.opacity(0.25))
+                                        .fill(item.isShowing ? .clear : .brown.opacity(0.25))
                                     
                                 }
                                 .background {
                                     RoundedRectangle(cornerRadius: 6, style: .continuous)
-                                        .stroke(.gray)
+                                        .stroke(.brown)
                                         .opacity(item.isShowing ? 1 : 0)
                                 }
                                 .onDrop(of: [.url], isTargeted: .constant(true)) { provider in
@@ -88,6 +88,6 @@ struct DropView: View {
 
 struct DropView_Previews: PreviewProvider {
     static var previews: some View {
-        DropView(vm: AnswerViewModel())
+        Drop(vm: AnswerViewModel())
     }
 }
