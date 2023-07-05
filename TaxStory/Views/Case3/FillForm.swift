@@ -118,75 +118,316 @@ struct FillForm: View {
 
                         }
                         Spacer()
+                    
                     }
-                    .overlay{
-                        Button(action: {
-                            selectedButton = 1
-                        }) {
-                            Text("")
-                                .frame(width: 50, height: 100)
-                                .foregroundColor(Color.black)
-                                .background(Color.red)
-                                .clipShape(Rectangle())
-                        }
+                    
+                    if selectedButton == 1 {                     Button(action: {
+                        selectedButton = 1
+                    })
+                        {
+                        Text("")
+                            .frame(width: 50, height: 100)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+                    }
+                    .offset(x: geometry.size.height / 1.75)
+                    .offset(y: -geometry.size.height / 3.95)
+                    Button(action: {
+                        selectedButton = 2
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+                    }
+                        .offset(x: geometry.size.height / 1.76)
+                        .offset(y: -geometry.size.height / 5.85)
+                    Button(action: {
+                        selectedButton = 3
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+
+                    }
+                        .offset(x: geometry.size.height / 1.76)
+                        .offset(y: -geometry.size.height / 9.1)
+                    Button(action: {
+                        selectedButton = 4
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+
+                    }
+                        .offset(x: geometry.size.height / 1.76)
+                        .offset(y: -geometry.size.height / 20.3)
+                    Button(action: {
+                        selectedButton = 5
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+
+                    }
+                        .offset(x: geometry.size.height / 1.76)
+                        .offset(y: geometry.size.height / 94.7)
+                        
+                    }
+                    else if selectedButton == 2 {                     Button(action: {
+                        selectedButton = 1
+                    })
+                        {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+                    }
+                    .offset(x: geometry.size.height / 1.77)
+                    .offset(y: -geometry.size.height / 3.65)
+                    Button(action: {
+                        selectedButton = 2
+                    }) {
+                        Text("")
+                            .frame(width: 50, height: 100)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+                    }
                         .offset(x: geometry.size.height / 1.75)
-                        .offset(y: -geometry.size.height / 3.95)
+                        .offset(y: -geometry.size.height / 5.18)
+                    Button(action: {
+                        selectedButton = 3
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+
                     }
-                    .overlay(
-                        Button(action: {
-                            selectedButton = 2
-                        }) {
-                            Text("")
-                                .frame(width: 30, height: 60)
-                                .foregroundColor(Color.black)
-                                .background(Color.red)
-                                .clipShape(Rectangle())
-                        }
-                            .offset(x: geometry.size.height / 1.76)
-                            .offset(y: -geometry.size.height / 5.85)
-                    )
-                    .overlay(
-                        Button(action: {
-                            selectedButton = 3
-                        }) {
-                            Text("")
-                                .frame(width: 30, height: 60)
-                                .foregroundColor(Color.black)
-                                .background(Color.red)
-                                .clipShape(Rectangle())
+                        .offset(x: geometry.size.height / 1.76)
+                        .offset(y: -geometry.size.height / 9.1)
+                    Button(action: {
+                        selectedButton = 4
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
 
-                        }
-                            .offset(x: geometry.size.height / 1.76)
-                            .offset(y: -geometry.size.height / 9.1)
-                    )
-                    .overlay(
-                        Button(action: {
-                            selectedButton = 4
-                        }) {
-                            Text("")
-                                .frame(width: 30, height: 60)
-                                .foregroundColor(Color.black)
-                                .background(Color.red)
-                                .clipShape(Rectangle())
+                    }
+                        .offset(x: geometry.size.height / 1.76)
+                        .offset(y: -geometry.size.height / 20.3)
+                    Button(action: {
+                        selectedButton = 5
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
 
-                        }
-                            .offset(x: geometry.size.height / 1.76)
-                            .offset(y: -geometry.size.height / 20.3)
-                    )
-                    .overlay(
-                        Button(action: {
-                            selectedButton = 5
-                        }) {
-                            Text("")
-                                .frame(width: 30, height: 60)
-                                .foregroundColor(Color.black)
-                                .background(Color.red)
-                                .clipShape(Rectangle())
+                    }
+                        .offset(x: geometry.size.height / 1.76)
+                        .offset(y: geometry.size.height / 94.7)
+                        
+                    }
+                    else if selectedButton == 3 {                     Button(action: {
+                        selectedButton = 1
+                    })
+                        {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+                    }
+                    .offset(x: geometry.size.height / 1.77)
+                    .offset(y: -geometry.size.height / 3.65)
+                    Button(action: {
+                        selectedButton = 2
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+                    }
+                        .offset(x: geometry.size.height / 1.765)
+                        .offset(y: -geometry.size.height / 4.69)
+                    Button(action: {
+                        selectedButton = 3
+                    }) {
+                        Text("")
+                            .frame(width: 50, height: 100)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
 
-                        }
-                            .offset(x: geometry.size.height / 1.76)
-                            .offset(y: geometry.size.height / 94.7)
-                    )
+                    }
+                        .offset(x: geometry.size.height / 1.74)
+                        .offset(y: -geometry.size.height / 7.6)
+                    Button(action: {
+                        selectedButton = 4
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+
+                    }
+                        .offset(x: geometry.size.height / 1.76)
+                        .offset(y: -geometry.size.height / 20.3)
+                    Button(action: {
+                        selectedButton = 5
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+
+                    }
+                        .offset(x: geometry.size.height / 1.76)
+                        .offset(y: geometry.size.height / 94.7)
+                        
+                    }
+                    else if selectedButton == 4 {                     Button(action: {
+                        selectedButton = 1
+                    })
+                        {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+                    }
+                    .offset(x: geometry.size.height / 1.77)
+                    .offset(y: -geometry.size.height / 3.65)
+                    Button(action: {
+                        selectedButton = 2
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+                    }
+                        .offset(x: geometry.size.height / 1.765)
+                        .offset(y: -geometry.size.height / 4.69)
+                    Button(action: {
+                        selectedButton = 3
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+
+                    }
+                        .offset(x: geometry.size.height / 1.765)
+                        .offset(y: -geometry.size.height / 6.54)
+                    Button(action: {
+                        selectedButton = 4
+                    }) {
+                        Text("")
+                            .frame(width: 50, height: 100)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+
+                    }
+                        .offset(x: geometry.size.height / 1.76)
+                        .offset(y: -geometry.size.height / 13.65)
+                    Button(action: {
+                        selectedButton = 5
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+
+                    }
+                        .offset(x: geometry.size.height / 1.768)
+                        .offset(y: geometry.size.height / 109.7)
+                        
+                    }
+                    else {
+                        Button(action: {
+                        selectedButton = 1
+                    })
+                        {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+                    }
+                    .offset(x: geometry.size.height / 1.77)
+                    .offset(y: -geometry.size.height / 3.65)
+                    Button(action: {
+                        selectedButton = 2
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+                    }
+                        .offset(x: geometry.size.height / 1.765)
+                        .offset(y: -geometry.size.height / 4.69)
+                    Button(action: {
+                        selectedButton = 3
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+
+                    }
+                        .offset(x: geometry.size.height / 1.765)
+                        .offset(y: -geometry.size.height / 6.54)
+                    Button(action: {
+                        selectedButton = 4
+                    }) {
+                        Text("")
+                            .frame(width: 30, height: 60)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+
+                    }
+                        .offset(x: geometry.size.height / 1.765)
+                        .offset(y: -geometry.size.height / 10.85)
+                    Button(action: {
+                        selectedButton = 5
+                    }) {
+                        Text("")
+                            .frame(width: 50, height: 100)
+                            .foregroundColor(Color.black)
+//                            .background(Color.red)
+                            .clipShape(Rectangle())
+
+                    }
+                        .offset(x: geometry.size.height / 1.758)
+                        .offset(y: -geometry.size.height / 75.7)
+                        
+                    }
+ 
                 }
                 .padding()
                 .onAppear {
