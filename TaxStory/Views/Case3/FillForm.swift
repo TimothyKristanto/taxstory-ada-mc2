@@ -10,7 +10,9 @@ import SwiftUI
 struct FillForm: View {
     @StateObject var vm : AnswerViewModel
     @State private var currentImageIndex = 0
+    @State private var selectedButton = 1
     @State var dragAmount = CGSize.zero
+    
     
     var body: some View {
         GeometryReader { geometry in
@@ -99,7 +101,7 @@ struct FillForm: View {
                     //DataBuktiPotong
             VStack {
                 ZStack {
-                    Image("BuktiPotong1")
+                    Image(selectedImageName())
                         .resizable()
                         .scaledToFit()
                         .frame(width: geometry.size.width / 2.1)
@@ -117,34 +119,81 @@ struct FillForm: View {
                         }
                         Spacer()
                     }
-                    .padding()
-                    .onAppear {
-                        vm.shuffleArray()
+                    .overlay{
+                        Button(action: {
+                            selectedButton = 1
+                        }) {
+                            Text("")
+                                .frame(width: 50, height: 100)
+                                .foregroundColor(Color.black)
+                                .background(Color.red)
+                                .clipShape(Rectangle())
+                        }
+                        .offset(x: geometry.size.height / 1.75)
+                        .offset(y: -geometry.size.height / 3.95)
                     }
-                    .offset(x: vm.animateWrongText ? -30 : 0)
-                    .environmentObject(vm)
+                    .overlay(
+                        Button(action: {
+                            selectedButton = 2
+                        }) {
+                            Text("")
+                                .frame(width: 30, height: 60)
+                                .foregroundColor(Color.black)
+                                .background(Color.red)
+                                .clipShape(Rectangle())
+                        }
+                            .offset(x: geometry.size.height / 1.76)
+                            .offset(y: -geometry.size.height / 5.85)
+                    )
+                    .overlay(
+                        Button(action: {
+                            selectedButton = 3
+                        }) {
+                            Text("")
+                                .frame(width: 30, height: 60)
+                                .foregroundColor(Color.black)
+                                .background(Color.red)
+                                .clipShape(Rectangle())
+
+                        }
+                            .offset(x: geometry.size.height / 1.76)
+                            .offset(y: -geometry.size.height / 9.1)
+                    )
+                    .overlay(
+                        Button(action: {
+                            selectedButton = 4
+                        }) {
+                            Text("")
+                                .frame(width: 30, height: 60)
+                                .foregroundColor(Color.black)
+                                .background(Color.red)
+                                .clipShape(Rectangle())
+
+                        }
+                            .offset(x: geometry.size.height / 1.76)
+                            .offset(y: -geometry.size.height / 20.3)
+                    )
+                    .overlay(
+                        Button(action: {
+                            selectedButton = 5
+                        }) {
+                            Text("")
+                                .frame(width: 30, height: 60)
+                                .foregroundColor(Color.black)
+                                .background(Color.red)
+                                .clipShape(Rectangle())
+
+                        }
+                            .offset(x: geometry.size.height / 1.76)
+                            .offset(y: geometry.size.height / 94.7)
+                    )
                 }
-//                    if let image = UIImage(named: "page1puzzle2") {
-//                        Image(uiImage: image)
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(width: geometry.size.width / 12)
-//                            .padding(.leading, geometry.size.width / 1.65)
-//                            .padding(.top, geometry.size.height / 8)
-//                            .offset(y: -geometry.size.height / 1.815)
-//                            .onDrag {
-//                                return NSItemProvider(object: image)
-//                            }
-//                    }
-//                    Image("page1puzzle2")
-//                        .resizable()
-//                        .scaledToFit()
-//                        .frame(width: geometry.size.width / 12)
-//                        .padding(.leading, geometry.size.width / 1.65)
-//                        .padding(.top, geometry.size.height / 8)
-//                        .offset(y: -geometry.size.height / 1.815)
-                    
-                    
+                .padding()
+                .onAppear {
+                    vm.shuffleArray()
+                }
+                .offset(x: vm.animateWrongText ? -30 : 0)
+                .environmentObject(vm)
             }
                     VStack {
                         // guide text
@@ -179,7 +228,26 @@ struct FillForm: View {
             }
             .ignoresSafeArea()
         }
+    
+    // Function to determine the image name based on the selected button
+    private func selectedImageName() -> String {
+        switch selectedButton {
+        case 1:
+            return "BuktiPotong1"
+        case 2:
+            return "BuktiPotong2"
+        case 3:
+            return "BuktiPotong3"
+        case 4:
+            return "BuktiPotong4"
+        case 5:
+            return "BuktiPotong5"
+        default:
+            return ""
+        }
     }
+    
+}
 
 struct FillForm_Previews: PreviewProvider {
     static var previews: some View {
@@ -189,34 +257,3 @@ struct FillForm_Previews: PreviewProvider {
     }
 }
 
-//struct DTDropTarget: DropDelegate {
-//    @Binding var text: String
-//    @Binding var dropTargetText: String
-//
-//    func performDrop(info: DropInfo) -> Bool {
-//        text = ""
-//        dropTargetText = "DevTechie"
-//        return true
-//    }
-//}
-//
-//struct DragDropExample: View {
-//    @State private var text = "DevTechie"
-//    @State private var dropTargetText = ""
-//    var body: some View {
-//        VStack {
-//            Text(text)
-//                .font(.largeTitle)
-//                .onDrag({
-//                    NSItemProvider(object: self.text as NSString)
-//                })
-//
-//            RoundedRectangle(cornerRadius: 20)
-//                .fill(.orange)
-//                .frame(width: 200, height: 100)
-//                .overlay(Text(dropTargetText))
-//                .onDrop(of: [text], delegate: DTDropTarget(text: $text, dropTargetText: $dropTargetText))
-//        }
-//
-//    }
-//}
