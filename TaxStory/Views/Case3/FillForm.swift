@@ -40,20 +40,26 @@ struct FillForm: View {
                                 
                                 VStack(alignment: .leading) {
                                     HStack {
-                                        Image(systemName: "circle.fill")
+                                        Image(systemName: "checkmark.circle.fill")
                                         Text("Pilih form")
                                             .font(.title2)
                                     }
                                     
                                     HStack {
-                                        Image(systemName: "circle.fill")
+                                        Image(systemName: "checkmark.circle.fill")
                                         Text("Minta bukti potong")
                                             .font(.title2)
                                     }
                                     
                                     HStack {
-                                        Image(systemName: "circle")
+                                        Image(systemName: "circle.fill")
                                         Text("Isi formulir")
+                                            .font(.title2)
+                                    }
+                                    
+                                    HStack {
+                                        Image(systemName: "circle")
+                                        Text("Lapor Harta")
                                             .font(.title2)
                                     }
                                     
