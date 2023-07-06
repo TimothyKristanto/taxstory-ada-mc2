@@ -24,6 +24,35 @@ struct FillForm: View
                 Image("formSPTdanBuktiPotong-10")
                     .resizable()
                     .scaledToFill()
+                    .overlay{
+                        VStack{
+                            HStack{
+                                Spacer()
+                                
+                                Button{
+                                    // kasi hint minigames ini suruh ngapain
+                                }label: {
+                                    Image("Hint")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: geometry.size.width / 18)
+                                }
+                                    
+                                Button{
+                                    // munculin dialog, trus balik ke main map
+                                }label: {
+                                    Image("Map")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: geometry.size.width / 18)
+                                }
+                            }
+                            .padding(.trailing, geometry.size.width / 10)
+                            .padding(.top, geometry.size.height / 12)
+                            
+                            Spacer()
+                        }
+                    }
                 // task list
                 VStack
                 {
@@ -34,7 +63,7 @@ struct FillForm: View
                             Image("Quest")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: geometry.size.width / 6.5)
+                                .frame(width: geometry.size.width / 5.8)
                         }
                         .overlay(
                             VStack
@@ -90,7 +119,7 @@ struct FillForm: View
                             }
                         )
                         .padding(.leading, geometry.size.width / 18)
-                        .padding(.top, geometry.size.height / 12)
+                        .padding(.top, geometry.size.height / 6)
                         Spacer()
                     }
                     Spacer()
@@ -106,7 +135,7 @@ struct FillForm: View
                         .scaledToFit()
                         .frame(width: geometry.size.width / 3.6)
                         .padding(.leading, geometry.size.width / 4.2)
-                        .padding(.top, geometry.size.height / 13)
+                        .padding(.top, geometry.size.height / 7)
                     
                 }
                 Spacer()
@@ -122,7 +151,7 @@ struct FillForm: View
                         .scaledToFit()
                         .frame(width: geometry.size.width / 2.1)
                         .padding(.leading, geometry.size.width / 2.2)
-                        .offset(y: geometry.size.height / 65)
+                        .offset(y: geometry.size.height / 20)
                         .offset(x: ViewModel.animateWrongText ? -30 : 0)
                     VStack()
                     {
@@ -149,7 +178,8 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.75)
-                        .offset(y: -geometry.size.height / 3.95)
+                        .offset(y: -geometry.size.height / 4.59) //3.95 = 0,64
+                        
                         Button(action: {selectedButton = 2})
                         {
                             Text("")
@@ -158,7 +188,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.76)
-                        .offset(y: -geometry.size.height / 5.85)
+                        .offset(y: -geometry.size.height / 7.29)
                         Button(action: {selectedButton = 3})
                         {
                             Text("")
@@ -167,7 +197,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.76)
-                        .offset(y: -geometry.size.height / 9.1)
+                        .offset(y: -geometry.size.height / 13)
                         Button(action: {selectedButton = 4})
                         {
                             Text("")
@@ -176,7 +206,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.76)
-                        .offset(y: -geometry.size.height / 20.3)
+                        .offset(y: -geometry.size.height / 58.94)
                         Button(action: {selectedButton = 5})
                         {
                             Text("")
@@ -185,7 +215,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.76)
-                        .offset(y: geometry.size.height / 94.7)
+                        .offset(y: geometry.size.height / 22.34)
                     }
                     else if selectedButton == 2
                     {
@@ -197,7 +227,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.77)
-                        .offset(y: -geometry.size.height / 3.65)
+                        .offset(y: -geometry.size.height / 4.15)
                         Button(action: {selectedButton = 2})
                         {
                             Text("")
@@ -206,7 +236,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.75)
-                        .offset(y: -geometry.size.height / 5.18)
+                        .offset(y: -geometry.size.height / 6.28)
                         Button(action: {selectedButton = 3})
                         {
                             Text("")
@@ -215,7 +245,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.76)
-                        .offset(y: -geometry.size.height / 9.1)
+                        .offset(y: -geometry.size.height / 13)
                         Button(action: {selectedButton = 4})
                         {
                             Text("")
@@ -224,7 +254,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.76)
-                        .offset(y: -geometry.size.height / 20.3)
+                        .offset(y: -geometry.size.height / 60.3)
                         Button(action: {selectedButton = 5})
                         {
                             Text("")
@@ -233,7 +263,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.76)
-                        .offset(y: geometry.size.height / 94.7)
+                        .offset(y: geometry.size.height / 22.7)
                     }
                     else if selectedButton == 3
                     {
@@ -245,7 +275,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.77)
-                        .offset(y: -geometry.size.height / 3.65)
+                        .offset(y: -geometry.size.height / 4.18)
                         Button(action: {selectedButton = 2})
                         {
                             Text("")
@@ -254,7 +284,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.765)
-                        .offset(y: -geometry.size.height / 4.69)
+                        .offset(y: -geometry.size.height / 5.59)
                         Button(action: {selectedButton = 3})
                         {
                             Text("")
@@ -263,7 +293,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.74)
-                        .offset(y: -geometry.size.height / 7.6)
+                        .offset(y: -geometry.size.height / 10.3)
                         Button(action: {selectedButton = 4})
                         {
                             Text("")
@@ -272,7 +302,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.76)
-                        .offset(y: -geometry.size.height / 20.3)
+                        .offset(y: -geometry.size.height / 70.3)
                         Button(action: {selectedButton = 5})
                         {
                             Text("")
@@ -281,7 +311,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.76)
-                        .offset(y: geometry.size.height / 94.7)
+                        .offset(y: geometry.size.height / 22.7)
                     }
                     else if selectedButton == 4
                     {
@@ -291,9 +321,10 @@ struct FillForm: View
                                 .frame(width: 30, height: 60)
                                 .foregroundColor(Color.black)
                                 .clipShape(Rectangle())
+
                         }
                         .offset(x: geometry.size.height / 1.77)
-                        .offset(y: -geometry.size.height / 3.65)
+                        .offset(y: -geometry.size.height / 4.1)
                         Button(action: {selectedButton = 2})
                         {
                             Text("")
@@ -302,7 +333,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.765)
-                        .offset(y: -geometry.size.height / 4.69)
+                        .offset(y: -geometry.size.height / 5.49)
                         Button(action: {selectedButton = 3})
                         {
                             Text("")
@@ -311,17 +342,16 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.765)
-                        .offset(y: -geometry.size.height / 6.54)
+                        .offset(y: -geometry.size.height / 8.24)
                         Button(action: {selectedButton = 4})
                         {
                             Text("")
                                 .frame(width: 50, height: 100)
                                 .foregroundColor(Color.black)
                                 .clipShape(Rectangle())
-                            
                         }
                         .offset(x: geometry.size.height / 1.76)
-                        .offset(y: -geometry.size.height / 13.65)
+                        .offset(y: -geometry.size.height / 25.65)
                         Button(action: {selectedButton = 5})
                         {
                             Text("")
@@ -330,7 +360,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.768)
-                        .offset(y: geometry.size.height / 109.7)
+                        .offset(y: geometry.size.height / 23.7)
                     }
                     else
                     {
@@ -342,7 +372,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.77)
-                        .offset(y: -geometry.size.height / 3.65)
+                        .offset(y: -geometry.size.height / 4.1)
                         Button(action: {selectedButton = 2})
                         {
                             Text("")
@@ -351,7 +381,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.765)
-                        .offset(y: -geometry.size.height / 4.69)
+                        .offset(y: -geometry.size.height / 5.49)
                         Button(action: {selectedButton = 3})
                         {
                             Text("")
@@ -360,7 +390,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.765)
-                        .offset(y: -geometry.size.height / 6.54)
+                        .offset(y: -geometry.size.height / 8.2)
                         Button(action: {selectedButton = 4})
                         {
                             Text("")
@@ -369,7 +399,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.765)
-                        .offset(y: -geometry.size.height / 10.85)
+                        .offset(y: -geometry.size.height / 16.85)
                         Button(action: {selectedButton = 5})
                         {
                             Text("")
@@ -378,7 +408,7 @@ struct FillForm: View
                                 .clipShape(Rectangle())
                         }
                         .offset(x: geometry.size.height / 1.758)
-                        .offset(y: -geometry.size.height / 75.7)
+                        .offset(y: geometry.size.height / 45.7)
                     }
                 }
                 .padding()

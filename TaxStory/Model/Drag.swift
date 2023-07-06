@@ -34,7 +34,7 @@ struct Drag: View
                         return .init(contentsOf:URL(string:ViewModel.characters[0].id))!
                     }
                     .offset(x : -geometry.size.height / 18)
-                    .offset(y : geometry.size.height / 100.21)
+                    .offset(y : geometry.size.height / 12.21) //100.21
                     .opacity(ViewModel.characters[0].isShowing ? 0 : 1)
                     .background
                     {
@@ -52,7 +52,7 @@ struct Drag: View
                             return .init(contentsOf:URL(string:ViewModel.characters[1].id))!
                         }
                         .offset(x: -geometry.size.height / 5.7)
-                        .offset(y: geometry.size.height / 11.21)
+                        .offset(y: geometry.size.height / 6.21)
                     
                         .opacity(ViewModel.characters[1].isShowing ? 0 : 1)
                         .background
@@ -73,7 +73,7 @@ struct Drag: View
                         return .init(contentsOf:URL(string:ViewModel.characters[2].id))!
                     }
                     .offset(x: -geometry.size.height / 21.13)
-                    .offset(y: geometry.size.height / 10.21)
+                    .offset(y: geometry.size.height / 5.81)
                     .opacity(ViewModel.characters[2].isShowing ? 0 : 1)
                     .background
                     {
@@ -96,7 +96,7 @@ struct Drag: View
                         return .init(contentsOf:URL(string:ViewModel.characters[3].id))!
                     }
                     .offset(x: geometry.size.height / 3.45)
-                    .offset(y: geometry.size.height / 1.615)
+                    .offset(y: geometry.size.height / 1.445)
                     .opacity(ViewModel.characters[3].isShowing ? 0 : 1)
                     .background
                     {
@@ -119,7 +119,7 @@ struct Drag: View
                         return .init(contentsOf:URL(string:ViewModel.characters[4].id))!
                     }
                     .offset(x: geometry.size.height / 10.4)
-                    .offset(y: geometry.size.height / 5.38)
+                    .offset(y: geometry.size.height / 3.87)
                     .opacity(ViewModel.characters[4].isShowing ? 0 : 1)
                     .background
                     {
