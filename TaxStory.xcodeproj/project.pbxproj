@@ -85,13 +85,13 @@
 		BFEB79B52A4135CE002A1A0B /* TaxStory */ = {
 			isa = PBXGroup;
 			children = (
+				FA64B1FD2A566D6200F48945 /* ViewModel */,
+				FA72FFE62A4BE7FF00834A19 /* Model */,
 				FAF697422A45525C009D7441 /* Views */,
 				BFEB79B82A4135CE002A1A0B /* ContentView.swift */,
 				BFEB79B62A4135CE002A1A0B /* TaxStoryApp.swift */,
 				BFEB79BA2A4135CF002A1A0B /* Assets.xcassets */,
 				BFEB79BC2A4135CF002A1A0B /* Preview Content */,
-				FA72FFEF2A4BEA2500834A19 /* AnswerViewModel.swift */,
-				FA72FFF12A4BEA4A00834A19 /* Word.swift */,
 			);
 			path = TaxStory;
 			sourceTree = "<group>";
@@ -104,13 +104,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		FA72FFE62A4BE7FF00834A19 /* Action */ = {
+		FA64B1FD2A566D6200F48945 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FA72FFEF2A4BEA2500834A19 /* AnswerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA72FFE62A4BE7FF00834A19 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA72FFF12A4BEA4A00834A19 /* Word.swift */,
 				FA7912DA2A4D8911009DCFBF /* Drag.swift */,
 				FA72FFF32A4BEBE800834A19 /* Drop.swift */,
 			);
-			path = Action;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FA7912E02A4DE5DB009DCFBF /* MapCase */ = {
@@ -125,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				FA7912E02A4DE5DB009DCFBF /* MapCase */,
-				FA72FFE62A4BE7FF00834A19 /* Action */,
 				BF10C9B12A4A776A004F3BA3 /* Case3 */,
 				FAF697432A455262009D7441 /* MainMenu */,
 			);
