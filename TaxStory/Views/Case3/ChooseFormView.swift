@@ -16,7 +16,7 @@ struct ChooseFormView: View {
     
     let maxCalculatorChara = 11
     
-    func changeCalculatorResultToScientific(){
+    func changeCalculatorResultToScientific() {
         if calculatorResult.count > 10 {
              let numberFormatter = NumberFormatter()
              numberFormatter.numberStyle = .scientific
@@ -24,25 +24,25 @@ struct ChooseFormView: View {
         }
     }
     
-    func giveSeparatorNumDot(num: String)->String{
+    func giveSeparatorNumDot(num: String) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        formatter.locale = Locale.current
+        formatter.locale = Locale(identifier: "en")
         formatter.maximumFractionDigits = 2
         let formattedNum = formatter.string(from: Double(num)! as NSNumber) ?? ""
         return formattedNum
     }
     
-    func containDecimal(num: Double)->Bool{
-        if num - floor(num) > 0{
+    func containDecimal(num: Double) -> Bool {
+        if num - floor(num) > 0 {
             return true
         }
         
         return false
     }
     
-    func giveComma(){
-        if calculatorResult.contains(".") == false && calculatorResult != "0"{
+    func giveComma() {
+        if calculatorResult.contains(".") == false && calculatorResult != "0" {
             calculatorResult += "."
         }
     }
@@ -105,6 +105,35 @@ struct ChooseFormView: View {
                 Image("bg")
                     .resizable()
                     .scaledToFill()
+                    .overlay{
+                        VStack{
+                            HStack{
+                                Spacer()
+                                
+                                Button{
+                                    // kasi hint minigames ini suruh ngapain
+                                }label: {
+                                    Image("Hint")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: geoScreen.size.width / 18)
+                                }
+                                    
+                                Button{
+                                    // munculin dialog, trus balik ke main map
+                                }label: {
+                                    Image("Map")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: geoScreen.size.width / 18)
+                                }
+                            }
+                            .padding(.trailing, geoScreen.size.width / 10)
+                            .padding(.top, geoScreen.size.height / 12)
+                            
+                            Spacer()
+                        }
+                    }
                     .overlay {
                         VStack{
                             HStack{
@@ -147,6 +176,12 @@ struct ChooseFormView: View {
                                                         
                                                         Text("Isi formulir")
                                                             .font(.system(size: geoTop.size.width / 55, design: .rounded))
+                                                    }
+                                                    
+                                                    HStack {
+                                                        Image(systemName: "circle")
+                                                        Text("Lapor Harta")
+                                                            .font(.title2)
                                                     }
                                                     
                                                     HStack{
@@ -572,6 +607,7 @@ struct ChooseFormView: View {
                                                     }
                                                 }
                                             )
+                                            .padding(.top, geoTop.size.height / 30)
                                     }
                                     .padding(.leading, geoTop.size.width / 1.83)
                                     .padding(.top, geoTop.size.height / 10)
@@ -608,6 +644,7 @@ struct ChooseFormView: View {
                                 .padding(.leading, geoBot.size.width / 13)
                             }
                         }
+                        .padding(.top, geoScreen.size.height / 15)
                     }
                 
             }

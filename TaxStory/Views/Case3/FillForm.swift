@@ -68,6 +68,12 @@ struct FillForm: View
                                     HStack
                                     {
                                         Image(systemName: "circle")
+                                        Text("Lapor Harta")
+                                            .font(.title2)
+                                    }
+                                    
+                                    HStack {
+                                        Image(systemName: "circle")
                                         Text("PTKP")
                                             .font(.title2)
                                     }
