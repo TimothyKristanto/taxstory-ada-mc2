@@ -112,7 +112,7 @@ struct FillForm: View {
                             Drop(vm: vm)
                                 .offset(x: geometry.size.height / 2.13)
                                 .offset(y: geometry.size.height / 3.21)
-                            Drag(vm: vm)
+                            Drag(vm: vm, pageForm: $selectedButton)
                                 .offset(x: geometry.size.height / 1.12)
                                 .offset(y: -geometry.size.height / 6.7)
 
@@ -482,7 +482,7 @@ struct FillForm: View {
         case 4:
             return "BuktiPotong4"
         case 5:
-            return "BuktiPotong5"
+            return "BuktiPotong5a"
         default:
             return ""
         }
