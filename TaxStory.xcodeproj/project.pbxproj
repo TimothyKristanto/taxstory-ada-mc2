@@ -91,6 +91,7 @@
 				BFEB79B82A4135CE002A1A0B /* ContentView.swift */,
 				BFEB79B62A4135CE002A1A0B /* TaxStoryApp.swift */,
 				BFEB79BA2A4135CF002A1A0B /* Assets.xcassets */,
+				FA72FFF12A4BEA4A00834A19 /* Word.swift */,
 				BFEB79BC2A4135CF002A1A0B /* Preview Content */,
 			);
 			path = TaxStory;
@@ -115,7 +116,6 @@
 		FA72FFE62A4BE7FF00834A19 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FA72FFF12A4BEA4A00834A19 /* Word.swift */,
 				FA7912DA2A4D8911009DCFBF /* Drag.swift */,
 				FA72FFF32A4BEBE800834A19 /* Drop.swift */,
 			);
