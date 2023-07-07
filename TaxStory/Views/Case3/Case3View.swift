@@ -7,22 +7,29 @@
 
 import SwiftUI
 
-struct Case3View: View {
+struct Case3View: View
+{
     @State var page: String = "pilihFormSPT"
     
-    var body: some View {
-        if page == "pilihFormSPT"{
+    var body: some View
+    {
+        if page == "pilihFormSPT"
+        {
             ChooseFormView(page: $page)
-        }else if page == "mintaBuktiPotong"{
+        }else if page == "mintaBuktiPotong"
+        {
             RequestWitholdingTaxCertificateView(page: $page)
-        }else if page == "isiBuktiPotong"{
-            FillForm(vm: AnswerViewModel())
+        }else if page == "isiBuktiPotong"
+        {
+            FillForm(ViewModel: AnswerViewModel())
         }
     }
 }
 
-struct Case3View_Previews: PreviewProvider {
-    static var previews: some View {
+struct Case3View_Previews: PreviewProvider
+{
+    static var previews: some View
+    {
         Case3View()
             .previewDevice("iPad Pro (12.9-inch) (6th generation)")
             .previewInterfaceOrientation(.landscapeLeft)
