@@ -15,9 +15,12 @@ enum CollisionTypes: UInt32 {
     case correct = 8
 }
 
-class PTKPMazeScene: SKScene {
+class PTKPMazeScene: SKScene, SKPhysicsContactDelegate {
     var player: SKShapeNode!
     var motionManager: CMMotionManager?
+    
+    var isWrong = false
+    var isCorrect = false
     
     override func didMove(to view: SKView) {
         view.backgroundColor = .clear
@@ -32,6 +35,7 @@ class PTKPMazeScene: SKScene {
         loadMaze()
 //
         physicsWorld.gravity = .zero
+        physicsWorld.contactDelegate = self
         
         motionManager = CMMotionManager()
         motionManager?.startAccelerometerUpdates()
@@ -74,7 +78,7 @@ class PTKPMazeScene: SKScene {
                 } else if letter == "t"{
                     // correct answer
                     let node = SKSpriteNode(color: .green, size: CGSize(width: self.frame.size.height / 14, height: self.frame.size.height / 14))
-                    node.name = "true"
+                    node.name = "correct"
                     node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
                     node.physicsBody?.isDynamic = false
                     
@@ -120,8 +124,42 @@ class PTKPMazeScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        guard isWrong == false else { return }
+        guard isCorrect == false else { return }
+        
         if let accelerometerData = motionManager?.accelerometerData {
             physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.y * -30, dy: accelerometerData.acceleration.x * 30)
+        }
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        guard let nodeA = contact.bodyA.node else { return }
+        guard let nodeB = contact.bodyB.node else { return }
+
+        if nodeA == player {
+            playerCollided(with: nodeB)
+        } else if nodeB == player {
+            playerCollided(with: nodeA)
+        }
+    }
+    
+    func playerCollided(with node: SKNode) {
+        if node.name == "wrong" {
+            player.physicsBody?.isDynamic = false
+            isWrong = true
+            
+            let remove = SKAction.removeFromParent()
+            player.run(remove)
+            loadMaze()
+            
+            isWrong = false
+        } else if node.name == "correct" {
+            player.physicsBody?.isDynamic = false
+            isCorrect = true
+            
+            let move = SKAction.move(to: node.position, duration: 0.15)
+            
+            player.run(move)
         }
     }
 }
