@@ -441,6 +441,7 @@ struct FillForm: View
                         .overlay(
                             Text("Bantu Bayu mengisi formulir bukti potong")
                                 .font(.system(size: geometry.size.width / 65, design: .rounded))
+                                .foregroundColor(Color("Dark Brown"))
                                 .bold()
                                 .padding(.horizontal, geometry.size.width / 21)
                                 .padding(.top, geometry.size.height / 550)
