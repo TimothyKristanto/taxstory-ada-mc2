@@ -105,7 +105,7 @@ struct RequestWitholdingTaxCertificateView: View {
                                                             }
                                                         }
                                                     )
-                                                    .offset(y: geo.size.width / 30)
+                                                    .offset(y: geo.size.width / 20)
                                                 
                                                 Spacer()
                                             }
@@ -313,6 +313,15 @@ struct RequestWitholdingTaxCertificateView: View {
                 .overlay{
                     VStack{
                         HStack{
+                            Button{
+                                // munculin dialog, trus balik ke main map
+                            }label: {
+                                Image("Map")
+                                    .resizable()
+                                    .scaledToFit()
+                            }
+                            .frame(width: geoScreen.size.width / 18)
+                            
                             Spacer()
                             
                             Button{
@@ -321,18 +330,10 @@ struct RequestWitholdingTaxCertificateView: View {
                                 Image("Hint")
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: geoScreen.size.width / 18)
                             }
-                                
-                            Button{
-                                // munculin dialog, trus balik ke main map
-                            }label: {
-                                Image("Map")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: geoScreen.size.width / 18)
-                            }
+                            .frame(width: geoScreen.size.width / 18)
                         }
+                        .padding(.leading, geoScreen.size.width / 11)
                         .padding(.trailing, geoScreen.size.width / 10)
                         .padding(.top, geoScreen.size.height / 12)
                         
@@ -340,6 +341,7 @@ struct RequestWitholdingTaxCertificateView: View {
                     }
                 }
         }
+        .ignoresSafeArea()
     }
 }
 
