@@ -100,6 +100,7 @@ struct MapCase: View {
                             .offset(y: -geometry.size.height / 8.5)
                             .offset(x: geometry.size.height / 15)
                         }
+//                        /Users/alex/Documents/Apple/MC2/taxstory-ada-mc2/TaxStory/Views/MapCase/MapCase.swift
                         .onAppear {
                             withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
                                 isButtonPressed = true // Set isButtonPressed to true to start the initial animation
