@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MapCase: View {
-//    @State private var isButtonPressed = false
     @State private var isAnimating = false
     @State private var rotationAngle: Angle = .degrees(0)
     @State private var isButtonPressed = false
@@ -16,86 +15,103 @@ struct MapCase: View {
     @State var hold = false
     @Binding var page: String
     
-    var body: some View {
-        ZStack{
-            GeometryReader { geometry in
+    var body: some View
+    {
+        ZStack
+        {
+            GeometryReader
+            { geometry in
                 Image("map")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                     .overlay{
-                        VStack{
+                        VStack
+                        {
                             // Building image
-                            Button(action: {
+                            Button(action:
+                                    {
                                 // Start game action
-                                withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-//                                    startGame()
-                                    isButtonPressed = true // Set isButtonPressed to true when the button is pressed
+                                withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
+                                {
+                                    //startGame()
+                                    isButtonPressed = true
                                 }
-                            }) {Image("point1")
+                            })
+                            {Image("point1")
                                     .resizable()
                                     .renderingMode(.original)
                                     .aspectRatio(contentMode: .fit)
                                     .rotationEffect(.degrees(isButtonPressed ? 10 : -10))
                                     .scaledToFit()
                                     .frame(width: geometry.size.width/10)
-                                    
+                                
                             }
                             .offset(y: -geometry.size.height / 3.5)
                             .offset(x: -geometry.size.height / 3)
                         }
-                        .onAppear {
-                            withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-                                isButtonPressed = true // Set isButtonPressed to true to start the initial animation
+                        .onAppear
+                        {
+                            withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
+                            {
+                                isButtonPressed = true
                             }
                         }
-                        
-                        VStack{
+                        VStack
+                        {
                             // Building image
-                            Button(action: {
+                            Button(action:
+                                    {
                                 // Start game action
-                                withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-//                                    startGame()
-                                    isButtonPressed = true // Set isButtonPressed to true when the button is pressed
+                                withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
+                                {
+                                    //                                    startGame()
+                                    isButtonPressed = true
                                 }
-                            }) {Image("point2")
+                            })
+                            {Image("point2")
                                     .resizable()
                                     .renderingMode(.original)
                                     .aspectRatio(contentMode: .fit)
                                     .rotationEffect(.degrees(isButtonPressed ? -10 : 10))
                                     .scaledToFit()
                                     .frame(width: geometry.size.width/10)
-                                    
+                                
                             }
                             .offset(y: -geometry.size.height / 12.5)
                             .offset(x: -geometry.size.height / 5)
                         }
-                        .onAppear {
-                            withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-                                isButtonPressed = true // Set isButtonPressed to true to start the initial animation
+                        .onAppear
+                        {
+                            withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
+                            {
+                                isButtonPressed = true
                             }
                         }
-                        
-                        VStack{
+                        VStack
+                        {
                             // Building image
-                            Button(action: {
-                                withAnimation{
+                            Button(action:
+                                    {
+                                withAnimation
+                                {
                                     page = "case3"
                                 }
-                                
                                 // Start game action
-                                withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-//                                    startGame()
-                                    isButtonPressed = true // Set isButtonPressed to true when the button is pressed
+                                withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
+                                {
+                                    //                                    startGame()
+                                    isButtonPressed = true
                                 }
-                            }) {Image("point3")
+                            })
+                            {Image("point3")
                                     .resizable()
                                     .renderingMode(.original)
                                     .aspectRatio(contentMode: .fit)
                                     .rotationEffect(.degrees(isButtonPressed ? 10 : -10))
                                     .scaledToFit()
                                     .frame(width: geometry.size.width/10)
-                                    
+                                
                             }
                             .offset(y: -geometry.size.height / 8.5)
                             .offset(x: geometry.size.height / 15)
@@ -103,42 +119,48 @@ struct MapCase: View {
 //                        /Users/alex/Documents/Apple/MC2/taxstory-ada-mc2/TaxStory/Views/MapCase/MapCase.swift
                         .onAppear {
                             withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-                                isButtonPressed = true // Set isButtonPressed to true to start the initial animation
+                                isButtonPressed = true
                             }
                         }
                         
-                        VStack{
+                        VStack
+                        {
                             // Building image
-                            Button(action: {
+                            Button(action:
+                                    {
                                 // Start game action
-                                withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-//                                    startGame()
-                                    isButtonPressed = true // Set isButtonPressed to true when the button is pressed
+                                withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
+                                {
+                                    //                                    startGame()
+                                    isButtonPressed = true
                                 }
-                            }) {Image("point4")
+                            })
+                            {Image("point4")
                                     .resizable()
                                     .renderingMode(.original)
                                     .aspectRatio(contentMode: .fit)
                                     .rotationEffect(.degrees(isButtonPressed ? -10 : 10))
                                     .scaledToFit()
                                     .frame(width: geometry.size.width/10)
-                                    
+                                
                             }
                             .offset(y: geometry.size.height / 60.5)
                             .offset(x: geometry.size.height / 3.4)
                         }
-                        .onAppear {
-                            withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-                                isButtonPressed = true // Set isButtonPressed to true to start the initial animation
+                        .onAppear
+                        {
+                            withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
+                            {
+                                isButtonPressed = true
                             }
                         }
-
-                        
                     }
-                VStack {
+                VStack
+                {
                     // guide text
                     Spacer()
-                    HStack {
+                    HStack
+                    {
                         Image("bayu-pilih-form")
                             .resizable()
                             .scaledToFit()
@@ -164,7 +186,6 @@ struct MapCase: View {
                 .padding(.bottom, geometry.size.height / 72.2)
                 .padding(.trailing, geometry.size.width / 1)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-                
             }
         }
     }
