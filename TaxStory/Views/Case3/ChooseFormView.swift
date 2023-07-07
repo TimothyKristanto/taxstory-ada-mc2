@@ -104,10 +104,20 @@ struct ChooseFormView: View {
             VStack{
                 Image("bg")
                     .resizable()
+                    .frame(width: geoScreen.size.width, height: geoScreen.size.height)
                     .scaledToFill()
                     .overlay{
                         VStack{
                             HStack{
+                                Button{
+                                    // munculin dialog, trus balik ke main map
+                                }label: {
+                                    Image("Map")
+                                        .resizable()
+                                        .scaledToFit()
+                                }
+                                .frame(width: geoScreen.size.width / 18)
+                                
                                 Spacer()
                                 
                                 Button{
@@ -116,18 +126,10 @@ struct ChooseFormView: View {
                                     Image("Hint")
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(width: geoScreen.size.width / 18)
                                 }
-                                    
-                                Button{
-                                    // munculin dialog, trus balik ke main map
-                                }label: {
-                                    Image("Map")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: geoScreen.size.width / 18)
-                                }
+                                .frame(width: geoScreen.size.width / 18)
                             }
+                            .padding(.leading, geoScreen.size.width / 11)
                             .padding(.trailing, geoScreen.size.width / 10)
                             .padding(.top, geoScreen.size.height / 12)
                             
@@ -204,8 +206,8 @@ struct ChooseFormView: View {
                                                 Spacer()
                                             }
                                         )
-                                        .padding(.top, geoTop.size.height / 6)
-                                        .padding(.leading, geoTop.size.width / 12)
+                                        .offset(y: geoTop.size.height / 4)
+                                        .offset(x: geoTop.size.width / 12)
                                         
                                         Spacer()
                                     }

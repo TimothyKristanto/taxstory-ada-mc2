@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var vm : AnswerViewModel
     @State var page: String = "mainMenu"
     
     var body: some View {
@@ -26,8 +25,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(vm: AnswerViewModel())
-//        ContentView()
+        ContentView()
             .previewInterfaceOrientation(.landscapeRight)
     }
 }

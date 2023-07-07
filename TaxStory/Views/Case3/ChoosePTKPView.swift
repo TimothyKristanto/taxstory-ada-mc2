@@ -6,15 +6,172 @@
 //
 
 import SwiftUI
+import SpriteKit
 
 struct ChoosePTKPView: View {
+    var scene: SKScene {
+        let scene = PTKPMazeScene()
+        scene.size = CGSize(width: Constants.screenWidth, height: Constants.screenHeight)
+        scene.scaleMode = .aspectFit
+        
+        return scene
+    }
+    
     var body: some View {
-        Image("bg")
-            .resizable()
-            .scaledToFill()
-            .overlay{
-                
-            }
+        GeometryReader{ geoScreen in
+            Image("bg")
+                .resizable()
+                .frame(width: geoScreen.size.width, height: geoScreen.size.height)
+                .scaledToFill()
+                .overlay{
+                    VStack{
+                        HStack{
+                            Button{
+                                // munculin dialog, trus balik ke main map
+                            }label: {
+                                Image("Map")
+                                    .resizable()
+                                    .scaledToFit()
+                            }
+                            .frame(width: geoScreen.size.width / 18)
+                            
+                            Spacer()
+                            
+                            Button{
+                                // kasi hint minigames ini suruh ngapain
+                            }label: {
+                                Image("Glosarium")
+                                    .resizable()
+                                    .scaledToFit()
+                            }
+                            .frame(width: geoScreen.size.width / 18)
+                            
+                            Button{
+                                // kasi hint minigames ini suruh ngapain
+                            }label: {
+                                Image("Hint")
+                                    .resizable()
+                                    .scaledToFit()
+                            }
+                            .frame(width: geoScreen.size.width / 18)
+                        }
+                        .padding(.leading, geoScreen.size.width / 11)
+                        .padding(.trailing, geoScreen.size.width / 10)
+                        .padding(.top, geoScreen.size.height / 12)
+                        
+                        Spacer()
+                    }
+                }
+                .overlay{
+                    GeometryReader{ geoTop in
+                        VStack{
+                            VStack{
+                                Image("Quest")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geoTop.size.width / 5.8)
+                            }
+                            .overlay(
+                                VStack{
+                                    Text("Quest")
+                                        .font(.system(size: geoTop.size.width / 60, design: .rounded))
+                                        .bold()
+                                        .foregroundColor(.white)
+                                        .padding(.top, geoTop.size.height / 130)
+                                    
+                                    Spacer()
+                                    
+                                    VStack(alignment: .leading){
+                                        HStack{
+                                            Image(systemName: "checkmark.circle.fill")
+                                            
+                                            Text("Pilih form")
+                                                .font(.system(size: geoTop.size.width / 55, design: .rounded))
+                                        }
+                                        
+                                        HStack{
+                                            Image(systemName: "checkmark.circle.fill")
+                                            
+                                            Text("Minta bukti potong")
+                                                .font(.system(size: geoTop.size.width / 55, design: .rounded))
+                                        }
+                                        
+                                        HStack{
+                                            Image(systemName: "checkmark.circle.fill")
+                                            
+                                            Text("Isi formulir")
+                                                .font(.system(size: geoTop.size.width / 55, design: .rounded))
+                                        }
+                                        
+                                        HStack {
+                                            Image(systemName: "checkmark.circle.fill")
+                                            Text("Lapor Harta")
+                                                .font(.title2)
+                                        }
+                                        
+                                        HStack{
+                                            Image(systemName: "circle.fill")
+                                            
+                                            Text("PTKP")
+                                                .font(.system(size: geoTop.size.width / 55, design: .rounded))
+                                        }
+                                        
+                                        HStack{
+                                            Image(systemName: "circle")
+                                            
+                                            Text("Result")
+                                                .font(.system(size: geoTop.size.width / 55, design: .rounded))
+                                        }
+                                    }
+                                    .padding(.horizontal, geoTop.size.width / 30)
+                                    .padding(.top, geoTop.size.height / 50)
+                                    
+                                    Spacer()
+                                }
+                            )
+                            .offset(y: geoTop.size.height / 5.5)
+                            .offset(x: geoTop.size.width / 12)
+                            
+                            Spacer()
+                        }
+                    }
+                }
+                .overlay {
+                    GeometryReader { geoBot in
+                        VStack{
+                            Spacer()
+                                
+                            HStack{
+                                Image("bayu-pilih-form")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geoBot.size.width / 8)
+                                    .offset(x: geoBot.size.width / 10, y: -geoBot.size.height / 9)
+                                
+                                Image("text-guide-pilih-form")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geoBot.size.width, height: geoBot.size.height / 6)
+                                    .offset(x: -geoBot.size.width / 14, y: -geoBot.size.height / 12)
+                                    .overlay{
+                                        Text("Setelah melaporkan harta, Bayu harus memilih tipe PTKP (Penghasilan Tidak Kena Pajak) yang Ia gunakan. Saat ini sendiri Bayu belum menikah sehingga tidak punya anak serta tidak punya keluarga.")
+                                            .font(.system(size: geoBot.size.width / 63, design: .rounded))
+                                            .bold()
+                                            .padding(.leading, geoBot.size.width / 6.5)
+                                            .padding(.trailing, geoBot.size.width / 3.6)
+                                            .offset(y: -geoBot.size.height / 11)
+                                    }
+                            }
+                        }
+                    }
+                }
+                .overlay {
+                    SpriteView(scene: scene, options: [.allowsTransparency])
+                        .frame(width: geoScreen.size.width / 1.909, height: geoScreen.size.height / 1.909)
+                        .offset(x: geoScreen.size.width / 13, y: -geoScreen.size.height / 15)
+                }
+        }
+        .ignoresSafeArea()
     }
 }
 
