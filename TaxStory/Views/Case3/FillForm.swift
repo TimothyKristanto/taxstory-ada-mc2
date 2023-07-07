@@ -461,7 +461,7 @@ struct FillForm: View
         case 1:
             return "BuktiPotong1"
         case 2:
-            return "BuktiPotong2"
+            return "BuktiPotong2R"
         case 3:
             return "BuktiPotong3"
         case 4:
