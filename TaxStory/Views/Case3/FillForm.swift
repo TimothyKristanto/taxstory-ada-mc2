@@ -27,6 +27,15 @@ struct FillForm: View
                     .overlay{
                         VStack{
                             HStack{
+                                Button{
+                                    // munculin dialog, trus balik ke main map
+                                }label: {
+                                    Image("Map")
+                                        .resizable()
+                                        .scaledToFit()
+                                }
+                                .frame(width: geometry.size.width / 18)
+                                
                                 Spacer()
                                 
                                 Button{
@@ -35,20 +44,12 @@ struct FillForm: View
                                     Image("Hint")
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(width: geometry.size.width / 18)
                                 }
-                                    
-                                Button{
-                                    // munculin dialog, trus balik ke main map
-                                }label: {
-                                    Image("Map")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: geometry.size.width / 18)
-                                }
+                                .frame(width: geometry.size.width / 18)
                             }
-                            .padding(.trailing, geometry.size.width / 10)
-                            .padding(.top, geometry.size.height / 12)
+                            .padding(.leading, geometry.size.width / 18)
+                            .padding(.trailing, geometry.size.width / 15)
+                            .padding(.top, geometry.size.height / 11)
                             
                             Spacer()
                         }
@@ -438,11 +439,11 @@ struct FillForm: View
                         .offset(x: geometry.size.height / 200.55)
                         .frame(width: geometry.size.width / 2.61)
                         .overlay(
-                            Text("Nanti je dah atur belum tak atur ")
-                                .font(.title2)
+                            Text("Bantu Bayu mengisi formulir bukti potong")
+                                .font(.system(size: geometry.size.width / 65, design: .rounded))
                                 .bold()
-                                .offset(y: -geometry.size.height / 1000.85)
-                                .offset(x: geometry.size.height / 200.55)
+                                .padding(.horizontal, geometry.size.width / 21)
+                                .padding(.top, geometry.size.height / 550)
                         )
                 }
             }
@@ -461,11 +462,11 @@ struct FillForm: View
         case 1:
             return "BuktiPotong1"
         case 2:
-            return "BuktiPotong2R"
+            return "BuktiPotong2"
         case 3:
             return "BuktiPotong3"
         case 4:
-            return "BuktiPotong4"
+            return "BuktiPotong4Revisi"
         case 5:
             return "BuktiPotong5a"
         default:
