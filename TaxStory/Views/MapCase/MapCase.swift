@@ -13,6 +13,8 @@ struct MapCase: View {
     @State private var isButtonPressed = false
     @State private var animationCount = 0
     @State private var selectedCase = 0
+    @State private var isPressed = false
+    @State private var pressedImage: String?
     @State var hold = false
     @Binding var page: String
     
@@ -47,17 +49,15 @@ struct MapCase: View {
                                     .rotationEffect(.degrees(isButtonPressed ? 10 : -10))
                                     .scaledToFit()
                                     .frame(width: geometry.size.width/10)
-                                
-                            }
+                                    .scaleEffect(pressedImage == "image1" ? 1.2 : 1.0)
+                                    .onTapGesture {
+                                        withAnimation {
+                                            pressedImage = "image1"
+                                            selectedCase = 1
+                                        }
+                                    }                            }
                             .offset(y: -geometry.size.height / 3.5)
                             .offset(x: -geometry.size.height / 3)
-                        }
-                        .onAppear
-                        {
-                            withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
-                            {
-                                isButtonPressed = true
-                            }
                         }
                         VStack
                         {
@@ -68,7 +68,6 @@ struct MapCase: View {
                                 // Start game action
                                 withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
                                 {
-                                    //                                    startGame()
                                     isButtonPressed = true
                                 }
                             })
@@ -79,17 +78,17 @@ struct MapCase: View {
                                     .rotationEffect(.degrees(isButtonPressed ? -10 : 10))
                                     .scaledToFit()
                                     .frame(width: geometry.size.width/10)
+                                    .scaleEffect(pressedImage == "image2" ? 1.2 : 1.0)
+                                    .onTapGesture {
+                                        withAnimation {
+                                            pressedImage = "image2"
+                                            selectedCase = 2
+                                        }
+                                    }
                                 
                             }
                             .offset(y: -geometry.size.height / 12.5)
                             .offset(x: -geometry.size.height / 5)
-                        }
-                        .onAppear
-                        {
-                            withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
-                            {
-                                isButtonPressed = true
-                            }
                         }
                         VStack
                         {
@@ -100,10 +99,8 @@ struct MapCase: View {
                                 withAnimation
                                 {
                                 }
-                                // Start game action
                                 withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
                                 {
-                                    //                                    startGame()
                                     isButtonPressed = true
                                 }
                             })
@@ -114,18 +111,17 @@ struct MapCase: View {
                                     .rotationEffect(.degrees(isButtonPressed ? 10 : -10))
                                     .scaledToFit()
                                     .frame(width: geometry.size.width/10)
-                                
+                                    .scaleEffect(pressedImage == "image3" ? 1.2 : 1.0)
+                                    .onTapGesture {
+                                        withAnimation {
+                                            pressedImage = "image3"
+                                            selectedCase = 3
+                                        }
+                                    }
                             }
                             .offset(y: -geometry.size.height / 8.5)
                             .offset(x: geometry.size.height / 15)
                         }
-//                        /Users/alex/Documents/Apple/MC2/taxstory-ada-mc2/TaxStory/Views/MapCase/MapCase.swift
-                        .onAppear {
-                            withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-                                isButtonPressed = true
-                            }
-                        }
-                        
                         VStack
                         {
                             // Building image
@@ -135,7 +131,6 @@ struct MapCase: View {
                                 // Start game action
                                 withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
                                 {
-                                    //                                    startGame()
                                     isButtonPressed = true
                                 }
                             })
@@ -146,19 +141,25 @@ struct MapCase: View {
                                     .rotationEffect(.degrees(isButtonPressed ? -10 : 10))
                                     .scaledToFit()
                                     .frame(width: geometry.size.width/10)
-                                
+                                    .scaleEffect(pressedImage == "image4" ? 1.2 : 1.0)
+                                    .onTapGesture {
+                                        withAnimation {
+                                            pressedImage = "image4"
+                                            selectedCase = 4
+                                        }
+                                    }
                             }
                             .offset(y: geometry.size.height / 60.5)
                             .offset(x: geometry.size.height / 3.4)
                         }
-                        .onAppear
-                        {
-                            withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
-                            {
-                                isButtonPressed = true
-                            }
-                        }
                     }
+                    .onAppear
+                {
+                    withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
+                    {
+                        isButtonPressed = true
+                    }
+                }
                 VStack
                 {
                     // guide text
@@ -189,23 +190,25 @@ struct MapCase: View {
                             .overlay(
                                 Button(action: {
                                     if selectedCase == 1 {
-                                        page = "case1"
+//                                        page = "case1"
                                     } else if selectedCase == 2 {
-                                        page = "case2"
+//                                        page = "case2"
                                     } else if selectedCase == 3 {
                                         page = "case3"
                                     } else if selectedCase == 4 {
-                                        page = "case4"
+//                                        page = "case4"
                                     }
-                                }) {
-                                    Text("")
-                                        .frame(width: 40, height: 40)
-                                        .foregroundColor(Color.black)
-                                        .clipShape(Rectangle())
-                                        .background(Color.red)
+                                })
+                                {Image("NextButton")
+                                        .resizable()
+                                        .renderingMode(.original)
+                                        .aspectRatio(contentMode: .fit)
+                                        .scaledToFit()
+                                        .frame(width: geometry.size.width / 23)
+                                    
                                 }
                                 .offset(x: geometry.size.height / 2.5)
-                                .offset(y: geometry.size.height / 10)
+                                .offset(y: geometry.size.height / 10.5)
                             )
 
                     }
