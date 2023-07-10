@@ -25,7 +25,6 @@
 		FA72FFF42A4BEBE800834A19 /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFF32A4BEBE800834A19 /* Drop.swift */; };
 		FA7912DB2A4D8911009DCFBF /* Drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7912DA2A4D8911009DCFBF /* Drag.swift */; };
 		FA7912DF2A4DE579009DCFBF /* MapCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7912DE2A4DE579009DCFBF /* MapCase.swift */; };
-		FACAD19F2A5BF9AC002EF790 /* Rename.json in Resources */ = {isa = PBXBuildFile; fileRef = FA482E622A5BBE0A0013EEDC /* Rename.json */; };
 		FACAD1A52A5C0122002EF790 /* DataStored.json in Resources */ = {isa = PBXBuildFile; fileRef = FACAD1A42A5C0122002EF790 /* DataStored.json */; };
 		FAF23A352A4ADFEB00AC2C6D /* FillForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF23A342A4ADFEB00AC2C6D /* FillForm.swift */; };
 		FAF697452A455272009D7441 /* MainMenuStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF697442A455272009D7441 /* MainMenuStart.swift */; };
@@ -47,7 +46,6 @@
 		FA482E5A2A5BB2930013EEDC /* VisualNovel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualNovel.swift; sourceTree = "<group>"; };
 		FA482E5C2A5BB9450013EEDC /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		FA482E5E2A5BBA5F0013EEDC /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
-		FA482E622A5BBE0A0013EEDC /* Rename.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Rename.json; sourceTree = "<group>"; };
 		FA72FFEF2A4BEA2500834A19 /* AnswerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewModel.swift; sourceTree = "<group>"; };
 		FA72FFF12A4BEA4A00834A19 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		FA72FFF32A4BEBE800834A19 /* Drop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				FACAD1A42A5C0122002EF790 /* DataStored.json */,
-				FA482E622A5BBE0A0013EEDC /* Rename.json */,
 				BF3AE7062A565FD5008B6B2F /* PTKPMaze.txt */,
 			);
 			path = Resources;
@@ -254,7 +251,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FACAD19F2A5BF9AC002EF790 /* Rename.json in Resources */,
 				BFEB79BE2A4135CF002A1A0B /* Preview Assets.xcassets in Resources */,
 				BF3AE7072A565FD5008B6B2F /* PTKPMaze.txt in Resources */,
 				FACAD1A52A5C0122002EF790 /* DataStored.json in Resources */,
