@@ -162,7 +162,6 @@
 			path = Modals;
 			sourceTree = "<group>";
 		};
-		FA72FFE62A4BE7FF00834A19 /* Action */ = {
 		FA64B1FD2A566D6200F48945 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
