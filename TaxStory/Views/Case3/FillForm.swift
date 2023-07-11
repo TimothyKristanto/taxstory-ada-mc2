@@ -439,7 +439,7 @@ struct FillForm: View
                         .offset(x: geometry.size.height / 200.55)
                         .frame(width: geometry.size.width / 2.61)
                         .overlay(
-                            Text("Bantu Bayu mengisi formulir bukti potong")
+                            Text("Yuk bantu Bayu mengisi formulir bukti potong!")
                                 .font(.system(size: geometry.size.width / 65, design: .rounded))
                                 .foregroundColor(Color("Dark Brown"))
                                 .bold()

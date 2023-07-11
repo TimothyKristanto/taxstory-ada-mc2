@@ -31,7 +31,7 @@ struct WarningPTKPView: View {
                                 Image("cobaLagi")
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: geo.size.width / 3.5)
+                                    .frame(width: geo.size.width / 3.7)
                             }
                             .offset(y: geo.size.height / 1.38)
                             
@@ -41,26 +41,14 @@ struct WarningPTKPView: View {
                 }
                 .frame(width: Constants.screenWidth / 1.5)
         }
-        .background(BackgroundBlurView())
+        .background(BackgroundBlurLayout())
         .ignoresSafeArea()
     }
 }
 
 struct WarningPTKPView_Previews: PreviewProvider {
     static var previews: some View {
-        WarningPTKPView(isWrong: .constant(true), wrongText: .constant("k0"))
+        WarningPTKPView(isWrong: .constant(true), wrongText: .constant("tk1"))
             .previewInterfaceOrientation(.landscapeRight)
     }
-}
-
-struct BackgroundBlurView: UIViewRepresentable {
-    func makeUIView(context: Context) -> UIView {
-        let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemThinMaterialDark))
-        DispatchQueue.main.async {
-            view.superview?.superview?.backgroundColor = .clear
-        }
-        return view
-    }
-
-    func updateUIView(_ uiView: UIView, context: Context) {}
 }

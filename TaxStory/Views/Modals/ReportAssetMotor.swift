@@ -143,7 +143,6 @@ struct ReportAssetMotorView: View {
                             }
                             .overlay{
                                 Button {
-                                    print("close")
                                     modalPresentMotor = false
                                 } label: {
                                     Image("Close")

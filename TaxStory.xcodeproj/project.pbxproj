@@ -11,6 +11,8 @@
 		BF10C9B62A4A776A004F3BA3 /* ChooseFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */; };
 		BF10C9B72A4A776A004F3BA3 /* Case3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B42A4A776A004F3BA3 /* Case3View.swift */; };
 		BF13506B2A528BD700700249 /* ChoosePTKPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13506A2A528BD700700249 /* ChoosePTKPView.swift */; };
+		BF1951052A5CEC6C00A5F00D /* WarningSTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1951042A5CEC6C00A5F00D /* WarningSTPView.swift */; };
+		BF1951082A5CED1700A5F00D /* BackgroundBlurLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1951072A5CED1700A5F00D /* BackgroundBlurLayout.swift */; };
 		BF3AE7072A565FD5008B6B2F /* PTKPMaze.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF3AE7062A565FD5008B6B2F /* PTKPMaze.txt */; };
 		BF3AE70B2A566177008B6B2F /* PTKPMazeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AE70A2A566177008B6B2F /* PTKPMazeScene.swift */; };
 		BF51C1EF2A5BAE01003AE6FF /* WarningPTKPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51C1EE2A5BAE01003AE6FF /* WarningPTKPView.swift */; };
@@ -38,6 +40,8 @@
 		BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFormView.swift; sourceTree = "<group>"; };
 		BF10C9B42A4A776A004F3BA3 /* Case3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Case3View.swift; sourceTree = "<group>"; };
 		BF13506A2A528BD700700249 /* ChoosePTKPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePTKPView.swift; sourceTree = "<group>"; };
+		BF1951042A5CEC6C00A5F00D /* WarningSTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningSTPView.swift; sourceTree = "<group>"; };
+		BF1951072A5CED1700A5F00D /* BackgroundBlurLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundBlurLayout.swift; sourceTree = "<group>"; };
 		BF3AE7062A565FD5008B6B2F /* PTKPMaze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PTKPMaze.txt; sourceTree = "<group>"; };
 		BF3AE70A2A566177008B6B2F /* PTKPMazeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTKPMazeScene.swift; sourceTree = "<group>"; };
 		BF51C1EE2A5BAE01003AE6FF /* WarningPTKPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningPTKPView.swift; sourceTree = "<group>"; };
@@ -85,6 +89,14 @@
 			path = Case3;
 			sourceTree = "<group>";
 		};
+		BF1951062A5CECFE00A5F00D /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				BF1951072A5CED1700A5F00D /* BackgroundBlurLayout.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
 		BF3AE7032A564E0F008B6B2F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,14 +111,6 @@
 				BF3AE70A2A566177008B6B2F /* PTKPMazeScene.swift */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		BF51C1ED2A5BADEC003AE6FF /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-				BF51C1EE2A5BAE01003AE6FF /* WarningPTKPView.swift */,
-			);
-			path = Layout;
 			sourceTree = "<group>";
 		};
 		BFEB79AA2A4135CE002A1A0B = {
@@ -158,6 +162,8 @@
 				CD326AEA2A57AA3F00B76813 /* ReportAssetRumah.swift */,
 				CD326AF02A5B966D00B76813 /* ReportAssetMobil.swift */,
 				CD326AF22A5B96AB00B76813 /* ReportAssetMotor.swift */,
+				BF51C1EE2A5BAE01003AE6FF /* WarningPTKPView.swift */,
+				BF1951042A5CEC6C00A5F00D /* WarningSTPView.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -190,8 +196,8 @@
 		FAF697422A45525C009D7441 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF1951062A5CECFE00A5F00D /* Layouts */,
 				CD326AE72A56732D00B76813 /* Modals */,
-				BF51C1ED2A5BADEC003AE6FF /* Layout */,
 				FA7912E02A4DE5DB009DCFBF /* MapCase */,
 				BF10C9B12A4A776A004F3BA3 /* Case3 */,
 				FAF697432A455262009D7441 /* MainMenu */,
@@ -284,9 +290,11 @@
 				FA72FFF22A4BEA4A00834A19 /* Word.swift in Sources */,
 				FA72FFF02A4BEA2500834A19 /* AnswerViewModel.swift in Sources */,
 				FAF23A352A4ADFEB00AC2C6D /* FillForm.swift in Sources */,
+				BF1951082A5CED1700A5F00D /* BackgroundBlurLayout.swift in Sources */,
 				FA7912DF2A4DE579009DCFBF /* MapCase.swift in Sources */,
 				CD326AE62A53B26D00B76813 /* ReportAssetView.swift in Sources */,
 				BF10C9B72A4A776A004F3BA3 /* Case3View.swift in Sources */,
+				BF1951052A5CEC6C00A5F00D /* WarningSTPView.swift in Sources */,
 				BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */,
 				BF13506B2A528BD700700249 /* ChoosePTKPView.swift in Sources */,
 				BF10C9B62A4A776A004F3BA3 /* ChooseFormView.swift in Sources */,

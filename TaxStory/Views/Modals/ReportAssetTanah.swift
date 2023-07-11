@@ -144,7 +144,6 @@ struct ReportAssetTanahView: View {
                             }
                             .overlay{
                                 Button {
-                                    print("close")
                                     modalPresentTanah = false
                                 } label: {
                                     Image("Close")

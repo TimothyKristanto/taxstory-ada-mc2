@@ -122,8 +122,9 @@ struct RequestWitholdingTaxCertificateView: View {
                                                         .frame(width: geo.size.width / 3, height: geo.size.height / 5)
                                                         .overlay(
                                                             GeometryReader{ geoTextGuide in
-                                                                Text("Yuk bantuin Bayu untuk menemukan jalan yang benar menuju kantor perusahaan tempat Bayu bekerja dengan menekan salah satu gedung yang di-highlight pada gambar di atas ya.")
+                                                                Text("Yuk bantuin Bayu untuk menemukan jalan yang benar menuju kantor perusahaan tempat Bayu bekerja supaya Bayu bisa meminta bukti potong.")
                                                                     .font(.system(size: geoTextGuide.size.width / 25, design: .rounded))
+                                                                    .foregroundColor(Color("Dark Brown"))
                                                                     .bold()
                                                                     .offset(x: -geoTextGuide.size.width / 20, y: geoTextGuide.size.height / 4)
                                                                     .padding(.horizontal, geoTextGuide.size.width / 15)
