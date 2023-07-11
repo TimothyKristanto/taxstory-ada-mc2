@@ -13,6 +13,7 @@
 		BF13506B2A528BD700700249 /* ChoosePTKPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13506A2A528BD700700249 /* ChoosePTKPView.swift */; };
 		BF3AE7072A565FD5008B6B2F /* PTKPMaze.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF3AE7062A565FD5008B6B2F /* PTKPMaze.txt */; };
 		BF3AE70B2A566177008B6B2F /* PTKPMazeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AE70A2A566177008B6B2F /* PTKPMazeScene.swift */; };
+		BF51C1EF2A5BAE01003AE6FF /* WarningPTKPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51C1EE2A5BAE01003AE6FF /* WarningPTKPView.swift */; };
 		BFEB79B72A4135CE002A1A0B /* TaxStoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB79B62A4135CE002A1A0B /* TaxStoryApp.swift */; };
 		BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB79B82A4135CE002A1A0B /* ContentView.swift */; };
 		BFEB79BB2A4135CF002A1A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEB79BA2A4135CF002A1A0B /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		BF13506A2A528BD700700249 /* ChoosePTKPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePTKPView.swift; sourceTree = "<group>"; };
 		BF3AE7062A565FD5008B6B2F /* PTKPMaze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PTKPMaze.txt; sourceTree = "<group>"; };
 		BF3AE70A2A566177008B6B2F /* PTKPMazeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTKPMazeScene.swift; sourceTree = "<group>"; };
+		BF51C1EE2A5BAE01003AE6FF /* WarningPTKPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningPTKPView.swift; sourceTree = "<group>"; };
 		BFEB79B32A4135CE002A1A0B /* TaxStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEB79B62A4135CE002A1A0B /* TaxStoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxStoryApp.swift; sourceTree = "<group>"; };
 		BFEB79B82A4135CE002A1A0B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 				BF3AE70A2A566177008B6B2F /* PTKPMazeScene.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		BF51C1ED2A5BADEC003AE6FF /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				BF51C1EE2A5BAE01003AE6FF /* WarningPTKPView.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		BFEB79AA2A4135CE002A1A0B = {
@@ -158,6 +168,7 @@
 		FAF697422A45525C009D7441 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF51C1ED2A5BADEC003AE6FF /* Layout */,
 				FA7912E02A4DE5DB009DCFBF /* MapCase */,
 				BF10C9B12A4A776A004F3BA3 /* Case3 */,
 				FAF697432A455262009D7441 /* MainMenu */,
@@ -244,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF51C1EF2A5BAE01003AE6FF /* WarningPTKPView.swift in Sources */,
 				BF3AE70B2A566177008B6B2F /* PTKPMazeScene.swift in Sources */,
 				FA72FFF22A4BEA4A00834A19 /* Word.swift in Sources */,
 				FA72FFF02A4BEA2500834A19 /* AnswerViewModel.swift in Sources */,
@@ -387,7 +399,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaxStory/Preview Content\"";
-				DEVELOPMENT_TEAM = A9UXG82R38;
+				DEVELOPMENT_TEAM = 9B67722SW9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
