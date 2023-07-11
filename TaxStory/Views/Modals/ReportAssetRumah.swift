@@ -143,7 +143,6 @@ struct ReportAssetRumahView: View {
                             }
                             .overlay{
                                 Button {
-                                    print("close")
                                     modalPresentRumah = false
                                 } label: {
                                     Image("Close")

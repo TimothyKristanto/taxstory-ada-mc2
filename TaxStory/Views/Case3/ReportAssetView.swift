@@ -218,8 +218,9 @@ struct ReportAssetView: View {
                                     .frame(width: geoBot.size.width, height: geoBot.size.height / 6)
                                     .offset(x: -geoBot.size.width / 4.5, y: -geoBot.size.height / 12)
                                     .overlay{
-                                        Text("Yuk bantu Bayu daftarin hartanya. Klik setiap aset Bayu, lalu pilihlah data yang sesuai pada layar detail harta. Kemudian tekan tombol tambah.")
-                                            .font(.system(size: geoBot.size.width / 63, design: .rounded))
+                                        Text("Sejauh ini Bayu telah memiliki 1 rumah, 2 mobil, dan 1 motor. Cara mendaftarkannya adalah klik pada setiap aset Bayu, kemudian pada layar detail harta pilih pilihan yang sesuai dengan data yang seharusnya dilaporkan. Kemudian tekan tombol tambah.")
+                                            .font(.system(size: geoBot.size.width / 83, design: .rounded))
+                                            .foregroundColor(Color("Dark Brown"))
                                             .bold()
                                             .padding(.leading, geoBot.size.width / 8)
                                             .padding(.trailing, geoBot.size.width / 1.8)
@@ -250,39 +251,43 @@ struct ReportAssetView: View {
         }
         .fullScreenCover(isPresented: $modalPresentTanah, content: {
             ReportAssetTanahView(modalPresentTanah: $modalPresentTanah, listGambar: $listGambar, modalTanahAppended: $modalTanahAppended)
-                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.85)
-                .background(BackgroundClearView())
+//                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.85)
+                .background(BackgroundBlurLayout())
+                .ignoresSafeArea()
         })
         .fullScreenCover(isPresented: $modalPresentRumah, content: {
             ReportAssetRumahView(modalPresentRumah: $modalPresentRumah, listGambar: $listGambar, modalRumahAppended: $modalRumahAppended)
-                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.85)
-                .background(BackgroundClearView())
+//                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.85)
+                .background(BackgroundBlurLayout())
+                .ignoresSafeArea()
         })
         .fullScreenCover(isPresented: $modalPresentMobil, content: {
             ReportAssetMobilView(modalPresentMobil: $modalPresentMobil, listGambar: $listGambar, modalMobilAppended: $modalMobilAppended)
-                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.85)
-                .background(BackgroundClearView())
+//                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.85)
+                .background(BackgroundBlurLayout())
+                .ignoresSafeArea()
         })
         .fullScreenCover(isPresented: $modalPresentMotor, content: {
             ReportAssetMotorView(modalPresentMotor: $modalPresentMotor, listGambar: $listGambar, modalMotorAppended: $modalMotorAppended)
-                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.85)
-                .background(BackgroundClearView())
+//                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.85)
+                .background(BackgroundBlurLayout())
+                .ignoresSafeArea()
         })
         .ignoresSafeArea()
     }
 }
 
-struct BackgroundClearView: UIViewRepresentable {
-    func makeUIView(context: Context) -> some UIView {
-        let view = UIView()
-        DispatchQueue.main.async {
-            view.superview?.superview?.backgroundColor = .clear
-        }
-        return view
-    }
-    
-    func updateUIView(_ uiView: UIViewType, context: Context) { }
-}
+//struct BackgroundClearView: UIViewRepresentable {
+//    func makeUIView(context: Context) -> some UIView {
+//        let view = UIView()
+//        DispatchQueue.main.async {
+//            view.superview?.superview?.backgroundColor = .clear
+//        }
+//        return view
+//    }
+//
+//    func updateUIView(_ uiView: UIViewType, context: Context) { }
+//}
 
 struct ReportAssetView_Previews: PreviewProvider {
     static var previews: some View {

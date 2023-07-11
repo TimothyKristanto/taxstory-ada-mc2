@@ -12,6 +12,9 @@ struct ChooseFormView: View {
     @State var calculatorOperator = ""
     @State var lastNumber: Double = 0
     @State var isResetNumber = true
+    @State var show1770Warning = false
+    @State var show1770ssWarning = false
+    
     @Binding var page: String
     
     let maxCalculatorChara = 11
@@ -580,15 +583,25 @@ struct ChooseFormView: View {
                                                 VStack{
                                                     Button{
                                                         // wrong
+                                                        withAnimation {
+                                                            show1770Warning = true
+                                                        }
                                                     }label: {
                                                         Image("pilihan-1770")
                                                             .resizable()
                                                             .scaledToFit()
                                                             .frame(height: geoTop.size.height / 3.4)
                                                     }
+                                                    .fullScreenCover(isPresented: $show1770Warning) {
+                                                        WarningSTPView(isWrong: $show1770Warning, wrongText: "1770")
+                                                    }
+                                                    .transition(.opacity)
                                                     
                                                     Button{
-                                                        // wrong
+                                                        // correct
+                                                        withAnimation{
+                                                            page = "mintaBuktiPotong"
+                                                        }
                                                     }label: {
                                                         Image("pilihan-1770s")
                                                             .resizable()
@@ -597,16 +610,18 @@ struct ChooseFormView: View {
                                                     }
                                                     
                                                     Button{
-                                                        // correct
-                                                        withAnimation{
-                                                            page = "mintaBuktiPotong"
-                                                        }
+                                                        // wrong
+                                                        show1770ssWarning = true
                                                     }label: {
                                                         Image("pilihan-1770ss")
                                                             .resizable()
                                                             .scaledToFit()
                                                             .frame(height: geoTop.size.height / 3.4)
                                                     }
+                                                    .fullScreenCover(isPresented: $show1770ssWarning) {
+                                                        WarningSTPView(isWrong: $show1770ssWarning, wrongText: "1770ss")
+                                                    }
+                                                    .transition(.opacity)
                                                 }
                                             )
                                             .padding(.top, geoTop.size.height / 30)
@@ -632,8 +647,9 @@ struct ChooseFormView: View {
                                             .scaledToFit()
                                             .frame(width: geoBot.size.width / 1.58, height: geoBot.size.height / 3)
                                             .overlay(
-                                                Text("Yuk bantu Bayu memilih form laporan SPT (Surat Pemberitahuan Tahunan) berdasarkan perhitungan penghasilannya tahun ini menggunakan kalkulator di atas ya. Pendapatan Bayu per bulannya sendiri adalah Rp 4,500,000.")
+                                                Text("Yuk bantu Bayu memilih form laporan SPT (Surat Pemberitahuan Tahunan) berdasarkan perhitungan penghasilannya tahun ini menggunakan kalkulator di atas ya. Pendapatan Bayu sendiri per bulannya adalah Rp 8.238.080.")
                                                     .font(.system(size: geoBot.size.width / 65, design: .rounded))
+                                                    .foregroundColor(Color("Dark Brown"))
                                                     .bold()
                                                     .padding(.horizontal, geoBot.size.width / 18)
                                                     .padding(.bottom, geoBot.size.height / 25)

@@ -143,7 +143,6 @@ struct ReportAssetMobilView: View {
                             }
                             .overlay{
                                 Button {
-                                    print("close")
                                     modalPresentMobil = false
                                 } label: {
                                     Image("Close")

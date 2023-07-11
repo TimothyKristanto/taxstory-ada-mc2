@@ -157,8 +157,9 @@ struct ChoosePTKPView: View {
                                     .scaledToFit()
                                     .frame(width: geoBot.size.width, height: geoBot.size.height / 6)
                                     .overlay{
-                                        Text("Setelah melaporkan harta, Bayu harus memilih tipe PTKP (Penghasilan Tidak Kena Pajak) yang Ia gunakan. Saat ini sendiri Bayu belum menikah sehingga tidak punya anak serta tidak punya keluarga.")
+                                        Text("Setelah melaporkan harta, Bayu harus memilih tipe PTKP (Penghasilan Tidak Kena Pajak) yang sesuai kondisinya. Saat ini, Bayu belum menikah sehingga tidak punya anak serta tidak punya keluarga. Bayu juga belum memiliki tanggungan yang lain.")
                                             .font(.system(size: geoBot.size.width / 63, design: .rounded))
+                                            .foregroundColor(Color("Dark Brown"))
                                             .bold()
                                             .padding(.leading, geoBot.size.width / 4.5)
                                             .padding(.trailing, geoBot.size.width / 5)
