@@ -11,6 +11,9 @@
 		BF10C9B62A4A776A004F3BA3 /* ChooseFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */; };
 		BF10C9B72A4A776A004F3BA3 /* Case3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B42A4A776A004F3BA3 /* Case3View.swift */; };
 		BF13506B2A528BD700700249 /* ChoosePTKPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13506A2A528BD700700249 /* ChoosePTKPView.swift */; };
+		BF3AE7072A565FD5008B6B2F /* PTKPMaze.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF3AE7062A565FD5008B6B2F /* PTKPMaze.txt */; };
+		BF3AE70B2A566177008B6B2F /* PTKPMazeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AE70A2A566177008B6B2F /* PTKPMazeScene.swift */; };
+		BF51C1EF2A5BAE01003AE6FF /* WarningPTKPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51C1EE2A5BAE01003AE6FF /* WarningPTKPView.swift */; };
 		BFEB79B72A4135CE002A1A0B /* TaxStoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB79B62A4135CE002A1A0B /* TaxStoryApp.swift */; };
 		BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB79B82A4135CE002A1A0B /* ContentView.swift */; };
 		BFEB79BB2A4135CF002A1A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEB79BA2A4135CF002A1A0B /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 		BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFormView.swift; sourceTree = "<group>"; };
 		BF10C9B42A4A776A004F3BA3 /* Case3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Case3View.swift; sourceTree = "<group>"; };
 		BF13506A2A528BD700700249 /* ChoosePTKPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePTKPView.swift; sourceTree = "<group>"; };
+		BF3AE7062A565FD5008B6B2F /* PTKPMaze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PTKPMaze.txt; sourceTree = "<group>"; };
+		BF3AE70A2A566177008B6B2F /* PTKPMazeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTKPMazeScene.swift; sourceTree = "<group>"; };
+		BF51C1EE2A5BAE01003AE6FF /* WarningPTKPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningPTKPView.swift; sourceTree = "<group>"; };
 		BFEB79B32A4135CE002A1A0B /* TaxStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEB79B62A4135CE002A1A0B /* TaxStoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxStoryApp.swift; sourceTree = "<group>"; };
 		BFEB79B82A4135CE002A1A0B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +85,30 @@
 			path = Case3;
 			sourceTree = "<group>";
 		};
+		BF3AE7032A564E0F008B6B2F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BF3AE7062A565FD5008B6B2F /* PTKPMaze.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BF3AE7052A565FA6008B6B2F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BF3AE70A2A566177008B6B2F /* PTKPMazeScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		BF51C1ED2A5BADEC003AE6FF /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				BF51C1EE2A5BAE01003AE6FF /* WarningPTKPView.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
 		BFEB79AA2A4135CE002A1A0B = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +129,16 @@
 		BFEB79B52A4135CE002A1A0B /* TaxStory */ = {
 			isa = PBXGroup;
 			children = (
+				FA64B1FD2A566D6200F48945 /* ViewModel */,
+				FA72FFE62A4BE7FF00834A19 /* Model */,
+				BF3AE7052A565FA6008B6B2F /* Scenes */,
+				BF3AE7032A564E0F008B6B2F /* Resources */,
 				FAF697422A45525C009D7441 /* Views */,
 				BFEB79B82A4135CE002A1A0B /* ContentView.swift */,
 				BFEB79B62A4135CE002A1A0B /* TaxStoryApp.swift */,
 				BFEB79BA2A4135CF002A1A0B /* Assets.xcassets */,
-				BFEB79BC2A4135CF002A1A0B /* Preview Content */,
-				FA72FFEF2A4BEA2500834A19 /* AnswerViewModel.swift */,
 				FA72FFF12A4BEA4A00834A19 /* Word.swift */,
+				BFEB79BC2A4135CF002A1A0B /* Preview Content */,
 			);
 			path = TaxStory;
 			sourceTree = "<group>";
@@ -130,12 +163,21 @@
 			sourceTree = "<group>";
 		};
 		FA72FFE62A4BE7FF00834A19 /* Action */ = {
+		FA64B1FD2A566D6200F48945 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA72FFEF2A4BEA2500834A19 /* AnswerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA72FFE62A4BE7FF00834A19 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				FA7912DA2A4D8911009DCFBF /* Drag.swift */,
 				FA72FFF32A4BEBE800834A19 /* Drop.swift */,
 			);
-			path = Action;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FA7912E02A4DE5DB009DCFBF /* MapCase */ = {
@@ -150,8 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				CD326AE72A56732D00B76813 /* Modals */,
+				BF51C1ED2A5BADEC003AE6FF /* Layout */,
 				FA7912E02A4DE5DB009DCFBF /* MapCase */,
-				FA72FFE62A4BE7FF00834A19 /* Action */,
 				BF10C9B12A4A776A004F3BA3 /* Case3 */,
 				FAF697432A455262009D7441 /* MainMenu */,
 			);
@@ -225,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFEB79BE2A4135CF002A1A0B /* Preview Assets.xcassets in Resources */,
+				BF3AE7072A565FD5008B6B2F /* PTKPMaze.txt in Resources */,
 				BFEB79BB2A4135CF002A1A0B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,6 +280,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD326AF12A5B966D00B76813 /* ReportAssetMobil.swift in Sources */,
+				BF51C1EF2A5BAE01003AE6FF /* WarningPTKPView.swift in Sources */,
+				BF3AE70B2A566177008B6B2F /* PTKPMazeScene.swift in Sources */,
 				FA72FFF22A4BEA4A00834A19 /* Word.swift in Sources */,
 				FA72FFF02A4BEA2500834A19 /* AnswerViewModel.swift in Sources */,
 				FAF23A352A4ADFEB00AC2C6D /* FillForm.swift in Sources */,
@@ -383,11 +428,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaxStory/Preview Content\"";
+				DEVELOPMENT_TEAM = 9B67722SW9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -410,11 +457,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaxStory/Preview Content\"";
+				DEVELOPMENT_TEAM = A9UXG82R38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
