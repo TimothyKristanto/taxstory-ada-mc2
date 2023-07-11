@@ -1,134 +1,50 @@
-
 //
-//  VisualNovel.swift
+//  CobaPakSupir.swift
 //  TaxStory
 //
-//  Created by Alex Lim on 10/07/23.
+//  Created by Alex Lim on 11/07/23.
 //
 
 import SwiftUI
 
 struct VisualNovel: View {
-    @State var emotions: [Emotion] = []
-    @ObservedObject var dates = ReadData()
+    @State private var tapCount = 1
+    
     var body: some View {
-        ZStack{
-            GeometryReader{ geoScreen in
-                VStack{
-                    Image("backgroundNovel")
+        GeometryReader { geoScreen in
+            VStack {
+//                Text("Tap Count: \(tapCount)")
+//                    .foregroundColor(.white)
+//                    .font(.title)
+                
+                ForEach((1...18), id: \.self) { index in
+                    Image("previewNovel\(tapCount)")
                         .resizable()
-                        .frame(width: geoScreen.size.width / 1, height: geoScreen.size.height / 0.95)
-                        .padding(.top, -geoScreen.size.height / 40)
                         .scaledToFill()
-                        .overlay{
-                            VStack{
-                                HStack{
-                                    Button{
-                                        // munculin dialog, trus balik ke main map
-                                    }label: {
-                                        Image("Map")
-                                            .resizable()
-                                            .scaledToFit()
-                                    }
-                                    .frame(width: geoScreen.size.width / 13)
-                                    
-                                    Spacer()
-                                }
-                                .padding(.leading, geoScreen.size.width / 28)
-                                .padding(.trailing, geoScreen.size.width / 10)
-                                .padding(.top, geoScreen.size.height / 100)
-                                
-                                Spacer()
+                        .ignoresSafeArea()
+                        .overlay(
+                            //actionya sini ya timmy tinggal sikat jangan sampe NT actionya
+                            Button(action: {})
+                            {
+                                Text("")
+                                    .frame(width: 100, height: 80)
+                                    .foregroundColor(Color.white)
+//                                    .background(Color.black)
+                                    .clipShape(Circle())
+
                             }
-                        }
+                            .offset(x: -geoScreen.size.height / 1.653)
+                            .offset(y: -geoScreen.size.height / 2.141))
                 }
-                //            .offset(x: geoScreen.size.height / 1)
-                //            .offset(y: -geoScreen.size.height / 6)
-                GeometryReader{ geoBot in
-                    VStack{
-                        // guide text
-                        HStack{
-                            Image("bayuSenyum")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: geoBot.size.width / 1, height: geoBot.size.height / 1.2)
-                            //                                .offset(x: -geoBot.size.height / 1.75)
-                                .offset(y: geoScreen.size.height / 10)
-                        }
-                    }
-                    VStack{
-                        HStack{
-                            Image("textBox")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: geoBot.size.width / 1.2, height: geoBot.size.height / 2)
-                                .overlay(
-                                    Text("Yuk bantu Bayu memilih form laporan SPT (Surat Pemberitahuan Tahunan) berdasarkan perhitungan penghasilannya tahun ini menggunakan kalkulator di atas ya. Pendapatan Bayu per bulannya sendiri adalah Rp 4,500,000.")
-                                        .font(.system(size: geoBot.size.width / 65, design: .rounded))
-                                        .bold()
-                                        .padding(.horizontal, geoBot.size.width / 18)
-                                        .padding(.top, geoBot.size.height / 100)
-                                )
-                                .overlay{
-                                    VStack
-                                    {
-                                        // Building image
-                                        Button(action:
-                                                {
-                                        })
-                                        {Image("NextButton")
-                                                .resizable()
-                                                .renderingMode(.original)
-                                                .aspectRatio(contentMode: .fit)
-                                                .scaledToFit()
-                                                .frame(width: geoBot.size.width/20)
-                                            
-                                        }
-                                        .offset(y: geoBot.size.height / 20)
-                                        .offset(x: geoBot.size.height / 1.95)
-                                    }
-                                }
-                        }
-                        .padding(.top, geoBot.size.height / 1.8)
-                        .padding(.leading, geoBot.size.width / 13)
-                    }
-                    
-                    
-                    
-                    //        List(dates.emotions)
-                    //        { emotion in
-                    //            VStack(alignment: .leading) {
-                    //
-                    //                Text(emotion.pictureName ?? "")
-                    //                    .font(.title)
-                    //                    .fontWeight(.heavy)
-                    //                    .foregroundColor(Color.gray)
-                    //
-                    //                HStack{
-                    //                    Text(emotion.textBox)
-                    //                        .font(.title3)
-                    //                        .foregroundColor(Color.red)
-                    //                }
-                    //            }
-                    //        }
-                    
-                    //            ini jadi simpan
-                    //            let emotion = dates.emotions[0]
-                    //            VStack(alignment: .leading)
-                    //            {
-                    //                Text(emotion.pictureName ?? "")
-                    //                    .font(.title)
-                    //                    .fontWeight(.heavy)
-                    //                    .foregroundColor(Color.gray)
-                    //
-                    //                HStack{
-                    //                    Text(emotion.textBox)
-                    //                        .font(.title3)
-                    //                        .foregroundColor(Color.red)
-                    //
-                    //                }
-                    //            }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.black)
+            .onTapGesture {
+                tapCount += 1
+                if tapCount == 18 {
+                    tapCount = 0
                 }
+                // Call your function or perform any other action here
             }
         }
     }
