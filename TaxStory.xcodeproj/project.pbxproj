@@ -16,6 +16,10 @@
 		BFEB79BB2A4135CF002A1A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEB79BA2A4135CF002A1A0B /* Assets.xcassets */; };
 		BFEB79BE2A4135CF002A1A0B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEB79BD2A4135CF002A1A0B /* Preview Assets.xcassets */; };
 		CD326AE62A53B26D00B76813 /* ReportAssetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD326AE52A53B26D00B76813 /* ReportAssetView.swift */; };
+		CD326AE92A5673C600B76813 /* ReportAssetTanah.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD326AE82A5673C600B76813 /* ReportAssetTanah.swift */; };
+		CD326AEB2A57AA3F00B76813 /* ReportAssetRumah.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD326AEA2A57AA3F00B76813 /* ReportAssetRumah.swift */; };
+		CD326AF12A5B966D00B76813 /* ReportAssetMobil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD326AF02A5B966D00B76813 /* ReportAssetMobil.swift */; };
+		CD326AF32A5B96AB00B76813 /* ReportAssetMotor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD326AF22A5B96AB00B76813 /* ReportAssetMotor.swift */; };
 		FA72FFF02A4BEA2500834A19 /* AnswerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFEF2A4BEA2500834A19 /* AnswerViewModel.swift */; };
 		FA72FFF22A4BEA4A00834A19 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFF12A4BEA4A00834A19 /* Word.swift */; };
 		FA72FFF42A4BEBE800834A19 /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFF32A4BEBE800834A19 /* Drop.swift */; };
@@ -37,6 +41,10 @@
 		BFEB79BA2A4135CF002A1A0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFEB79BD2A4135CF002A1A0B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CD326AE52A53B26D00B76813 /* ReportAssetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAssetView.swift; sourceTree = "<group>"; };
+		CD326AE82A5673C600B76813 /* ReportAssetTanah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAssetTanah.swift; sourceTree = "<group>"; };
+		CD326AEA2A57AA3F00B76813 /* ReportAssetRumah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAssetRumah.swift; sourceTree = "<group>"; };
+		CD326AF02A5B966D00B76813 /* ReportAssetMobil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAssetMobil.swift; sourceTree = "<group>"; };
+		CD326AF22A5B96AB00B76813 /* ReportAssetMotor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAssetMotor.swift; sourceTree = "<group>"; };
 		FA72FFEF2A4BEA2500834A19 /* AnswerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewModel.swift; sourceTree = "<group>"; };
 		FA72FFF12A4BEA4A00834A19 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		FA72FFF32A4BEBE800834A19 /* Drop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
@@ -110,6 +118,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		CD326AE72A56732D00B76813 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				CD326AE82A5673C600B76813 /* ReportAssetTanah.swift */,
+				CD326AEA2A57AA3F00B76813 /* ReportAssetRumah.swift */,
+				CD326AF02A5B966D00B76813 /* ReportAssetMobil.swift */,
+				CD326AF22A5B96AB00B76813 /* ReportAssetMotor.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
 		FA72FFE62A4BE7FF00834A19 /* Action */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +149,7 @@
 		FAF697422A45525C009D7441 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CD326AE72A56732D00B76813 /* Modals */,
 				FA7912E02A4DE5DB009DCFBF /* MapCase */,
 				FA72FFE62A4BE7FF00834A19 /* Action */,
 				BF10C9B12A4A776A004F3BA3 /* Case3 */,
@@ -216,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD326AF12A5B966D00B76813 /* ReportAssetMobil.swift in Sources */,
 				FA72FFF22A4BEA4A00834A19 /* Word.swift in Sources */,
 				FA72FFF02A4BEA2500834A19 /* AnswerViewModel.swift in Sources */,
 				FAF23A352A4ADFEB00AC2C6D /* FillForm.swift in Sources */,
@@ -225,11 +246,14 @@
 				BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */,
 				BF13506B2A528BD700700249 /* ChoosePTKPView.swift in Sources */,
 				BF10C9B62A4A776A004F3BA3 /* ChooseFormView.swift in Sources */,
+				CD326AE92A5673C600B76813 /* ReportAssetTanah.swift in Sources */,
 				FAF697472A4553E6009D7441 /* Constants.swift in Sources */,
 				BFEB79B72A4135CE002A1A0B /* TaxStoryApp.swift in Sources */,
+				CD326AEB2A57AA3F00B76813 /* ReportAssetRumah.swift in Sources */,
 				FAF697452A455272009D7441 /* MainMenuStart.swift in Sources */,
 				BF10C9B52A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift in Sources */,
 				FA72FFF42A4BEBE800834A19 /* Drop.swift in Sources */,
+				CD326AF32A5B96AB00B76813 /* ReportAssetMotor.swift in Sources */,
 				FA7912DB2A4D8911009DCFBF /* Drag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
