@@ -29,6 +29,7 @@
 		FA72FFF02A4BEA2500834A19 /* AnswerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFEF2A4BEA2500834A19 /* AnswerViewModel.swift */; };
 		FA72FFF22A4BEA4A00834A19 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFF12A4BEA4A00834A19 /* Word.swift */; };
 		FA72FFF42A4BEBE800834A19 /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFF32A4BEBE800834A19 /* Drop.swift */; };
+		FA7596FD2A58156D00B3BE4B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7596FC2A58156D00B3BE4B /* Result.swift */; };
 		FA7912DB2A4D8911009DCFBF /* Drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7912DA2A4D8911009DCFBF /* Drag.swift */; };
 		FA7912DF2A4DE579009DCFBF /* MapCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7912DE2A4DE579009DCFBF /* MapCase.swift */; };
 		FAF23A352A4ADFEB00AC2C6D /* FillForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF23A342A4ADFEB00AC2C6D /* FillForm.swift */; };
@@ -60,6 +61,7 @@
 		FA72FFEF2A4BEA2500834A19 /* AnswerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewModel.swift; sourceTree = "<group>"; };
 		FA72FFF12A4BEA4A00834A19 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		FA72FFF32A4BEBE800834A19 /* Drop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
+		FA7596FC2A58156D00B3BE4B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FA7912DA2A4D8911009DCFBF /* Drag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drag.swift; sourceTree = "<group>"; };
 		FA7912DE2A4DE579009DCFBF /* MapCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCase.swift; sourceTree = "<group>"; };
 		FAF23A342A4ADFEB00AC2C6D /* FillForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillForm.swift; sourceTree = "<group>"; };
@@ -188,6 +190,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FA7596FB2A58155C00B3BE4B /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				FA7596FC2A58156D00B3BE4B /* Result.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 		FA7912E02A4DE5DB009DCFBF /* MapCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +209,7 @@
 		FAF697422A45525C009D7441 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA7596FB2A58155C00B3BE4B /* Result */,
 				BF1951062A5CECFE00A5F00D /* Layouts */,
 				CD326AE72A56732D00B76813 /* Modals */,
 				FA7912E02A4DE5DB009DCFBF /* MapCase */,
@@ -298,6 +309,7 @@
 				CD326AE62A53B26D00B76813 /* ReportAssetView.swift in Sources */,
 				BF05C75E2A5D71030062CB4F /* WarningMapModal.swift in Sources */,
 				BF10C9B72A4A776A004F3BA3 /* Case3View.swift in Sources */,
+				FA7596FD2A58156D00B3BE4B /* Result.swift in Sources */,
 				BF1951052A5CEC6C00A5F00D /* WarningSTPView.swift in Sources */,
 				BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */,
 				BF13506B2A528BD700700249 /* ChoosePTKPView.swift in Sources */,
