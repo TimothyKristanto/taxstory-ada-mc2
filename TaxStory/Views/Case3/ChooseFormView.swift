@@ -130,6 +130,7 @@ struct ChooseFormView: View {
                                 
                                 Button{
                                     // kasi hint minigames ini suruh ngapain
+									
                                 }label: {
                                     Image("Hint")
                                         .resizable()
@@ -200,6 +201,7 @@ struct ChooseFormView: View {
                                                         
 														Text("Lapor Harta")
                                                             .font(.title2)
+															.foregroundColor(Color("Dark Brown"))
                                                     }
                                                     
                                                     HStack{
