@@ -61,8 +61,10 @@ struct Drop : View {
 													// check if user already filled the form
 													if ViewModel.droppedCount == 5 {
 														// next page
-														withAnimation {
-															page = "laporHarta"
+														DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+															withAnimation {
+																page = "laporHarta"
+															}
 														}
 													}
                                                 }

@@ -24,7 +24,7 @@ struct Case3View: View
 		} else if page == "laporHarta" {
 			ReportAssetView(page: $page)
 		} else if page == "pilihPTKP" {
-			ChoosePTKPView()
+			ChoosePTKPView(page: $page)
 		} 
     }
 }

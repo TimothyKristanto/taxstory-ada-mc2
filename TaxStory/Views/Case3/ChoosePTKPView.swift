@@ -15,7 +15,7 @@ struct ChoosePTKPView: View {
     @State var wrongText = ""
 	@State var showMapModal = false
 	
-	@Binding var page: Bool
+	@Binding var page: String
     
     var scene: SKScene {
         let scene = PTKPMazeScene(wrong: $isWrong, correct: $isCorrect, text: $wrongText)
@@ -267,7 +267,7 @@ struct ChoosePTKPView: View {
 
 struct ChoosePTKPView_Previews: PreviewProvider {
     static var previews: some View {
-        ChoosePTKPView(page: $page)
+		ChoosePTKPView(page: .constant("pilihPTKP"))
             .previewInterfaceOrientation(.landscapeRight)
     }
 }
