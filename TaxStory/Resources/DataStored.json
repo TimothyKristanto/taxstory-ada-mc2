@@ -1,0 +1,172 @@
+[
+  {
+    "id": 1,
+    "pictureName": "bayuSenang",
+    "textBox": "Hai, kenalin namaku Bayu. Tahun lalu, aku berhasil lulus dari universitas dan mendapatkan nilai baik. Berkat itu, aku bisa bekerja di pekerjaan impianku sekarang. Ah senangnya mimpiku menjadi nyata!"
+  },
+  {
+    "id": 2,
+    "pictureName": "bayuSenang",
+    "textBox": "Berkat itu, aku bisa bekerja di pekerjaan impianku sekarang. Ah senangnya mimpiku menjadi nyata!"
+  },
+  {
+    "id": 3,
+    "pictureName": "bayuManyun",
+    "textBox": "Eitssss, tapi aku baru dengar kalau karyawan ternyata juga diwajibkan untuk membayar pajak. "
+  },
+  {
+    "id": 4,
+    "pictureName": "bayuNangis",
+    "textBox": "oh tidak! Aku takut sekali karena pajak terdengar susah dan terkenal susah dipahami. "
+  },
+  {
+    "id": 5,
+    "pictureName": "bayuBingung",
+    "textBox": " Bagaimana ya proses pembayaran pajak? yuk kita belajar bersama!"
+  },
+  {
+    "id": 6,
+    "pictureName": "bayuBingung",
+    "textBox": " aku belum pernah lapor pajak sehingga aku bingung apa yang harus aku lakukan. "
+  },
+  {
+    "id": 7,
+    "pictureName": "bayuManyun",
+    "textBox": "Oh ternyata ada 3 jenis formulir SPT yaitu 1770, 1770 S dan 1770 SS Yuk bantu aku memilih formulir yang tepat untukku!"
+  },
+  {
+    "id": 8,
+    "pictureName": "hintCalcu",
+    "textBox": "Tugasmu adalah menghitung penghasilan Bayu selama setahun (12 bulan) menggunakan kalkulator, kemudian mencocokkan dengan jenis form yang sesuai. Setelah kamu mengetahui jumlah penghasilan Bayu selama setahun, klik pada pilihan form yang sesuai."
+  },
+  {
+    "id": 9,
+    "pictureName": "Calcu",
+    "textBox": "Yuk bantu Bayu memilih form laporan SPT (Surat Pemberitahuan Tahunan) berdasarkan perhitungan penghasilannya tahun ini menggunakan kalkulator di atas ya. Pendapatan Bayu sendiri per bulannya adalah Rp 8.238.080."
+  },
+  {
+    "id": 10,
+    "pictureName": "bayuYay",
+    "textBox": "Yay! Terima kasih bantuannya! Sekarang aku sudah berhasil pilih formulir!"
+  },
+  {
+    "id": 11,
+    "pictureName": "bayuSenang",
+    "textBox": "Selanjutnya, aku harus melaporkan Bukti Potong PPh dari perusahaan nih. "
+  },
+  {
+    "id": 12,
+    "pictureName": "bayuBingung",
+    "textBox": "Aku harus meminta bukti potong di kantor tempatku bekerja. Yuk bantu aku meminta bukti potong dari kantor."
+  },
+  {
+    "id": 13,
+    "pictureName": "hintMap",
+    "textBox": "Klik lokasi kantor Bayu agar Bayu dapat berjalan ke sana. Pastikan yang kamu klik adalah gedung kantor Bayu agar Bayu tidak salah tujuan."
+  },
+  {
+    "id": 14,
+    "pictureName": "screenCityMap",
+    "textBox": "Yuk bantuin Bayu untuk menemukan jalan yang benar menuju kantor perusahaan tempat Bayu bekerja supaya Bayu bisa meminta bukti potong."
+  },
+  {
+    "id": 15,
+    "pictureName": "bayuSenang",
+    "textBox": "Terima kasih sudah menolongku untuk sampai ke kantor. Sekarang aku harus mengisi formulir Bukti Pemotongan Pajak Penghasilan."
+  },
+  {
+    "id": 16,
+    "pictureName": "bayuManyun",
+    "textBox": "Sekarang aku harus mengisi formulir Bukti Pemotongan Pajak Penghasilan."
+  },
+  {
+    "id": 17,
+    "pictureName": "bayuYay",
+    "textBox": "Yuk bantu aku mengisi formulir hingga selesai!"
+  },
+  {
+    "id": 18,
+    "pictureName": "hintBuktiPotong",
+    "textBox": "Klik dan pindahkan informasi yang sesuai dalam form bukti pemotongan ke dalam kolom bukti potong yang sesuai di tengah. Ingat, ada 5 lembar form bukti pemotongan. Jangan lupa memindahkan semua informasi dari ke-5 form tersebut ya!"
+  },
+  {
+    "id": 19,
+    "pictureName": "formulirBuktiPotong",
+    "textBox": "Yuk bantu Bayu mengisi formulir bukti potong!"
+  },
+  {
+    "id": 20,
+    "pictureName": "bayuX",
+    "textBox": "Terima kasih sudah membantuku untuk mengisi formulir!"
+  },
+  {
+    "id": 21,
+    "pictureName": "bayuSenang",
+    "textBox": "Setelah beberapa saat bekerja, aku sudah memiliki banyak uang dan memiliki beberapa harta."
+  },
+  {
+    "id": 22,
+    "pictureName": "bayuBingung",
+    "textBox": "Langkah selanjutnya aku harus melaporkan hartaku. Tapi aku tidak tahu caranya, ayo bantu aku melaporkan semua hartaku!"
+  },
+  {
+    "id": 23,
+    "pictureName": "laporHarta",
+    "textBox": "Sejauh ini Bayu telah memiliki 1 rumah, 2 mobil, dan 1 motor. Cara mendaftarkannya adalah klik pada setiap aset Bayu, kemudian pada layar detail harta pilih pilihan yang sesuai dengan data yang seharusnya dilaporkan. Kemudian tekan tombol tambah."
+  },
+  {
+    "id": 24,
+    "pictureName": "Hint",
+    "textBox": "Dalam melaporkan pajak, harga yang berlaku adalah harga beli, bukan harga saat produk diproduksi ataupun harga market. Begitu pula untuk tahun produk, yang dilaporkan adalah tahun saat dibeli atau diperoleh, bukan tahun produksi."
+  },
+  {
+    "id": 25,
+    "pictureName": "rumah",
+    "textBox": "Bayu membeli rumah ini pada tahun 2020 dengan harga 1 miliar. Rumah tersebut dibangun dan berdiri pada tahun 2006 dengan nilai 900 juta. Saat ini, rumah tersebut memiliki harga 1.2 miliar di pasaran."
+  },
+  {
+    "id": 26,
+    "pictureName": "mobil1",
+    "textBox": "Bayu membeli mobil ini pada tahun 2022 dengan harga 600 juta. Mobil tersebut diproduksi pada tahun 2021 dengan nilai 700 juta. Saat ini, mobil tersebut bernilai 500 juta di pasaran."
+  },
+  {
+    "id": 27,
+    "pictureName": "mobil2",
+    "textBox": "Bayu membeli mobil ini pada tahun 2023 dengan harga 800 juta. Mobil tersebut diproduksi pada tahun 2018 dengan nilai 1 miliar. Saat ini, mobil tersebut bernilai 900 juta di pasaran."
+  },
+  {
+    "id": 28,
+    "pictureName": "tanah",
+    "textBox": "Bayu membeli tanah ini pada tahun 2016 dengan harga 1 miliar. Saat ini, tanah tersebut memiliki harga 1.3 miliar di pasaran."
+  },
+  {
+    "id": 29,
+    "pictureName": "motor",
+    "textBox": "Bayu membeli motor ini pada tahun 2019 dengan harga 10 juta. Motor tersebut diproduksi pada tahun 2017 dengan nilai 12 juta. Saat ini, motor tersebut bernilai 7 juta di pasaran."
+  },
+  {
+    "id": 30,
+    "pictureName": "bayuBingung",
+    "textBox": "Nah akhirnya aku sudah berhasil melaporkan hartaku! Langkah terakhir adalah memilih tipe PTKP. Kira-kira jenis PTKP mana yang sesuai untuk kondisiku saat ini?"
+  },
+  {
+    "id": 31,
+    "pictureName": "bayuBingung",
+    "textBox": "Kondisiku saat ini adalah aku belum menikah dan tidak memiliki tanggungan. Tipe PTKP mana yang cocok untukku?"
+  },
+  {
+    "id": 32,
+    "pictureName": "hintMaze",
+    "textBox": "Untuk membantu Bayu menemukan tipe PTPK yang sesuai, gerakkan dan arahkan device mengikuti jalan pada labirin sampai menemukan jalan keluar ke tipe PTKP yang tepat. Jika kamu bingung tipe PTKP mana yang sesuai untuk Bayu, kamu dapat membuka dictionary untuk melihat tabel tipe PTKP."
+  },
+  {
+    "id": 33,
+    "pictureName": "mazePTKP",
+    "textBox": "Setelah melaporkan harta, Bayu harus memilih tipe PTKP (Penghasilan Tidak Kena Pajak) yang sesuai kondisinya. Saat ini, Bayu belum menikah sehingga tidak punya anak serta tidak punya keluarga. Bayu juga belum memiliki tanggungan yang lain."
+  },
+  {
+    "id": 34,
+    "pictureName": "SPTTerakhir",
+    "textBox": "Yayy SPT tahun ini sudah berhasil dibuat dan dilaporkan. Terima kasih atas bantuanmu, sangat membantuku dalam melaporkan pajak tahunanku. Semoga kamu tidak kesulitan juga ya dalam melapor pajak! Jika kamu kesusahan, kamu selalu dapat mencoba melaporkan pajak bersama Bayu! Sampai jumpa di case yang lain!"
+  }
+]

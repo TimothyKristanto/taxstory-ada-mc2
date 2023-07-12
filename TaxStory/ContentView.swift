@@ -18,6 +18,9 @@ struct ContentView: View {
         }else if page == "case3"{
             Case3View()
         }
+        
+//        VisualNovel(, DataJSON: <#[Data]#>)
+        
 //        ChooseFormView()
 //        FillForm(vm: vm)
     }
