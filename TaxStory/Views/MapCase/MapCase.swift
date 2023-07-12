@@ -194,7 +194,9 @@ struct MapCase: View {
                                     } else if selectedCase == 2 {
 //                                        page = "case2"
                                     } else if selectedCase == 3 {
-                                        page = "case3"
+                                        withAnimation {
+                                        	page = "case3"
+                                        }
                                     } else if selectedCase == 4 {
 //                                        page = "case4"
                                     }
@@ -232,11 +234,11 @@ struct MapCase: View {
         case 2:
             return "Di tahun pertama bekerja, Bayu mendapatkan gaji sebesar Rp 4,5 juta per bulan. Yuk bantu Bayu dalam lapor SPT……"
         case 3:
-            return "Di tahun kedua bekerja, Bayu mendapatkan kenaikan gaji sebesar 1,2 juta.  Nampaknya PPh21 Bayu sudah tidak nihil lagi. Yuk bantu Bayu mengisi laporan SPT nya...."
+            return "Di tahun kedua bekerja, Bayu mendapatkan kenaikan gaji sebesar 3,7 juta.  Nampaknya PPh21 Bayu sudah tidak nihil lagi. Yuk bantu Bayu mengisi laporan SPT nya...."
         case 4:
-            return "Coming soon"
+            return "Segera hadir"
         default:
-            return "Select Your Cases"
+            return "Pilih studi kasus yang ingin Anda kerjakan"
         }
     }
 }

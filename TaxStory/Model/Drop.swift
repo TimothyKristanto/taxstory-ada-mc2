@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Drop : View {
     @ObservedObject var ViewModel : AnswerViewModel
+	@Binding var page: String
     
     var body : some View {
         GeometryReader { geometry in
@@ -56,6 +57,14 @@ struct Drop : View {
                                                         ViewModel.progress = progress
                                                     }
                                                     item.isShowing = true
+													
+													// check if user already filled the form
+													if ViewModel.droppedCount == 5 {
+														// next page
+														withAnimation {
+															page = "laporHarta"
+														}
+													}
                                                 }
                                             }
                                             else
@@ -99,6 +108,6 @@ struct DropView_Previews: PreviewProvider
 {
     static var previews: some View
     {
-        Drop(ViewModel: AnswerViewModel())
+		Drop(ViewModel: AnswerViewModel(), page: .constant("isiBuktiPotong"))
     }
 }

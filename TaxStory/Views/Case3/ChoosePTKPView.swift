@@ -13,6 +13,9 @@ struct ChoosePTKPView: View {
     @State var isCorrect = false
     @State var isWrong = false
     @State var wrongText = ""
+	@State var showMapModal = false
+	
+	@Binding var page: Bool
     
     var scene: SKScene {
         let scene = PTKPMazeScene(wrong: $isWrong, correct: $isCorrect, text: $wrongText)
@@ -32,11 +35,15 @@ struct ChoosePTKPView: View {
                         HStack{
                             Button{
                                 // munculin dialog, trus balik ke main map
+								showMapModal = true
                             }label: {
                                 Image("Map")
                                     .resizable()
                                     .scaledToFit()
                             }
+							.fullScreenCover(isPresented: $showMapModal) {
+								WarningMapModal(showMapModal: $showMapModal, page: $page)
+							}
                             .frame(width: geoScreen.size.width / 18)
                             
                             Spacer()
@@ -88,43 +95,56 @@ struct ChoosePTKPView: View {
                                     VStack(alignment: .leading){
                                         HStack{
                                             Image(systemName: "checkmark.circle.fill")
+												.foregroundColor(Color("Dark Brown"))
                                             
                                             Text("Pilih form")
                                                 .font(.system(size: geoTop.size.width / 55, design: .rounded))
+												.foregroundColor(Color("Dark Brown"))
                                         }
                                         
                                         HStack{
                                             Image(systemName: "checkmark.circle.fill")
+												.foregroundColor(Color("Dark Brown"))
                                             
                                             Text("Minta bukti potong")
                                                 .font(.system(size: geoTop.size.width / 55, design: .rounded))
+												.foregroundColor(Color("Dark Brown"))
                                         }
                                         
                                         HStack{
                                             Image(systemName: "checkmark.circle.fill")
+												.foregroundColor(Color("Dark Brown"))
                                             
                                             Text("Isi formulir")
                                                 .font(.system(size: geoTop.size.width / 55, design: .rounded))
+												.foregroundColor(Color("Dark Brown"))
                                         }
                                         
                                         HStack {
                                             Image(systemName: "checkmark.circle.fill")
+												.foregroundColor(Color("Dark Brown"))
+											
                                             Text("Lapor Harta")
                                                 .font(.title2)
+												.foregroundColor(Color("Dark Brown"))
                                         }
                                         
                                         HStack{
                                             Image(systemName: "circle.fill")
+												.foregroundColor(Color("Dark Brown"))
                                             
                                             Text("PTKP")
                                                 .font(.system(size: geoTop.size.width / 55, design: .rounded))
+												.foregroundColor(Color("Dark Brown"))
                                         }
                                         
                                         HStack{
                                             Image(systemName: "circle")
+												.foregroundColor(Color("Dark Brown"))
                                             
                                             Text("Result")
                                                 .font(.system(size: geoTop.size.width / 55, design: .rounded))
+												.foregroundColor(Color("Dark Brown"))
                                         }
                                     }
                                     .padding(.horizontal, geoTop.size.width / 30)
@@ -247,7 +267,7 @@ struct ChoosePTKPView: View {
 
 struct ChoosePTKPView_Previews: PreviewProvider {
     static var previews: some View {
-        ChoosePTKPView()
+        ChoosePTKPView(page: $page)
             .previewInterfaceOrientation(.landscapeRight)
     }
 }
