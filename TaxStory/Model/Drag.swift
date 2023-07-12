@@ -84,31 +84,8 @@ struct Drag: View
                 }
                 else if pageForm == 4
                 {
-                    Text("\(ViewModel.characters[3].value)")
-                        .frame(width: geometry.size.width / 10.5)
-                        .background
-                    {
-                        RoundedRectangle(cornerRadius: 6, style: .continuous)
-                            .fill(Color("DarkCream"))
-                    }
-                    .onDrag
-                    {
-                        return .init(contentsOf:URL(string:ViewModel.characters[3].id))!
-                    }
-                    .offset(x: geometry.size.height / 3.45)
-                    .offset(y: geometry.size.height / 1.445)
-                    .opacity(ViewModel.characters[3].isShowing ? 0 : 1)
-                    .background
-                    {
-                        RoundedRectangle(cornerRadius: 6, style: .continuous)
-                            .stroke(.brown)
-                            .opacity(ViewModel.characters[3].isShowing ? 1 : 0)
-                    }
-                }
-                else if pageForm == 5
-                {
                     Text("\(ViewModel.characters[4].value)")
-                        .frame(width: geometry.size.width / 13.9)
+                        .frame(width: geometry.size.width / 10.5)
                         .background
                     {
                         RoundedRectangle(cornerRadius: 6, style: .continuous)
@@ -118,14 +95,37 @@ struct Drag: View
                     {
                         return .init(contentsOf:URL(string:ViewModel.characters[4].id))!
                     }
-                    .offset(x: geometry.size.height / 10.4)
-                    .offset(y: geometry.size.height / 3.87)
+                    .offset(x: geometry.size.height / 3.45)
+                    .offset(y: geometry.size.height / 1.445)
                     .opacity(ViewModel.characters[4].isShowing ? 0 : 1)
                     .background
                     {
                         RoundedRectangle(cornerRadius: 6, style: .continuous)
                             .stroke(.brown)
                             .opacity(ViewModel.characters[4].isShowing ? 1 : 0)
+                    }
+                }
+                else if pageForm == 5
+                {
+                    Text("\(ViewModel.characters[3].value)")
+                        .frame(width: geometry.size.width / 13.9)
+                        .background
+                    {
+                        RoundedRectangle(cornerRadius: 6, style: .continuous)
+                            .fill(Color("DarkCream"))
+                    }
+                    .onDrag
+                    {
+                        return .init(contentsOf:URL(string:ViewModel.characters[3].id))!
+                    }
+                    .offset(x: geometry.size.height / 10.4)
+                    .offset(y: geometry.size.height / 3.87)
+                    .opacity(ViewModel.characters[3].isShowing ? 0 : 1)
+                    .background
+                    {
+                        RoundedRectangle(cornerRadius: 6, style: .continuous)
+                            .stroke(.brown)
+                            .opacity(ViewModel.characters[3].isShowing ? 1 : 0)
                     }
                 }
             }

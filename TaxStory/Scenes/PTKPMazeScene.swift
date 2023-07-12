@@ -7,6 +7,7 @@
 
 import SpriteKit
 import CoreMotion
+import SwiftUI
 
 enum CollisionTypes: UInt32 {
     case player = 1
@@ -16,11 +17,27 @@ enum CollisionTypes: UInt32 {
 }
 
 class PTKPMazeScene: SKScene, SKPhysicsContactDelegate {
-    var player: SKShapeNode!
+    var player: SKSpriteNode!
     var motionManager: CMMotionManager?
     
-    var isWrong = false
-    var isCorrect = false
+    @Binding var isWrong: Bool
+    @Binding var isCorrect: Bool
+    @Binding var wrongText: String
+
+    init(wrong: Binding<Bool>, correct: Binding<Bool>, text: Binding<String>) {
+        _isWrong = wrong
+        _isCorrect = correct
+        _wrongText = text
+        super.init(size: CGSize(width: Constants.screenWidth, height: Constants.screenHeight))
+        self.scaleMode = .aspectFit
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        _isWrong = .constant(false)
+        _isCorrect = .constant(false)
+        _wrongText = .constant("")
+        super.init(coder: aDecoder)
+    }
     
     override func didMove(to view: SKView) {
         view.backgroundColor = .clear
@@ -33,7 +50,7 @@ class PTKPMazeScene: SKScene, SKPhysicsContactDelegate {
         addChild(background)
 
         loadMaze()
-//
+
         physicsWorld.gravity = .zero
         physicsWorld.contactDelegate = self
         
@@ -53,9 +70,10 @@ class PTKPMazeScene: SKScene, SKPhysicsContactDelegate {
                 
                 if letter == "x" {
                     // load wall
-                    let node = SKSpriteNode(color: .black, size: CGSize(width: self.frame.size.height / 14, height: self.frame.size.height / 14))
+                    let node = SKSpriteNode(imageNamed: "SquareMaze")
                     node.name = "wall"
                     node.position = position
+                    node.size = CGSize(width: self.frame.size.height / 14, height: self.frame.size.height / 14)
                     
                     node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
                     node.physicsBody?.categoryBitMask = CollisionTypes.wall.rawValue
@@ -64,8 +82,8 @@ class PTKPMazeScene: SKScene, SKPhysicsContactDelegate {
                     addChild(node)
                 } else if letter == "w"{
                     // wrong answer
-                    let node = SKSpriteNode(color: .red, size: CGSize(width: self.frame.size.height / 14, height: self.frame.size.height / 14))
-                    node.name = "wrong"
+                    let node = SKSpriteNode(color: .clear, size: CGSize(width: self.frame.size.height / 14, height: self.frame.size.height / 14))
+                    node.name = "tk1"
                     node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
                     node.physicsBody?.isDynamic = false
                     
@@ -77,7 +95,7 @@ class PTKPMazeScene: SKScene, SKPhysicsContactDelegate {
                     addChild(node)
                 } else if letter == "t"{
                     // correct answer
-                    let node = SKSpriteNode(color: .green, size: CGSize(width: self.frame.size.height / 14, height: self.frame.size.height / 14))
+                    let node = SKSpriteNode(color: .clear, size: CGSize(width: self.frame.size.height / 14, height: self.frame.size.height / 14))
                     node.name = "correct"
                     node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
                     node.physicsBody?.isDynamic = false
@@ -89,23 +107,13 @@ class PTKPMazeScene: SKScene, SKPhysicsContactDelegate {
                     
                     addChild(node)
                 } else if letter == "p" {
-//                    var Circle = SKShapeNode(circleOfRadius: 100 ) // Size of Circle
-//                        Circle.position = CGPointMake(frame.midX, frame.midY)  //Middle of Screen
-//                        Circle.strokeColor = SKColor.blackColor()
-//                        Circle.glowWidth = 1.0
-//                        Circle.fillColor = SKColor.orangeColor()
-//                        self.addChild(Circle)
-                    
-//                    player = SKSpriteNode(color: .brown, size: CGSize(width: self.frame.size.height / 19, height: self.frame.size.height / 19))
-                    player = SKShapeNode(circleOfRadius: self.frame.size.height / 38)
+                    player = SKSpriteNode(imageNamed: "ball")
                     player.position = position
                     player.zPosition = 1
-                    player.strokeColor = SKColor.brown
-                    player.fillColor = SKColor.brown
-                    player.glowWidth = 2.0
+                    player.size = CGSize(width: self.frame.width / 24, height: self.frame.width / 24)
                     
-                    player.physicsBody = SKPhysicsBody(circleOfRadius: player.frame.size.width / 2)
-                    player.physicsBody?.allowsRotation = false
+                    player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width / 2)
+                    player.physicsBody?.allowsRotation = true
                     player.physicsBody?.linearDamping = 0.5
                     
                     player.physicsBody?.categoryBitMask = CollisionTypes.player.rawValue
@@ -114,6 +122,18 @@ class PTKPMazeScene: SKScene, SKPhysicsContactDelegate {
                         .rawValue
                     
                     addChild(player)
+                }else if letter == "y"{
+                    let node = SKSpriteNode(color: .clear, size: CGSize(width: self.frame.size.height / 14, height: self.frame.size.height / 14))
+                    node.name = "k0"
+                    node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
+                    node.physicsBody?.isDynamic = false
+                    
+                    node.physicsBody?.categoryBitMask = CollisionTypes.wrong.rawValue
+                    node.physicsBody?.contactTestBitMask = CollisionTypes.player.rawValue
+                    node.physicsBody?.collisionBitMask = 0
+                    node.position = position
+                    
+                    addChild(node)
                 } else if letter == " " {
                     // do nothing
                 } else {
@@ -144,15 +164,24 @@ class PTKPMazeScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func playerCollided(with node: SKNode) {
-        if node.name == "wrong" {
+        if node.name == "tk1" {
             player.physicsBody?.isDynamic = false
             isWrong = true
+            wrongText = node.name!
             
             let remove = SKAction.removeFromParent()
             player.run(remove)
-            loadMaze()
             
-            isWrong = false
+            loadMaze()
+        } else if node.name == "k0" {
+            player.physicsBody?.isDynamic = false
+            isWrong = true
+            wrongText = node.name!
+            
+            let remove = SKAction.removeFromParent()
+            player.run(remove)
+            
+            loadMaze()
         } else if node.name == "correct" {
             player.physicsBody?.isDynamic = false
             isCorrect = true
