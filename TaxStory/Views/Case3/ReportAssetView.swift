@@ -15,6 +15,7 @@ struct ReportAssetView: View {
     
     @State var listGambar:[String] = []
 	@State var showMapModal = false
+	@State var showHint = false
     
     @State var modalTanahAppended = false
     @State var modalRumahAppended = false
@@ -26,8 +27,6 @@ struct ReportAssetView: View {
     var isButtonLaporkanDisabled: Bool {
             return modalMobilAppended && modalMotorAppended && modalTanahAppended && modalRumahAppended
         }
-    
-//    let gridItems = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         GeometryReader{ geoScreen in
@@ -54,11 +53,21 @@ struct ReportAssetView: View {
                             
                             Button{
                                 // kasi hint minigames ini suruh ngapain
+								withAnimation {
+									showHint = true
+								}
                             }label: {
                                 Image("Hint")
                                     .resizable()
                                     .scaledToFit()
                             }
+							.onAppear() {
+								DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+									withAnimation {
+										showHint = true
+									}
+								}
+							}
                             .frame(width: geoScreen.size.width / 18)
                         }
                         .padding(.leading, geoScreen.size.width / 11)
@@ -188,16 +197,6 @@ struct ReportAssetView: View {
                         .disabled(modalRumahAppended)
                         .opacity(modalRumahAppended == true ? 0.5 : 1)
                         
-                        //                        Button{
-                        //                        }label: {
-                        //                            Image("Mobil2")
-                        //                                .resizable()
-                        //                                .scaledToFit()
-                        //                        }
-                        //                        .frame(width: geoMid.size.width / 12)
-                        //                        .background(.red)
-                        //                        .offset(x: geoMid.size.width / 3.45, y: geoMid.size.height / 2.25)
-                        
                         Button{
                             modalPresentMotor = true
                         }label: {
@@ -277,81 +276,55 @@ struct ReportAssetView: View {
                             Spacer()
                             Button {
                                 // change page
+								page = "visualNovel17"
                             } label: {
-//                                Text("Grace")
-//                                    .frame(width:100, height:100)
-//                                    .background(.red)
                                 Image("Laporkan")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: geoScreen.size.width, height: geoScreen.size.height / 16)
-                                    .offset(y: -geoScreen.size.height / 21)
                                     
                             }
-                            .disabled(!isButtonLaporkanDisabled)
+							.offset(y: -geoScreen.size.height / 21)
+                            .disabled(isButtonLaporkanDisabled == false)
                                                .opacity(isButtonLaporkanDisabled == true ? 1 : 0.5)
                         }
                         .frame(width: geoScreen.size.width * 0.24, height: geoScreen.size.height * 0.6)
-                        //                    .background(.red)
                         .offset(x: geoScreen.size.width / 3.68, y: geoScreen.size.height / 10)
                         
                     }
                 }
-//                .overlay{
-//                    Button {
-//                        print("Grace is something")
-//                    } label: {
-//                        Image("Laporkan")
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(width: geoScreen.size.width, height: geoScreen.size.height / 16)
-//                            .offset(x: geoScreen.size.width / 3.68, y: geoScreen.size.height / 3.1)
-//
-//                    }
-////                    .disabled(isButtonLaporkanDisabled)
-////                    .opacity(isButtonLaporkanDisabled == true ? 1 : 0.5)
-//                }
+				.overlay {
+					if showHint {
+						HintLayout(showHint: $showHint, page: page)
+							.offset(x: geoScreen.size.width / 1.95, y: geoScreen.size.height / 16.3)
+							.transition(.opacity)
+					}
+				}
          
         }
         .fullScreenCover(isPresented: $modalPresentTanah, content: {
             ReportAssetTanahView(modalPresentTanah: $modalPresentTanah, listGambar: $listGambar, modalTanahAppended: $modalTanahAppended)
-//                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.85)
                 .background(BackgroundBlurLayout())
                 .ignoresSafeArea()
         })
         .fullScreenCover(isPresented: $modalPresentRumah, content: {
             ReportAssetRumahView(modalPresentRumah: $modalPresentRumah, listGambar: $listGambar, modalRumahAppended: $modalRumahAppended)
-//                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.85)
                 .background(BackgroundBlurLayout())
                 .ignoresSafeArea()
         })
         .fullScreenCover(isPresented: $modalPresentMobil, content: {
             ReportAssetMobilView(modalPresentMobil: $modalPresentMobil, listGambar: $listGambar, modalMobilAppended: $modalMobilAppended)
-//                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.85)
                 .background(BackgroundBlurLayout())
                 .ignoresSafeArea()
         })
         .fullScreenCover(isPresented: $modalPresentMotor, content: {
             ReportAssetMotorView(modalPresentMotor: $modalPresentMotor, listGambar: $listGambar, modalMotorAppended: $modalMotorAppended)
-//                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.85)
                 .background(BackgroundBlurLayout())
                 .ignoresSafeArea()
         })
         .ignoresSafeArea()
     }
 }
-
-//struct BackgroundClearView: UIViewRepresentable {
-//    func makeUIView(context: Context) -> some UIView {
-//        let view = UIView()
-//        DispatchQueue.main.async {
-//            view.superview?.superview?.backgroundColor = .clear
-//        }
-//        return view
-//    }
-//
-//    func updateUIView(_ uiView: UIViewType, context: Context) { }
-//}
 
 struct ReportAssetView_Previews: PreviewProvider {
     static var previews: some View {

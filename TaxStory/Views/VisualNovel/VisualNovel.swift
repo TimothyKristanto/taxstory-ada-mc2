@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct VisualNovel: View {
-    @State private var tapCount = 1
+	@State var visualNovelSceneCount: Int
+	@State var showMapModal = false
+	
+	@Binding var page: String
     
     var body: some View {
         GeometryReader { geoScreen in
@@ -17,15 +20,16 @@ struct VisualNovel: View {
 //                    .foregroundColor(.white)
 //                    .font(.title)
                 
-                ForEach((1...18), id: \.self) { index in
-                    Image("previewNovel\(tapCount)")
+//                ForEach((1...18), id: \.self) { index in
+                    Image("previewNovel\(visualNovelSceneCount)")
                         .resizable()
                         .scaledToFill()
                         .ignoresSafeArea()
                         .overlay(
                             //actionya sini ya timmy tinggal sikat jangan sampe NT actionya
-                            Button(action: {})
-                            {
+							Button{
+								showMapModal = true
+							}label: {
                                 Text("")
                                     .frame(width: 100, height: 80)
                                     .foregroundColor(Color.white)
@@ -33,18 +37,43 @@ struct VisualNovel: View {
                                     .clipShape(Circle())
 
                             }
+								.fullScreenCover(isPresented: $showMapModal, content: {
+									WarningMapModal(showMapModal: $showMapModal, page: $page)
+								})
                             .offset(x: -geoScreen.size.height / 1.653)
                             .offset(y: -geoScreen.size.height / 2.141))
-                }
+//                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.black)
             .onTapGesture {
-                tapCount += 1
-                if tapCount == 18 {
-                    tapCount = 0
-                }
-                // Call your function or perform any other action here
+				if visualNovelSceneCount == 5 {
+					withAnimation {
+						page = "mapCase"
+					}
+				} else if visualNovelSceneCount == 7 {
+					withAnimation {
+						page = "pilihFormSPT"
+					}
+				} else if visualNovelSceneCount == 10 {
+					withAnimation {
+						page = "mintaBuktiPotong"
+					}
+				} else if visualNovelSceneCount == 13 {
+					withAnimation {
+						page = "isiBuktiPotong"
+					}
+				} else if visualNovelSceneCount == 16 {
+					withAnimation {
+						page = "laporHarta"
+					}
+				} else if visualNovelSceneCount == 18 {
+					withAnimation {
+						page = "pilihPTKP"
+					}
+				} else {
+					visualNovelSceneCount += 1
+				}
             }
         }
     }
@@ -52,7 +81,7 @@ struct VisualNovel: View {
 
 struct VisualNovel_Previews: PreviewProvider {
     static var previews: some View {
-        VisualNovel()
+		VisualNovel(visualNovelSceneCount: 1, page: .constant("visualNovel"))
             .previewDevice("iPad Pro (12.9-inch) (6th generation)")
             .previewInterfaceOrientation(.landscapeLeft)
     }

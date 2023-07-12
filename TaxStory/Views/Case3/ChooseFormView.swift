@@ -15,6 +15,7 @@ struct ChooseFormView: View {
     @State var show1770Warning = false
     @State var show1770ssWarning = false
 	@State var showMapModal = false
+	@State var showHint = false
     
     @Binding var page: String
     
@@ -130,12 +131,22 @@ struct ChooseFormView: View {
                                 
                                 Button{
                                     // kasi hint minigames ini suruh ngapain
+									withAnimation {
+										showHint = true
+									}
                                 }label: {
                                     Image("Hint")
                                         .resizable()
                                         .scaledToFit()
                                 }
                                 .frame(width: geoScreen.size.width / 18)
+								.onAppear() {
+									DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+										withAnimation {
+											showHint = true
+										}
+									}
+								}
                             }
                             .padding(.leading, geoScreen.size.width / 11)
                             .padding(.trailing, geoScreen.size.width / 10)
@@ -200,6 +211,7 @@ struct ChooseFormView: View {
                                                         
 														Text("Lapor Harta")
                                                             .font(.title2)
+															.foregroundColor(Color("Dark Brown"))
                                                     }
                                                     
                                                     HStack{
@@ -617,7 +629,7 @@ struct ChooseFormView: View {
                                                     Button{
                                                         // correct
                                                         withAnimation{
-                                                            page = "mintaBuktiPotong"
+                                                            page = "visualNovel8"
                                                         }
                                                     }label: {
                                                         Image("pilihan-1770s")
@@ -681,9 +693,15 @@ struct ChooseFormView: View {
                         }
                         .padding(.top, geoScreen.size.height / 15)
                     }
-                
+					.overlay {
+						if showHint {
+							HintLayout(showHint: $showHint, page: page)
+								.offset(x: geoScreen.size.width / 1.95, y: geoScreen.size.height / 16.3)
+								.transition(.opacity)
+						}
+					}
             }
-            
+			
         }
         .ignoresSafeArea()
         }

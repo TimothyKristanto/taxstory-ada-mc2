@@ -14,11 +14,12 @@ struct ChoosePTKPView: View {
     @State var isWrong = false
     @State var wrongText = ""
 	@State var showMapModal = false
+	@State var showHint = false
 	
 	@Binding var page: String
     
     var scene: SKScene {
-        let scene = PTKPMazeScene(wrong: $isWrong, correct: $isCorrect, text: $wrongText)
+        let scene = PTKPMazeScene(wrong: $isWrong, correct: $isCorrect, text: $wrongText, argumentPage: $page)
         scene.size = CGSize(width: Constants.screenWidth, height: Constants.screenHeight)
         
         return scene
@@ -49,16 +50,27 @@ struct ChoosePTKPView: View {
                             Spacer()
                             
                             Button{
-                                // kasi hint minigames ini suruh ngapain
+                                // kasi kamus
+								
                             }label: {
                                 Image("Glosarium")
                                     .resizable()
                                     .scaledToFit()
                             }
+							.onAppear() {
+								DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+									withAnimation {
+										showHint = true
+									}
+								}
+							}
                             .frame(width: geoScreen.size.width / 18)
                             
                             Button{
                                 // kasi hint minigames ini suruh ngapain
+								withAnimation {
+									showHint = true
+								}
                             }label: {
                                 Image("Hint")
                                     .resizable()
@@ -259,6 +271,13 @@ struct ChoosePTKPView: View {
                 .fullScreenCover(isPresented: $isWrong) {
                     WarningPTKPView(isWrong: $isWrong, wrongText: $wrongText)
                 }
+				.overlay {
+					if showHint {
+						HintLayout(showHint: $showHint, page: page)
+							.offset(x: geoScreen.size.width / 1.95, y: geoScreen.size.height / 16.3)
+							.transition(.opacity)
+					}
+				}
                 
         }
         .ignoresSafeArea()

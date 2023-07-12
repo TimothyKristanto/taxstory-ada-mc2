@@ -17,6 +17,7 @@ struct RequestWitholdingTaxCertificateView: View {
     @State var carY: CGFloat = 0
     
 	@State var showMapModal = false
+	@State var showHint = false
 	
     @Binding var page: String
     
@@ -254,8 +255,6 @@ struct RequestWitholdingTaxCertificateView: View {
                                             .offset(x: geo.size.width / 3.3, y: -geo.size.height / 6)
                                             .shadow(color: Color("Cream"), radius: shadowIsShining ? 20 : 10)
                                             .onTapGesture(perform: {
-                                                // coordinate: (-geo.size.width / 24, -geo.size.width / 8.5), (-geo.size.width / 60, -geo.size.width / 7.9), (geo.size.width / 10.5, -geo.size.height / 13), (geo.size.width / 3.8, -geo.size.height / 4.8)
-                                                
                                                 if isCorrect == false{
                                                     isCorrect = true
                                                     carX = -geo.size.width / 24
@@ -284,7 +283,7 @@ struct RequestWitholdingTaxCertificateView: View {
                                                     
                                                     DispatchQueue.main.asyncAfter(deadline: .now() + 6){
                                                         withAnimation{
-                                                            page = "isiBuktiPotong"
+                                                            page = "visualNovel11"
                                                         }
                                                     }
                                                 }
@@ -340,11 +339,21 @@ struct RequestWitholdingTaxCertificateView: View {
                             
                             Button{
                                 // kasi hint minigames ini suruh ngapain
+								withAnimation {
+									showHint = true
+								}
                             }label: {
                                 Image("Hint")
                                     .resizable()
                                     .scaledToFit()
                             }
+							.onAppear() {
+								DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+									withAnimation {
+										showHint = true
+									}
+								}
+							}
                             .frame(width: geoScreen.size.width / 18)
                         }
                         .padding(.leading, geoScreen.size.width / 11)
@@ -354,6 +363,13 @@ struct RequestWitholdingTaxCertificateView: View {
                         Spacer()
                     }
                 }
+				.overlay {
+					if showHint {
+						HintLayout(showHint: $showHint, page: page)
+							.offset(x: geoScreen.size.width / 1.95, y: geoScreen.size.height / 16.3)
+							.transition(.opacity)
+					}
+				}
         }
         .ignoresSafeArea()
     }
