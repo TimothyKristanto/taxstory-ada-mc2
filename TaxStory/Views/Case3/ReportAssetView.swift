@@ -15,6 +15,7 @@ struct ReportAssetView: View {
     
     @State var listGambar:[String] = []
 	@State var showMapModal = false
+	@State var showHint = false
     
     @State var modalTanahAppended = false
     @State var modalRumahAppended = false
@@ -54,11 +55,21 @@ struct ReportAssetView: View {
                             
                             Button{
                                 // kasi hint minigames ini suruh ngapain
+								withAnimation {
+									showHint = true
+								}
                             }label: {
                                 Image("Hint")
                                     .resizable()
                                     .scaledToFit()
                             }
+							.onAppear() {
+								DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+									withAnimation {
+										showHint = true
+									}
+								}
+							}
                             .frame(width: geoScreen.size.width / 18)
                         }
                         .padding(.leading, geoScreen.size.width / 11)
@@ -277,6 +288,7 @@ struct ReportAssetView: View {
                             Spacer()
                             Button {
                                 // change page
+								page = "visualNovel17"
                             } label: {
 //                                Text("Grace")
 //                                    .frame(width:100, height:100)
@@ -297,6 +309,13 @@ struct ReportAssetView: View {
                         
                     }
                 }
+				.overlay {
+					if showHint {
+						HintLayout(showHint: $showHint, page: page)
+							.offset(x: geoScreen.size.width / 1.95, y: geoScreen.size.height / 16.3)
+							.transition(.opacity)
+					}
+				}
 //                .overlay{
 //                    Button {
 //                        print("Grace is something")

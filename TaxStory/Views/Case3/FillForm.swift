@@ -16,6 +16,7 @@ struct FillForm: View
 	@Binding var page: String
 	
 	@State var showMapModal = false
+	@State var showHint = false
 	
 	var body: some View
 	{
@@ -46,10 +47,20 @@ struct FillForm: View
 								
 								Button{
 									// kasi hint minigames ini suruh ngapain
+									withAnimation {
+										showHint = true
+									}
 								}label: {
 									Image("Hint")
 										.resizable()
 										.scaledToFit()
+								}
+								.onAppear() {
+									DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+										withAnimation {
+											showHint = true
+										}
+									}
 								}
 								.frame(width: geometry.size.width / 18)
 							}
@@ -444,6 +455,14 @@ struct FillForm: View
 				}
 				.environmentObject(ViewModel)
 			}
+			.overlay {
+				if showHint {
+					HintLayout(showHint: $showHint, page: page)
+						.offset(x: geometry.size.width / 1.83, y: geometry.size.height / 14.3)
+						.transition(.opacity)
+				}
+			}
+			
 			VStack
 			{
 				// guide text
@@ -472,12 +491,16 @@ struct FillForm: View
 								.padding(.top, geometry.size.height / 550)
 						)
 				}
+				
 			}
+			
 			.padding(.bottom, geometry.size.height / 12.2)
 			.padding(.trailing, geometry.size.width / 1)
 			.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
 		}
+		
 		.ignoresSafeArea()
+		
 	}
 	
 	// Function to determine the image name based on the selected button

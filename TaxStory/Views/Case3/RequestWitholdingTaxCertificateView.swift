@@ -17,6 +17,7 @@ struct RequestWitholdingTaxCertificateView: View {
     @State var carY: CGFloat = 0
     
 	@State var showMapModal = false
+	@State var showHint = false
 	
     @Binding var page: String
     
@@ -282,7 +283,7 @@ struct RequestWitholdingTaxCertificateView: View {
                                                     
                                                     DispatchQueue.main.asyncAfter(deadline: .now() + 6){
                                                         withAnimation{
-                                                            page = "isiBuktiPotong"
+                                                            page = "visualNovel11"
                                                         }
                                                     }
                                                 }
@@ -338,11 +339,21 @@ struct RequestWitholdingTaxCertificateView: View {
                             
                             Button{
                                 // kasi hint minigames ini suruh ngapain
+								withAnimation {
+									showHint = true
+								}
                             }label: {
                                 Image("Hint")
                                     .resizable()
                                     .scaledToFit()
                             }
+							.onAppear() {
+								DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+									withAnimation {
+										showHint = true
+									}
+								}
+							}
                             .frame(width: geoScreen.size.width / 18)
                         }
                         .padding(.leading, geoScreen.size.width / 11)
@@ -352,6 +363,13 @@ struct RequestWitholdingTaxCertificateView: View {
                         Spacer()
                     }
                 }
+				.overlay {
+					if showHint {
+						HintLayout(showHint: $showHint, page: page)
+							.offset(x: geoScreen.size.width / 1.95, y: geoScreen.size.height / 16.3)
+							.transition(.opacity)
+					}
+				}
         }
         .ignoresSafeArea()
     }

@@ -19,7 +19,7 @@ struct MainMenuStart: View {
     func startGame() {
         // Code to start the game
         withAnimation{
-            page = "mapCase"
+            page = "visualNovel1"
         }
     }
     

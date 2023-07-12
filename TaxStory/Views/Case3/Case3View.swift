@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Case3View: View
 {
-    @State var page: String = "pilihFormSPT"
+    @State var page: String = "visualNovel6"
     
     var body: some View
     {
@@ -25,7 +25,19 @@ struct Case3View: View
 			ReportAssetView(page: $page)
 		} else if page == "pilihPTKP" {
 			ChoosePTKPView(page: $page)
-		} 
+		} else if page == "visualNovel6"{
+			VisualNovel(visualNovelSceneCount: 6, page: $page)
+		} else if page == "visualNovel8" {
+			VisualNovel(visualNovelSceneCount: 8, page: $page)
+		} else if page == "visualNovel11" {
+			VisualNovel(visualNovelSceneCount: 11, page: $page)
+		} else if page == "visualNovel14" {
+			VisualNovel(visualNovelSceneCount: 14, page: $page)
+		} else if page == "visualNovel17" {
+			VisualNovel(visualNovelSceneCount: 17, page: $page)
+		} else if page == "result" {
+			Result(page: $page)
+		}
     }
 }
 

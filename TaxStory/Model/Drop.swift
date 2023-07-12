@@ -63,7 +63,7 @@ struct Drop : View {
 														// next page
 														DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
 															withAnimation {
-																page = "laporHarta"
+																page = "visualNovel14"
 															}
 														}
 													}

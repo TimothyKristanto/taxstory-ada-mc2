@@ -11,18 +11,15 @@ struct ContentView: View {
     @State var page: String = "mainMenu"
     
     var body: some View {
-        if page == "mainMenu"{
+        if page == "mainMenu" {
             MainMenuStart(page: $page)
-        }else if page == "mapCase"{
+        } else if page == "mapCase" {
             MapCase(page: $page)
-        }else if page == "case3"{
+        } else if page == "case3" {
             Case3View()
-        }
-        
-//        VisualNovel(, DataJSON: <#[Data]#>)
-        
-//        ChooseFormView()
-//        FillForm(vm: vm)
+		} else if page == "visualNovel1" {
+			VisualNovel(visualNovelSceneCount: 1, page: $page)
+		}
     }
 }
 

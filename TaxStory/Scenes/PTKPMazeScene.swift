@@ -23,11 +23,13 @@ class PTKPMazeScene: SKScene, SKPhysicsContactDelegate {
     @Binding var isWrong: Bool
     @Binding var isCorrect: Bool
     @Binding var wrongText: String
+	@Binding var page: String
 
-    init(wrong: Binding<Bool>, correct: Binding<Bool>, text: Binding<String>) {
+	init(wrong: Binding<Bool>, correct: Binding<Bool>, text: Binding<String>, argumentPage: Binding<String>) {
         _isWrong = wrong
         _isCorrect = correct
         _wrongText = text
+		_page = argumentPage
         super.init(size: CGSize(width: Constants.screenWidth, height: Constants.screenHeight))
         self.scaleMode = .aspectFit
     }
@@ -36,6 +38,7 @@ class PTKPMazeScene: SKScene, SKPhysicsContactDelegate {
         _isWrong = .constant(false)
         _isCorrect = .constant(false)
         _wrongText = .constant("")
+		_page = .constant("")
         super.init(coder: aDecoder)
     }
     
@@ -189,6 +192,8 @@ class PTKPMazeScene: SKScene, SKPhysicsContactDelegate {
             let move = SKAction.move(to: node.position, duration: 0.15)
             
             player.run(move)
+			
+			page = "result"
         }
     }
 }
