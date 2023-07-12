@@ -14,6 +14,7 @@ struct ChooseFormView: View {
     @State var isResetNumber = true
     @State var show1770Warning = false
     @State var show1770ssWarning = false
+	@State var showMapModal = false
     
     @Binding var page: String
     
@@ -114,11 +115,15 @@ struct ChooseFormView: View {
                             HStack{
                                 Button{
                                     // munculin dialog, trus balik ke main map
+									showMapModal = true
                                 }label: {
                                     Image("Map")
                                         .resizable()
                                         .scaledToFit()
                                 }
+								.fullScreenCover(isPresented: $showMapModal, content: {
+									WarningMapModal(showMapModal: $showMapModal, page: $page)
+								})
                                 .frame(width: geoScreen.size.width / 18)
                                 
                                 Spacer()
@@ -164,42 +169,54 @@ struct ChooseFormView: View {
                                                 VStack(alignment: .leading){
                                                     HStack{
                                                         Image(systemName: "circle.fill")
+															.foregroundColor(Color("Dark Brown"))
                                                         
                                                         Text("Pilih form")
+															.foregroundColor(Color("Dark Brown"))
                                                             .font(.system(size: geoTop.size.width / 55, design: .rounded))
                                                     }
                                                     
                                                     HStack{
                                                         Image(systemName: "circle")
+															.foregroundColor(Color("Dark Brown"))
                                                         
                                                         Text("Minta bukti potong")
+															.foregroundColor(Color("Dark Brown"))
                                                             .font(.system(size: geoTop.size.width / 55, design: .rounded))
                                                     }
                                                     
                                                     HStack{
                                                         Image(systemName: "circle")
+															.foregroundColor(Color("Dark Brown"))
                                                         
                                                         Text("Isi formulir")
+															.foregroundColor(Color("Dark Brown"))
                                                             .font(.system(size: geoTop.size.width / 55, design: .rounded))
                                                     }
                                                     
                                                     HStack {
                                                         Image(systemName: "circle")
-                                                        Text("Lapor Harta")
+															.foregroundColor(Color("Dark Brown"))
+                                                        
+														Text("Lapor Harta")
                                                             .font(.title2)
                                                     }
                                                     
                                                     HStack{
                                                         Image(systemName: "circle")
+															.foregroundColor(Color("Dark Brown"))
                                                         
                                                         Text("PTKP")
+															.foregroundColor(Color("Dark Brown"))
                                                             .font(.system(size: geoTop.size.width / 55, design: .rounded))
                                                     }
                                                     
                                                     HStack{
                                                         Image(systemName: "circle")
+															.foregroundColor(Color("Dark Brown"))
                                                         
                                                         Text("Result")
+															.foregroundColor(Color("Dark Brown"))
                                                             .font(.system(size: geoTop.size.width / 55, design: .rounded))
                                                     }
                                                 }

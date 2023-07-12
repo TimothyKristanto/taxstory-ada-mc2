@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF05C75E2A5D71030062CB4F /* WarningMapModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05C75D2A5D71030062CB4F /* WarningMapModal.swift */; };
 		BF10C9B52A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B22A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift */; };
 		BF10C9B62A4A776A004F3BA3 /* ChooseFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */; };
 		BF10C9B72A4A776A004F3BA3 /* Case3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B42A4A776A004F3BA3 /* Case3View.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF05C75D2A5D71030062CB4F /* WarningMapModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningMapModal.swift; sourceTree = "<group>"; };
 		BF10C9B22A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestWitholdingTaxCertificateView.swift; sourceTree = "<group>"; };
 		BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFormView.swift; sourceTree = "<group>"; };
 		BF10C9B42A4A776A004F3BA3 /* Case3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Case3View.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				CD326AF22A5B96AB00B76813 /* ReportAssetMotor.swift */,
 				BF51C1EE2A5BAE01003AE6FF /* WarningPTKPView.swift */,
 				BF1951042A5CEC6C00A5F00D /* WarningSTPView.swift */,
+				BF05C75D2A5D71030062CB4F /* WarningMapModal.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				BF1951082A5CED1700A5F00D /* BackgroundBlurLayout.swift in Sources */,
 				FA7912DF2A4DE579009DCFBF /* MapCase.swift in Sources */,
 				CD326AE62A53B26D00B76813 /* ReportAssetView.swift in Sources */,
+				BF05C75E2A5D71030062CB4F /* WarningMapModal.swift in Sources */,
 				BF10C9B72A4A776A004F3BA3 /* Case3View.swift in Sources */,
 				BF1951052A5CEC6C00A5F00D /* WarningSTPView.swift in Sources */,
 				BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */,
