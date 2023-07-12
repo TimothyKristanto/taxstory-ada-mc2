@@ -23,6 +23,10 @@ struct ReportAssetView: View {
 	
 	@Binding var page: String
     
+    var isButtonLaporkanDisabled: Bool {
+            return modalMobilAppended && modalMotorAppended && modalTanahAppended && modalRumahAppended
+        }
+    
 //    let gridItems = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
@@ -253,21 +257,61 @@ struct ReportAssetView: View {
                     }
                 }
                 .overlay{
-                    VStack{
-//                        LazyVGrid(columns: gridItems, spacing: 10) {
+                    ZStack{
+                        VStack{
+                            //                        LazyVGrid(columns: gridItems, spacing: 10) {
                             ForEach(listGambar, id: \.self) { imageName in
                                 Image(imageName)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: UIScreen.main.bounds.width / 4.3)
                             }
-//                        }
-                        Spacer()
+                            //                        }
+                            Spacer()
+                        }
+                        .frame(width: geoScreen.size.width * 0.24, height: geoScreen.size.height * 0.6)
+                        //                    .background(.red)
+                        .offset(x: geoScreen.size.width / 3.68, y: geoScreen.size.height / 10)
+                        
+                        VStack{
+                            Spacer()
+                            Button {
+                                // change page
+                            } label: {
+//                                Text("Grace")
+//                                    .frame(width:100, height:100)
+//                                    .background(.red)
+                                Image("Laporkan")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geoScreen.size.width, height: geoScreen.size.height / 16)
+                                    .offset(y: -geoScreen.size.height / 21)
+                                    
+                            }
+                            .disabled(!isButtonLaporkanDisabled)
+                                               .opacity(isButtonLaporkanDisabled == true ? 1 : 0.5)
+                        }
+                        .frame(width: geoScreen.size.width * 0.24, height: geoScreen.size.height * 0.6)
+                        //                    .background(.red)
+                        .offset(x: geoScreen.size.width / 3.68, y: geoScreen.size.height / 10)
+                        
                     }
-                    .frame(width: geoScreen.size.width * 0.24, height: geoScreen.size.height * 0.6)
-//                    .background(.red)
-                    .offset(x: geoScreen.size.width / 3.68, y: geoScreen.size.height / 10)
                 }
+//                .overlay{
+//                    Button {
+//                        print("Grace is something")
+//                    } label: {
+//                        Image("Laporkan")
+//                            .resizable()
+//                            .scaledToFit()
+//                            .frame(width: geoScreen.size.width, height: geoScreen.size.height / 16)
+//                            .offset(x: geoScreen.size.width / 3.68, y: geoScreen.size.height / 3.1)
+//
+//                    }
+////                    .disabled(isButtonLaporkanDisabled)
+////                    .opacity(isButtonLaporkanDisabled == true ? 1 : 0.5)
+//                }
+         
         }
         .fullScreenCover(isPresented: $modalPresentTanah, content: {
             ReportAssetTanahView(modalPresentTanah: $modalPresentTanah, listGambar: $listGambar, modalTanahAppended: $modalTanahAppended)
