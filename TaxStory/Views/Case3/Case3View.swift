@@ -13,16 +13,19 @@ struct Case3View: View
     
     var body: some View
     {
-        if page == "pilihFormSPT"
-        {
+        if page == "pilihFormSPT" {
             ChooseFormView(page: $page)
-        }else if page == "mintaBuktiPotong"
-        {
+        } else if page == "mintaBuktiPotong" {
             RequestWitholdingTaxCertificateView(page: $page)
-        }else if page == "isiBuktiPotong"
-        {
-            FillForm(ViewModel: AnswerViewModel())
-        }
+        } else if page == "isiBuktiPotong" {
+			FillForm(ViewModel: AnswerViewModel(), page: $page)
+		} else if page == "mapCase" {
+			ContentView(page: page)
+		} else if page == "laporHarta" {
+			ReportAssetView(page: $page)
+		} else if page == "pilihPTKP" {
+			ChoosePTKPView(page: $page)
+		} 
     }
 }
 

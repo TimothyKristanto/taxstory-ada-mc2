@@ -16,6 +16,8 @@ struct RequestWitholdingTaxCertificateView: View {
     @State var carX: CGFloat = 0
     @State var carY: CGFloat = 0
     
+	@State var showMapModal = false
+	
     @Binding var page: String
     
     var body: some View {
@@ -59,43 +61,56 @@ struct RequestWitholdingTaxCertificateView: View {
                                                                 VStack(alignment: .leading){
                                                                     HStack{
                                                                         Image(systemName: "checkmark.circle.fill")
+																			.foregroundColor(Color("Dark Brown"))
                                                                         
                                                                         Text("Pilih form")
                                                                             .font(.system(size: geoQuest.size.width / 10, design: .rounded))
+																			.foregroundColor(Color("Dark Brown"))
                                                                     }
                                                                     
                                                                     HStack{
                                                                         Image(systemName: "circle.fill")
+																			.foregroundColor(Color("Dark Brown"))
                                                                         
                                                                         Text("Minta bukti potong")
                                                                             .font(.system(size: geoQuest.size.width / 10, design: .rounded))
+																			.foregroundColor(Color("Dark Brown"))
                                                                     }
                                                                     
                                                                     HStack{
                                                                         Image(systemName: "circle")
+																			.foregroundColor(Color("Dark Brown"))
                                                                         
                                                                         Text("Isi formulir")
                                                                             .font(.system(size: geoQuest.size.width / 10, design: .rounded))
+																			.foregroundColor(Color("Dark Brown"))
                                                                     }
                                                                     
                                                                     HStack {
                                                                         Image(systemName: "circle")
+																			.foregroundColor(Color("Dark Brown"))
+																		
                                                                         Text("Lapor Harta")
                                                                             .font(.title2)
+																			.foregroundColor(Color("Dark Brown"))
                                                                     }
                                                                     
                                                                     HStack{
                                                                         Image(systemName: "circle")
+																			.foregroundColor(Color("Dark Brown"))
                                                                         
                                                                         Text("PTKP")
                                                                             .font(.system(size: geoQuest.size.width / 10, design: .rounded))
+																			.foregroundColor(Color("Dark Brown"))
                                                                     }
                                                                     
                                                                     HStack{
                                                                         Image(systemName: "circle")
+																			.foregroundColor(Color("Dark Brown"))
                                                                         
                                                                         Text("Result")
                                                                             .font(.system(size: geoQuest.size.width / 10, design: .rounded))
+																			.foregroundColor(Color("Dark Brown"))
                                                                     }
                                                                 }
                                                                 .padding(.leading, geoQuest.size.width / 5)
@@ -122,8 +137,9 @@ struct RequestWitholdingTaxCertificateView: View {
                                                         .frame(width: geo.size.width / 3, height: geo.size.height / 5)
                                                         .overlay(
                                                             GeometryReader{ geoTextGuide in
-                                                                Text("Yuk bantuin Bayu untuk menemukan jalan yang benar menuju kantor perusahaan tempat Bayu bekerja dengan menekan salah satu gedung yang di-highlight pada gambar di atas ya.")
+                                                                Text("Yuk bantuin Bayu untuk menemukan jalan yang benar menuju kantor perusahaan tempat Bayu bekerja supaya Bayu bisa meminta bukti potong.")
                                                                     .font(.system(size: geoTextGuide.size.width / 25, design: .rounded))
+                                                                    .foregroundColor(Color("Dark Brown"))
                                                                     .bold()
                                                                     .offset(x: -geoTextGuide.size.width / 20, y: geoTextGuide.size.height / 4)
                                                                     .padding(.horizontal, geoTextGuide.size.width / 15)
@@ -266,16 +282,10 @@ struct RequestWitholdingTaxCertificateView: View {
                                                         }
                                                     }
                                                     
-                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 5.5){
+                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 6){
                                                         withAnimation{
                                                             page = "isiBuktiPotong"
                                                         }
-                                                    }
-                                                }
-                                                
-                                                DispatchQueue.main.asyncAfter(deadline: .now() + 5.5){
-                                                    withAnimation{
-                                                        page = "isiBuktiPotong"
                                                     }
                                                 }
                                             })
@@ -315,11 +325,15 @@ struct RequestWitholdingTaxCertificateView: View {
                         HStack{
                             Button{
                                 // munculin dialog, trus balik ke main map
+								showMapModal = true
                             }label: {
                                 Image("Map")
                                     .resizable()
                                     .scaledToFit()
                             }
+							.fullScreenCover(isPresented: $showMapModal) {
+								WarningMapModal(showMapModal: $showMapModal, page: $page)
+							}
                             .frame(width: geoScreen.size.width / 18)
                             
                             Spacer()

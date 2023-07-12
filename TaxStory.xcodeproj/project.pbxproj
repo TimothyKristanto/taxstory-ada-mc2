@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF05C75E2A5D71030062CB4F /* WarningMapModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05C75D2A5D71030062CB4F /* WarningMapModal.swift */; };
 		BF10C9B52A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B22A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift */; };
 		BF10C9B62A4A776A004F3BA3 /* ChooseFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */; };
 		BF10C9B72A4A776A004F3BA3 /* Case3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C9B42A4A776A004F3BA3 /* Case3View.swift */; };
 		BF13506B2A528BD700700249 /* ChoosePTKPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13506A2A528BD700700249 /* ChoosePTKPView.swift */; };
+		BF1951052A5CEC6C00A5F00D /* WarningSTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1951042A5CEC6C00A5F00D /* WarningSTPView.swift */; };
+		BF1951082A5CED1700A5F00D /* BackgroundBlurLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1951072A5CED1700A5F00D /* BackgroundBlurLayout.swift */; };
 		BF3AE7072A565FD5008B6B2F /* PTKPMaze.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF3AE7062A565FD5008B6B2F /* PTKPMaze.txt */; };
 		BF3AE70B2A566177008B6B2F /* PTKPMazeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AE70A2A566177008B6B2F /* PTKPMazeScene.swift */; };
+		BF51C1EF2A5BAE01003AE6FF /* WarningPTKPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51C1EE2A5BAE01003AE6FF /* WarningPTKPView.swift */; };
 		BFEB79B72A4135CE002A1A0B /* TaxStoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB79B62A4135CE002A1A0B /* TaxStoryApp.swift */; };
 		BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB79B82A4135CE002A1A0B /* ContentView.swift */; };
 		BFEB79BB2A4135CF002A1A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEB79BA2A4135CF002A1A0B /* Assets.xcassets */; };
@@ -20,9 +24,15 @@
 		FA482E5B2A5BB2930013EEDC /* NotDoneVisualNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA482E5A2A5BB2930013EEDC /* NotDoneVisualNovel.swift */; };
 		FA482E5D2A5BB9450013EEDC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA482E5C2A5BB9450013EEDC /* Data.swift */; };
 		FA482E5F2A5BBA5F0013EEDC /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA482E5E2A5BBA5F0013EEDC /* DataViewModel.swift */; };
+		CD326AE62A53B26D00B76813 /* ReportAssetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD326AE52A53B26D00B76813 /* ReportAssetView.swift */; };
+		CD326AE92A5673C600B76813 /* ReportAssetTanah.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD326AE82A5673C600B76813 /* ReportAssetTanah.swift */; };
+		CD326AEB2A57AA3F00B76813 /* ReportAssetRumah.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD326AEA2A57AA3F00B76813 /* ReportAssetRumah.swift */; };
+		CD326AF12A5B966D00B76813 /* ReportAssetMobil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD326AF02A5B966D00B76813 /* ReportAssetMobil.swift */; };
+		CD326AF32A5B96AB00B76813 /* ReportAssetMotor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD326AF22A5B96AB00B76813 /* ReportAssetMotor.swift */; };
 		FA72FFF02A4BEA2500834A19 /* AnswerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFEF2A4BEA2500834A19 /* AnswerViewModel.swift */; };
 		FA72FFF22A4BEA4A00834A19 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFF12A4BEA4A00834A19 /* Word.swift */; };
 		FA72FFF42A4BEBE800834A19 /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFF32A4BEBE800834A19 /* Drop.swift */; };
+		FA7596FD2A58156D00B3BE4B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7596FC2A58156D00B3BE4B /* Result.swift */; };
 		FA7912DB2A4D8911009DCFBF /* Drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7912DA2A4D8911009DCFBF /* Drag.swift */; };
 		FA7912DF2A4DE579009DCFBF /* MapCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7912DE2A4DE579009DCFBF /* MapCase.swift */; };
 		FAB0B9F22A5CF2BD00C1DF78 /* VisualNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0B9F12A5CF2BD00C1DF78 /* VisualNovel.swift */; };
@@ -33,12 +43,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF05C75D2A5D71030062CB4F /* WarningMapModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningMapModal.swift; sourceTree = "<group>"; };
 		BF10C9B22A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestWitholdingTaxCertificateView.swift; sourceTree = "<group>"; };
 		BF10C9B32A4A776A004F3BA3 /* ChooseFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFormView.swift; sourceTree = "<group>"; };
 		BF10C9B42A4A776A004F3BA3 /* Case3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Case3View.swift; sourceTree = "<group>"; };
 		BF13506A2A528BD700700249 /* ChoosePTKPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePTKPView.swift; sourceTree = "<group>"; };
+		BF1951042A5CEC6C00A5F00D /* WarningSTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningSTPView.swift; sourceTree = "<group>"; };
+		BF1951072A5CED1700A5F00D /* BackgroundBlurLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundBlurLayout.swift; sourceTree = "<group>"; };
 		BF3AE7062A565FD5008B6B2F /* PTKPMaze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PTKPMaze.txt; sourceTree = "<group>"; };
 		BF3AE70A2A566177008B6B2F /* PTKPMazeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTKPMazeScene.swift; sourceTree = "<group>"; };
+		BF51C1EE2A5BAE01003AE6FF /* WarningPTKPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningPTKPView.swift; sourceTree = "<group>"; };
 		BFEB79B32A4135CE002A1A0B /* TaxStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEB79B62A4135CE002A1A0B /* TaxStoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxStoryApp.swift; sourceTree = "<group>"; };
 		BFEB79B82A4135CE002A1A0B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,9 +61,15 @@
 		FA482E5A2A5BB2930013EEDC /* NotDoneVisualNovel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotDoneVisualNovel.swift; sourceTree = "<group>"; };
 		FA482E5C2A5BB9450013EEDC /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		FA482E5E2A5BBA5F0013EEDC /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
+		CD326AE52A53B26D00B76813 /* ReportAssetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAssetView.swift; sourceTree = "<group>"; };
+		CD326AE82A5673C600B76813 /* ReportAssetTanah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAssetTanah.swift; sourceTree = "<group>"; };
+		CD326AEA2A57AA3F00B76813 /* ReportAssetRumah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAssetRumah.swift; sourceTree = "<group>"; };
+		CD326AF02A5B966D00B76813 /* ReportAssetMobil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAssetMobil.swift; sourceTree = "<group>"; };
+		CD326AF22A5B96AB00B76813 /* ReportAssetMotor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAssetMotor.swift; sourceTree = "<group>"; };
 		FA72FFEF2A4BEA2500834A19 /* AnswerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewModel.swift; sourceTree = "<group>"; };
 		FA72FFF12A4BEA4A00834A19 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		FA72FFF32A4BEBE800834A19 /* Drop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
+		FA7596FC2A58156D00B3BE4B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FA7912DA2A4D8911009DCFBF /* Drag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drag.swift; sourceTree = "<group>"; };
 		FA7912DE2A4DE579009DCFBF /* MapCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCase.swift; sourceTree = "<group>"; };
 		FAB0B9F12A5CF2BD00C1DF78 /* VisualNovel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualNovel.swift; sourceTree = "<group>"; };
@@ -78,8 +98,17 @@
 				BF10C9B42A4A776A004F3BA3 /* Case3View.swift */,
 				FAF23A342A4ADFEB00AC2C6D /* FillForm.swift */,
 				BF13506A2A528BD700700249 /* ChoosePTKPView.swift */,
+				CD326AE52A53B26D00B76813 /* ReportAssetView.swift */,
 			);
 			path = Case3;
+			sourceTree = "<group>";
+		};
+		BF1951062A5CECFE00A5F00D /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				BF1951072A5CED1700A5F00D /* BackgroundBlurLayout.swift */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 		BF3AE7032A564E0F008B6B2F /* Resources */ = {
@@ -148,6 +177,18 @@
 				FAB0B9F12A5CF2BD00C1DF78 /* VisualNovel.swift */,
 			);
 			path = VisualNovel;
+		CD326AE72A56732D00B76813 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				CD326AE82A5673C600B76813 /* ReportAssetTanah.swift */,
+				CD326AEA2A57AA3F00B76813 /* ReportAssetRumah.swift */,
+				CD326AF02A5B966D00B76813 /* ReportAssetMobil.swift */,
+				CD326AF22A5B96AB00B76813 /* ReportAssetMotor.swift */,
+				BF51C1EE2A5BAE01003AE6FF /* WarningPTKPView.swift */,
+				BF1951042A5CEC6C00A5F00D /* WarningSTPView.swift */,
+				BF05C75D2A5D71030062CB4F /* WarningMapModal.swift */,
+			);
+			path = Modals;
 			sourceTree = "<group>";
 		};
 		FA64B1FD2A566D6200F48945 /* ViewModel */ = {
@@ -169,6 +210,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FA7596FB2A58155C00B3BE4B /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				FA7596FC2A58156D00B3BE4B /* Result.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 		FA7912E02A4DE5DB009DCFBF /* MapCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +230,9 @@
 			isa = PBXGroup;
 			children = (
 				FA482E592A5BB2770013EEDC /* VisualNovel */,
+				FA7596FB2A58155C00B3BE4B /* Result */,
+				BF1951062A5CECFE00A5F00D /* Layouts */,
+				CD326AE72A56732D00B76813 /* Modals */,
 				FA7912E02A4DE5DB009DCFBF /* MapCase */,
 				BF10C9B12A4A776A004F3BA3 /* Case3 */,
 				FAF697432A455262009D7441 /* MainMenu */,
@@ -268,6 +320,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD326AF12A5B966D00B76813 /* ReportAssetMobil.swift in Sources */,
+				BF51C1EF2A5BAE01003AE6FF /* WarningPTKPView.swift in Sources */,
 				BF3AE70B2A566177008B6B2F /* PTKPMazeScene.swift in Sources */,
 				FA72FFF22A4BEA4A00834A19 /* Word.swift in Sources */,
 				FA482E5F2A5BBA5F0013EEDC /* DataViewModel.swift in Sources */,
@@ -275,17 +329,25 @@
 				FAF23A352A4ADFEB00AC2C6D /* FillForm.swift in Sources */,
 				FAB0B9F22A5CF2BD00C1DF78 /* VisualNovel.swift in Sources */,
 				FA482E5B2A5BB2930013EEDC /* NotDoneVisualNovel.swift in Sources */,
+				BF1951082A5CED1700A5F00D /* BackgroundBlurLayout.swift in Sources */,
 				FA7912DF2A4DE579009DCFBF /* MapCase.swift in Sources */,
+				CD326AE62A53B26D00B76813 /* ReportAssetView.swift in Sources */,
+				BF05C75E2A5D71030062CB4F /* WarningMapModal.swift in Sources */,
 				BF10C9B72A4A776A004F3BA3 /* Case3View.swift in Sources */,
+				FA7596FD2A58156D00B3BE4B /* Result.swift in Sources */,
+				BF1951052A5CEC6C00A5F00D /* WarningSTPView.swift in Sources */,
 				BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */,
 				BF13506B2A528BD700700249 /* ChoosePTKPView.swift in Sources */,
 				BF10C9B62A4A776A004F3BA3 /* ChooseFormView.swift in Sources */,
+				CD326AE92A5673C600B76813 /* ReportAssetTanah.swift in Sources */,
 				FAF697472A4553E6009D7441 /* Constants.swift in Sources */,
 				BFEB79B72A4135CE002A1A0B /* TaxStoryApp.swift in Sources */,
+				CD326AEB2A57AA3F00B76813 /* ReportAssetRumah.swift in Sources */,
 				FAF697452A455272009D7441 /* MainMenuStart.swift in Sources */,
 				FA482E5D2A5BB9450013EEDC /* Data.swift in Sources */,
 				BF10C9B52A4A776A004F3BA3 /* RequestWitholdingTaxCertificateView.swift in Sources */,
 				FA72FFF42A4BEBE800834A19 /* Drop.swift in Sources */,
+				CD326AF32A5B96AB00B76813 /* ReportAssetMotor.swift in Sources */,
 				FA7912DB2A4D8911009DCFBF /* Drag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,7 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaxStory/Preview Content\"";
-				DEVELOPMENT_TEAM = A9UXG82R38;
+				DEVELOPMENT_TEAM = 9B67722SW9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
