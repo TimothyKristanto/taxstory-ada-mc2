@@ -18,6 +18,7 @@ struct RequestWitholdingTaxCertificateView: View {
     
 	@State var showMapModal = false
 	@State var showHint = false
+	@State var showGlosarium = false
 	
     @Binding var page: String
     
@@ -25,21 +26,22 @@ struct RequestWitholdingTaxCertificateView: View {
         GeometryReader{ geoScreen in
             Image("bg")
                 .resizable()
+				.frame(width: Constants.screenWidth, height: Constants.screenHeight)
                 .scaledToFill()
                 .overlay (
                     GeometryReader{ geo in
                         VStack{
                             ZStack{
-                                Image("map-bukti-potong")
+                                Image("mapMintaBuktiPotong")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: geo.size.width / 1.15)
                                     .overlay(
-                                        Image("Awan")
+                                        Image("awan")
                                             .resizable()
                                             .scaledToFit()
                                             .offset(x: cloudIsMoving ? geo.size.width / 25 : geo.size.width / 40)
-                                            .offset(y: cloudIsMoving ? geo.size.height / 40 : geo.size.height / 55)
+                                            .offset(y: cloudIsMoving ? -geo.size.height / 5 : -geo.size.height / 5)
                                     )
                                     .overlay(
                                         HStack{
@@ -146,81 +148,46 @@ struct RequestWitholdingTaxCertificateView: View {
                                                                     .padding(.horizontal, geoTextGuide.size.width / 15)
                                                             }
                                                         )
-                                                        .offset(y: geo.size.height / 105)
+                                                        .offset(y: -geo.size.height / 15)
                                                     
                                                     Image("bayu-minta-bukti-potong")
                                                         .resizable()
                                                         .scaledToFit()
                                                         .frame(width: geo.size.width / 5, height: geo.size.height / 4.5)
                                                         .offset(x: -geo.size.width / 40)
-                                                        .offset(y: -geo.size.height / 55)
+                                                        .offset(y: -geo.size.height / 13)
                                                 }
                                             }
                                         }
                                     )
                                     .overlay{
-                                        if isCorrect == false{
-                                            Image("bensin")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: geo.size.width / 15)
-                                                .offset(x: geo.size.width / 80, y: geo.size.height / 20)
-                                                .shadow(color: Color("Cream"), radius: shadowIsShining ? 20 : 10)
-                                        }else{
-                                            Image("bensin")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: geo.size.width / 15)
-                                                .offset(x: geo.size.width / 80, y: geo.size.height / 20)
-                                        }
+										Image("bensin")
+											.resizable()
+											.scaledToFit()
+											.frame(width: geo.size.width / 15)
+											.offset(x: geo.size.width / 80, y: geo.size.height / 20)
                                         }
                                     .overlay{
-                                        if isCorrect == false{
-                                            Image("Cafe")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: geo.size.width / 18)
-                                                .offset(x: geo.size.width / 7.5, y: -geo.size.height / 22)
-                                                .shadow(color: Color("Cream"), radius: shadowIsShining ? 20 : 10)
-                                        }else{
-                                            Image("Cafe")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: geo.size.width / 18)
-                                                .offset(x: geo.size.width / 7.5, y: -geo.size.height / 22)
-                                        }
+										Image("Cafe")
+											.resizable()
+											.scaledToFit()
+											.frame(width: geo.size.width / 18)
+											.offset(x: geo.size.width / 7.5, y: -geo.size.height / 22)
+
                                         }
                                     .overlay{
-                                        if isCorrect == false{
-                                            Image("Hospital")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: geo.size.width / 7.5)
-                                                .offset(x: geo.size.width / 10.6, y: -geo.size.height / 5.98)
-                                                .shadow(color: Color("Cream"), radius: shadowIsShining ? 20 : 10)
-                                        }else{
-                                            Image("Hospital")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: geo.size.width / 7.5)
-                                                .offset(x: geo.size.width / 10.6, y: -geo.size.height / 5.98)
-                                        }
+										Image("Hospital")
+											.resizable()
+											.scaledToFit()
+											.frame(width: geo.size.width / 7.5)
+											.offset(x: geo.size.width / 10.6, y: -geo.size.height / 5.98)
                                     }
                                     .overlay{
-                                        if isCorrect == false{
-                                            Image("kantor-polisi")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: geo.size.width / 6.6)
-                                                .offset(x: geo.size.width / 5.3, y: -geo.size.height / 4)
-                                                .shadow(color: Color("Cream"), radius: shadowIsShining ? 20 : 10)
-                                        }else{
-                                            Image("kantor-polisi")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: geo.size.width / 6.6)
-                                                .offset(x: geo.size.width / 5.3, y: -geo.size.height / 4)
-                                        }
+										Image("kantor-polisi")
+											.resizable()
+											.scaledToFit()
+											.frame(width: geo.size.width / 6.6)
+											.offset(x: geo.size.width / 5.3, y: -geo.size.height / 4)
                                     }
                                     .overlay{
                                         if isCorrect{
@@ -232,20 +199,11 @@ struct RequestWitholdingTaxCertificateView: View {
                                         }
                                     }
                                     .overlay{
-                                        if isCorrect == false{
-                                            Image("sekolah")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: geo.size.width / 8.8)
-                                                .offset(x: geo.size.width / 4.5, y: -geo.size.height / 9.5)
-                                                .shadow(color: Color("Cream"), radius: shadowIsShining ? 20 : 10)
-                                        }else{
-                                            Image("sekolah")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: geo.size.width / 8.8)
-                                                .offset(x: geo.size.width / 4.5, y: -geo.size.height / 9.5)
-                                        }
+										Image("sekolah")
+											.resizable()
+											.scaledToFit()
+											.frame(width: geo.size.width / 8.8)
+											.offset(x: geo.size.width / 4.5, y: -geo.size.height / 9.5)
                                     }
                                     .overlay(
                                         Image("kantor")
@@ -336,6 +294,21 @@ struct RequestWitholdingTaxCertificateView: View {
                             .frame(width: geoScreen.size.width / 18)
                             
                             Spacer()
+							
+							Button{
+								// munculin dialog, trus balik ke main map
+								showGlosarium = true
+							}label: {
+								Image("Glosarium")
+									.resizable()
+									.scaledToFit()
+							}
+							.fullScreenCover(isPresented: $showGlosarium) {
+								GlosariumModal(showGlosarium: $showGlosarium)
+									.background(BackgroundBlurLayout())
+									.ignoresSafeArea()
+							}
+							.frame(width: geoScreen.size.width / 18)
                             
                             Button{
                                 // kasi hint minigames ini suruh ngapain

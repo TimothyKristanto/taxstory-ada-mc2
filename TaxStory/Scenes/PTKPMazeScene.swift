@@ -193,7 +193,9 @@ class PTKPMazeScene: SKScene, SKPhysicsContactDelegate {
             
             player.run(move)
 			
-			page = "result"
+			withAnimation {
+				page = "result"
+			}
         }
     }
 }
