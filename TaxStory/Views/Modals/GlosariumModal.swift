@@ -38,7 +38,7 @@ struct GlosariumModal: View {
 								Button {
 									dictionaryPage = 1
 								} label: {
-									Image("NextButton")
+									Image("BackButton")
 										.resizable()
 										.scaledToFit()
 										.frame(width: geo.size.width / 11)
