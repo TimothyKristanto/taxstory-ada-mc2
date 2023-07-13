@@ -59,7 +59,7 @@ struct GlosariumModal: View {
 						Button {
 							showGlosarium = false
 						} label: {
-							Image("Close")
+							Image("backButton")
 								.resizable()
 								.scaledToFit()
 								.frame(width: geo.size.width / 20)

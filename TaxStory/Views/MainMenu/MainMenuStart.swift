@@ -66,8 +66,10 @@ struct MainMenuStart: View {
                         .resizable()
                         .scaledToFill()
                         .rotationEffect(rotationAngle)
-                        .onAppear {withAnimation(Animation.linear(duration: 20).repeatForever(autoreverses: false)) {rotationAngle = .degrees(360)
-                        }
+                        .onAppear {
+							withAnimation(Animation.linear(duration: 20).repeatForever(autoreverses: false)) {
+								rotationAngle = .degrees(360)
+							}
                         }
                         .frame(width: Constants.screenWidth * 1, height: Constants.screenWidth * 3)
                 }
