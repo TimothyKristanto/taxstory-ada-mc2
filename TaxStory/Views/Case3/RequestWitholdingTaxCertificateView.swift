@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct RequestWitholdingTaxCertificateView: View {
     @State var jump = false
     @State var cloudIsMoving = false
     @State var shadowIsShining = false
     @State var isCorrect = false
+    
+    @State var audioPlayer: AVAudioPlayer?
     
     @State var carX: CGFloat = 0
     @State var carY: CGFloat = 0
@@ -20,6 +23,25 @@ struct RequestWitholdingTaxCertificateView: View {
 	@State var showHint = false
 	
     @Binding var page: String
+    
+    func startMusicChallenge() {
+        //code to start the music and loop
+        guard let path = Bundle.main.path(forResource: "challenge", ofType: "mp3") else {
+            print("Failed to find the music file")
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.numberOfLoops = -1 // Set the number of loops to -1 for infinite looping
+            audioPlayer?.play()
+        } catch {
+            print("Failed to play the music: \(error)")
+        }
+    }
+
     
     var body: some View {
         GeometryReader{ geoScreen in
@@ -370,6 +392,12 @@ struct RequestWitholdingTaxCertificateView: View {
 							.transition(.opacity)
 					}
 				}
+        }
+        .onAppear{
+            startMusicChallenge()
+        }
+        .onDisappear {
+            audioPlayer?.stop()
         }
         .ignoresSafeArea()
     }

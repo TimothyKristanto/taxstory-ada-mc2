@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ChooseFormView: View {
     @State var calculatorResult = ""
@@ -17,9 +18,30 @@ struct ChooseFormView: View {
 	@State var showMapModal = false
 	@State var showHint = false
     
+    @State var audioPlayer: AVAudioPlayer?
+    
     @Binding var page: String
     
     let maxCalculatorChara = 11
+    
+    func startMusicChallenge() {
+        //code to start the music and loop
+        guard let path = Bundle.main.path(forResource: "challenge", ofType: "mp3") else {
+            print("Failed to find the music file")
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.numberOfLoops = -1 // Set the number of loops to -1 for infinite looping
+            audioPlayer?.play()
+        } catch {
+            print("Failed to play the music: \(error)")
+        }
+    }
+
     
     func changeCalculatorResultToScientific() {
         if calculatorResult.count > 10 {
@@ -702,6 +724,12 @@ struct ChooseFormView: View {
 					}
             }
 			
+        }
+        .onAppear{
+            startMusicChallenge()
+        }
+        .onDisappear {
+            audioPlayer?.stop()
         }
         .ignoresSafeArea()
         }

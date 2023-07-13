@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct FillForm: View
 {
@@ -17,6 +18,27 @@ struct FillForm: View
 	
 	@State var showMapModal = false
 	@State var showHint = false
+    
+    @State var audioPlayer: AVAudioPlayer?
+    
+    func startMusicChallenge() {
+        //code to start the music and loop
+        guard let path = Bundle.main.path(forResource: "challenge", ofType: "mp3") else {
+            print("Failed to find the music file")
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.numberOfLoops = -1 // Set the number of loops to -1 for infinite looping
+            audioPlayer?.play()
+        } catch {
+            print("Failed to play the music: \(error)")
+        }
+    }
+
 	
 	var body: some View
 	{
@@ -498,6 +520,12 @@ struct FillForm: View
 			.padding(.trailing, geometry.size.width / 1)
 			.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
 		}
+        .onAppear{
+            startMusicChallenge()
+        }
+        .onDisappear {
+            audioPlayer?.stop()
+        }
 		
 		.ignoresSafeArea()
 		

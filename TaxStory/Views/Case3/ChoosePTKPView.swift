@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SpriteKit
+import AVFoundation
 
 struct ChoosePTKPView: View {
     @State var isStarted = false
@@ -15,8 +16,29 @@ struct ChoosePTKPView: View {
     @State var wrongText = ""
 	@State var showMapModal = false
 	@State var showHint = false
+    
+    @State var audioPlayer: AVAudioPlayer?
 	
 	@Binding var page: String
+    
+    func startMusicChallenge() {
+        //code to start the music and loop
+        guard let path = Bundle.main.path(forResource: "challenge", ofType: "mp3") else {
+            print("Failed to find the music file")
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.numberOfLoops = -1 // Set the number of loops to -1 for infinite looping
+            audioPlayer?.play()
+        } catch {
+            print("Failed to play the music: \(error)")
+        }
+    }
+
     
     var scene: SKScene {
         let scene = PTKPMazeScene(wrong: $isWrong, correct: $isCorrect, text: $wrongText, argumentPage: $page)
@@ -280,6 +302,13 @@ struct ChoosePTKPView: View {
 				}
                 
         }
+        .onAppear{
+            startMusicChallenge()
+        }
+        .onDisappear {
+            audioPlayer?.stop()
+        }
+
         .ignoresSafeArea()
     }
 }

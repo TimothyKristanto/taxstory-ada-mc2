@@ -6,9 +6,29 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct Result: View {
 	@Binding var page: String
+    @State var audioPlayer: AVAudioPlayer?
+    
+    func startMusicNovel() {
+        //code to start the music and loop
+        guard let path = Bundle.main.path(forResource: "visualnovel", ofType: "mp3") else {
+            print("Failed to find the music file")
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.numberOfLoops = -1 // Set the number of loops to -1 for infinite looping
+            audioPlayer?.play()
+        } catch {
+            print("Failed to play the music: \(error)")
+        }
+    }
 	
     var body: some View {
         GeometryReader
@@ -56,6 +76,12 @@ struct Result: View {
 //                }
 
                     }
+        .onAppear{
+            startMusicNovel()
+        }
+        .onDisappear {
+            audioPlayer?.stop()
+        }
                 
             }
 }
