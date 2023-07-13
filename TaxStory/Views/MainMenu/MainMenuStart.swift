@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct MainMenuStart: View {
     @State private var rotationAngle: Angle = .degrees(0)
@@ -13,6 +14,8 @@ struct MainMenuStart: View {
     @State private var animationCount = 0
     @State var hold = false
     @Binding var page: String
+    @State var audioPlayer: AVAudioPlayer?
+    
     
     let totalMovements = 2 // Total number of left and right movements
     
@@ -20,6 +23,24 @@ struct MainMenuStart: View {
         // Code to start the game
         withAnimation{
             page = "visualNovel1"
+        }
+    }
+    
+    func startMusicIntro() {
+        //code to start the music and loop
+        guard let path = Bundle.main.path(forResource: "intro", ofType: "mp3") else {
+            print("Failed to find the music file")
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.numberOfLoops = -1 // Set the number of loops to -1 for infinite looping
+            audioPlayer?.play()
+        } catch {
+            print("Failed to play the music: \(error)")
         }
     }
     
@@ -49,6 +70,12 @@ struct MainMenuStart: View {
                         }
                         }
                         .frame(width: Constants.screenWidth * 1, height: Constants.screenWidth * 3)
+                }
+                .onAppear{
+                    startMusicIntro()
+                }
+                .onDisappear {
+                    audioPlayer?.stop()
                 }
                 
                 VStack{

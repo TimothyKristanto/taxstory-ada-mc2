@@ -32,6 +32,10 @@
 		CD326AF32A5B96AB00B76813 /* ReportAssetMotor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD326AF22A5B96AB00B76813 /* ReportAssetMotor.swift */; };
 		FA482E5D2A5BB9450013EEDC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA482E5C2A5BB9450013EEDC /* Data.swift */; };
 		FA482E5F2A5BBA5F0013EEDC /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA482E5E2A5BBA5F0013EEDC /* DataViewModel.swift */; };
+		FA65048F2A5F870C004957CD /* PlayMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65048E2A5F870C004957CD /* PlayMusic.swift */; };
+		FA6504932A5F8924004957CD /* challenge.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA6504902A5F8923004957CD /* challenge.mp3 */; };
+		FA6504942A5F8924004957CD /* intro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA6504912A5F8924004957CD /* intro.mp3 */; };
+		FA6504972A5F8EA4004957CD /* visualnovel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA6504962A5F8EA4004957CD /* visualnovel.mp3 */; };
 		FA72FFF02A4BEA2500834A19 /* AnswerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFEF2A4BEA2500834A19 /* AnswerViewModel.swift */; };
 		FA72FFF22A4BEA4A00834A19 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFF12A4BEA4A00834A19 /* Word.swift */; };
 		FA72FFF42A4BEBE800834A19 /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72FFF32A4BEBE800834A19 /* Drop.swift */; };
@@ -71,6 +75,10 @@
 		CD326AF22A5B96AB00B76813 /* ReportAssetMotor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAssetMotor.swift; sourceTree = "<group>"; };
 		FA482E5C2A5BB9450013EEDC /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		FA482E5E2A5BBA5F0013EEDC /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
+		FA65048E2A5F870C004957CD /* PlayMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMusic.swift; sourceTree = "<group>"; };
+		FA6504902A5F8923004957CD /* challenge.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = challenge.mp3; sourceTree = "<group>"; };
+		FA6504912A5F8924004957CD /* intro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = intro.mp3; sourceTree = "<group>"; };
+		FA6504962A5F8EA4004957CD /* visualnovel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = visualnovel.mp3; sourceTree = "<group>"; };
 		FA72FFEF2A4BEA2500834A19 /* AnswerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewModel.swift; sourceTree = "<group>"; };
 		FA72FFF12A4BEA4A00834A19 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		FA72FFF32A4BEBE800834A19 /* Drop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
@@ -153,6 +161,7 @@
 		BFEB79B52A4135CE002A1A0B /* TaxStory */ = {
 			isa = PBXGroup;
 			children = (
+				FA65048D2A5F86F0004957CD /* Music */,
 				FA64B1FD2A566D6200F48945 /* ViewModel */,
 				FA72FFE62A4BE7FF00834A19 /* Model */,
 				BF3AE7052A565FA6008B6B2F /* Scenes */,
@@ -208,12 +217,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		FA65048D2A5F86F0004957CD /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				FA6504962A5F8EA4004957CD /* visualnovel.mp3 */,
+				FA6504902A5F8923004957CD /* challenge.mp3 */,
+				FA6504912A5F8924004957CD /* intro.mp3 */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		FA72FFE62A4BE7FF00834A19 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				FA7912DA2A4D8911009DCFBF /* Drag.swift */,
 				FA72FFF32A4BEBE800834A19 /* Drop.swift */,
 				FA482E5C2A5BB9450013EEDC /* Data.swift */,
+				FA65048E2A5F870C004957CD /* PlayMusic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,8 +336,11 @@
 			files = (
 				BFEB79BE2A4135CF002A1A0B /* Preview Assets.xcassets in Resources */,
 				BF3AE7072A565FD5008B6B2F /* PTKPMaze.txt in Resources */,
+				FA6504972A5F8EA4004957CD /* visualnovel.mp3 in Resources */,
 				FACAD1A52A5C0122002EF790 /* DataStored.json in Resources */,
 				BFEB79BB2A4135CF002A1A0B /* Assets.xcassets in Resources */,
+				FA6504932A5F8924004957CD /* challenge.mp3 in Resources */,
+				FA6504942A5F8924004957CD /* intro.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +366,7 @@
 				BF10C9B72A4A776A004F3BA3 /* Case3View.swift in Sources */,
 				FA7596FD2A58156D00B3BE4B /* Result.swift in Sources */,
 				BF1951052A5CEC6C00A5F00D /* WarningSTPView.swift in Sources */,
+				FA65048F2A5F870C004957CD /* PlayMusic.swift in Sources */,
 				BFEB79B92A4135CE002A1A0B /* ContentView.swift in Sources */,
 				BFFFF90B2A5E59B20054826D /* NotDoneVisualNovel.swift in Sources */,
 				BF13506B2A528BD700700249 /* ChoosePTKPView.swift in Sources */,

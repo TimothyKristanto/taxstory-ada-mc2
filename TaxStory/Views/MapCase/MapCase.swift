@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct MapCase: View {
     @State private var isAnimating = false
@@ -16,7 +17,26 @@ struct MapCase: View {
     @State private var isPressed = false
     @State private var pressedImage: String?
     @State var hold = false
+    @State var audioPlayer: AVAudioPlayer?
     @Binding var page: String
+    
+    func startMusicIntro() {
+        //code to start the music and loop
+        guard let path = Bundle.main.path(forResource: "intro", ofType: "mp3") else {
+            print("Failed to find the music file")
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.numberOfLoops = -1 // Set the number of loops to -1 for infinite looping
+            audioPlayer?.play()
+        } catch {
+            print("Failed to play the music: \(error)")
+        }
+    }
     
     var body: some View
     {
@@ -220,6 +240,12 @@ struct MapCase: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
             }
             
+        }
+        .onAppear{
+            startMusicIntro()
+        }
+        .onDisappear {
+            audioPlayer?.stop()
         }
         
     }

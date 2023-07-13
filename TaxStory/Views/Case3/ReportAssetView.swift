@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ReportAssetView: View {
     @State var modalPresentTanah = false
@@ -22,8 +23,29 @@ struct ReportAssetView: View {
     @State var modalRumahAppended = false
     @State var modalMobilAppended = false
     @State var modalMotorAppended = false
+    
+    @State var audioPlayer: AVAudioPlayer?
 	
 	@Binding var page: String
+    
+    func startMusicChallenge() {
+        //code to start the music and loop
+        guard let path = Bundle.main.path(forResource: "challenge", ofType: "mp3") else {
+            print("Failed to find the music file")
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.numberOfLoops = -1 // Set the number of loops to -1 for infinite looping
+            audioPlayer?.play()
+        } catch {
+            print("Failed to play the music: \(error)")
+        }
+    }
+
     
     var isButtonLaporkanDisabled: Bool {
             return modalMobilAppended && modalMotorAppended && modalTanahAppended && modalRumahAppended
@@ -321,6 +343,12 @@ struct ReportAssetView: View {
 					}
 				}
          
+        }
+        .onAppear{
+            startMusicChallenge()
+        }
+        .onDisappear {
+            audioPlayer?.stop()
         }
         .fullScreenCover(isPresented: $modalPresentTanah, content: {
             ReportAssetTanahView(modalPresentTanah: $modalPresentTanah, listGambar: $listGambar, modalTanahAppended: $modalTanahAppended)
