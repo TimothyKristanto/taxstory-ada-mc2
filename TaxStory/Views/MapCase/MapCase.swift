@@ -201,7 +201,7 @@ struct MapCase: View {
 //                                        page = "case4"
                                     }
                                 })
-                                {Image("NextButton")
+								{Image(selectedCase > 0 ? "NextButton" : "")
                                         .resizable()
                                         .renderingMode(.original)
                                         .aspectRatio(contentMode: .fit)
@@ -238,7 +238,7 @@ struct MapCase: View {
         case 4:
             return "Segera hadir"
         default:
-            return "Pilih studi kasus yang ingin Anda kerjakan"
+            return "Pilih studi kasus pajak yang ingin Anda kerjakan"
         }
     }
 }

@@ -17,6 +17,7 @@ struct FillForm: View
 	
 	@State var showMapModal = false
 	@State var showHint = false
+	@State var showGlosarium = false
 	
 	var body: some View
 	{
@@ -44,6 +45,21 @@ struct FillForm: View
 								.frame(width: geometry.size.width / 18)
 								
 								Spacer()
+								
+								Button{
+									// munculin dialog, trus balik ke main map
+									showGlosarium = true
+								}label: {
+									Image("Glosarium")
+										.resizable()
+										.scaledToFit()
+								}
+								.fullScreenCover(isPresented: $showGlosarium, content: {
+									GlosariumModal(showGlosarium: $showGlosarium)
+										.background(BackgroundBlurLayout())
+										.ignoresSafeArea()
+								})
+								.frame(width: geometry.size.width / 18)
 								
 								Button{
 									// kasi hint minigames ini suruh ngapain
