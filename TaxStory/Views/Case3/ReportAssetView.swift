@@ -17,6 +17,7 @@ struct ReportAssetView: View {
     @State var listGambar:[String] = []
 	@State var showMapModal = false
 	@State var showHint = false
+	@State var showGlosarium = false
     
     @State var modalTanahAppended = false
     @State var modalRumahAppended = false
@@ -54,6 +55,7 @@ struct ReportAssetView: View {
         GeometryReader{ geoScreen in
             Image("bg")
                 .resizable()
+				.frame(width: Constants.screenWidth, height: Constants.screenHeight)
                 .scaledToFill()
                 .overlay{
                     VStack{
@@ -72,6 +74,21 @@ struct ReportAssetView: View {
                             .frame(width: geoScreen.size.width / 18)
                             
                             Spacer()
+							
+							Button{
+								// munculin dialog, trus balik ke main map
+								showGlosarium = true
+							}label: {
+								Image("Glosarium")
+									.resizable()
+									.scaledToFit()
+							}
+							.fullScreenCover(isPresented: $showGlosarium) {
+								GlosariumModal(showGlosarium: $showGlosarium)
+									.background(BackgroundBlurLayout())
+									.ignoresSafeArea()
+							}
+							.frame(width: geoScreen.size.width / 18)
                             
                             Button{
                                 // kasi hint minigames ini suruh ngapain
@@ -261,16 +278,17 @@ struct ReportAssetView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: geoBot.size.width, height: geoBot.size.height / 6)
-                                    .offset(x: -geoBot.size.width / 4.5, y: -geoBot.size.height / 12)
                                     .overlay{
                                         Text("Sejauh ini Bayu telah memiliki 1 rumah, 2 mobil, dan 1 motor. Cara mendaftarkannya adalah klik pada setiap aset Bayu, kemudian pada layar detail harta pilih pilihan yang sesuai dengan data yang seharusnya dilaporkan. Kemudian tekan tombol tambah.")
-                                            .font(.system(size: geoBot.size.width / 83, design: .rounded))
+                                            .font(.system(size: geoBot.size.width / 90, design: .rounded))
                                             .foregroundColor(Color("Dark Brown"))
                                             .bold()
-                                            .padding(.leading, geoBot.size.width / 8)
-                                            .padding(.trailing, geoBot.size.width / 1.8)
-                                            .offset(y: -geoBot.size.height / 11.4)
+											.padding(.horizontal, geoBot.size.width / 2.8)
+//											.padding(.leading, geoBot.size.width / 2.8)
+//											.padding(.trailing, geoBot.size.width / 3)
+//                                            .offset(y: -geoBot.size.height / 11.4)
                                     }
+									.offset(x: -geoBot.size.width / 4.5, y: -geoBot.size.height / 14)
                                 Spacer()
                             }
                             //                            .background(.purple)
@@ -298,7 +316,9 @@ struct ReportAssetView: View {
                             Spacer()
                             Button {
                                 // change page
-								page = "visualNovel17"
+								withAnimation {
+									page = "visualNovel17"
+								}
                             } label: {
                                 Image("Laporkan")
                                     .resizable()

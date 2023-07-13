@@ -18,6 +18,7 @@ struct ChoosePTKPView: View {
 	@State var showHint = false
     
     @State var audioPlayer: AVAudioPlayer?
+	@State var showGlosarium = false
 	
 	@Binding var page: String
     
@@ -73,19 +74,18 @@ struct ChoosePTKPView: View {
                             
                             Button{
                                 // kasi kamus
-								
+								showGlosarium = true
                             }label: {
                                 Image("Glosarium")
                                     .resizable()
                                     .scaledToFit()
                             }
-							.onAppear() {
-								DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-									withAnimation {
-										showHint = true
-									}
-								}
+							.fullScreenCover(isPresented: $showGlosarium) {
+								GlosariumModal(showGlosarium: $showGlosarium)
+									.background(BackgroundBlurLayout())
+									.ignoresSafeArea()
 							}
+							
                             .frame(width: geoScreen.size.width / 18)
                             
                             Button{
@@ -98,6 +98,13 @@ struct ChoosePTKPView: View {
                                     .resizable()
                                     .scaledToFit()
                             }
+							.onAppear() {
+								DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+									withAnimation {
+										showHint = true
+									}
+								}
+							}
                             .frame(width: geoScreen.size.width / 18)
                         }
                         .padding(.leading, geoScreen.size.width / 11)

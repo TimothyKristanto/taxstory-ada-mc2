@@ -46,6 +46,7 @@ struct VisualNovel: View {
 //                ForEach((1...18), id: \.self) { index in
                     Image("previewNovel\(visualNovelSceneCount)")
                         .resizable()
+						.frame(width: Constants.screenWidth, height: Constants.screenHeight)
                         .scaledToFill()
                         .ignoresSafeArea()
                         .overlay(

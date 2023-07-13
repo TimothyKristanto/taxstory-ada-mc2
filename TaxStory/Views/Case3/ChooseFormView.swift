@@ -17,6 +17,7 @@ struct ChooseFormView: View {
     @State var show1770ssWarning = false
 	@State var showMapModal = false
 	@State var showHint = false
+	@State var showGlosarium = false
     
     @State var audioPlayer: AVAudioPlayer?
     
@@ -150,6 +151,23 @@ struct ChooseFormView: View {
                                 .frame(width: geoScreen.size.width / 18)
                                 
                                 Spacer()
+								
+								Button{
+									// kasi hint minigames ini suruh ngapain
+									withAnimation {
+										showGlosarium = true
+									}
+								}label: {
+									Image("Glosarium")
+										.resizable()
+										.scaledToFit()
+								}
+								.fullScreenCover(isPresented: $showGlosarium) {
+									GlosariumModal(showGlosarium: $showGlosarium)
+										.background(BackgroundBlurLayout())
+										.ignoresSafeArea()
+								}
+								.frame(width: geoScreen.size.width / 18)
                                 
                                 Button{
                                     // kasi hint minigames ini suruh ngapain
@@ -285,7 +303,7 @@ struct ChooseFormView: View {
                                                                     .resizable()
                                                                     .scaledToFit()
                                                                     .frame(width: geo.size.width / 1.4)
-                                                                    .padding(.top)
+																	.padding(.top)
                                                                     .overlay {
                                                                         VStack{
                                                                             HStack{
@@ -618,7 +636,7 @@ struct ChooseFormView: View {
                                                     }
                                                 }
                                             )
-                                            .padding(.top, geoTop.size.height / 7)
+                                            .padding(.top, geoTop.size.height / 11)
                                             .padding(.leading, geoTop.size.width / 3.6)
                                         
                                         Spacer()
@@ -702,11 +720,10 @@ struct ChooseFormView: View {
                                                     .font(.system(size: geoBot.size.width / 65, design: .rounded))
                                                     .foregroundColor(Color("Dark Brown"))
                                                     .bold()
-                                                    .padding(.horizontal, geoBot.size.width / 18)
+                                                    .padding(.horizontal, geoBot.size.width / 15)
                                                     .padding(.bottom, geoBot.size.height / 25)
                                             )
-                                            .padding(.top, geoBot.size.height / 6)
-                                            .padding(.trailing, geoBot.size.width)
+											.offset(x: -geoBot.size.width / 25, y: geoBot.size.height / 10)
                                     }
                                 }
                                 .padding(.top, geoBot.size.height / 3.5)
