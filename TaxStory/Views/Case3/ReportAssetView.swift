@@ -279,7 +279,7 @@ struct ReportAssetView: View {
                                     .scaledToFit()
                                     .frame(width: geoBot.size.width, height: geoBot.size.height / 6)
                                     .overlay{
-                                        Text("Sejauh ini Bayu telah memiliki 1 rumah, 2 mobil, dan 1 motor. Cara mendaftarkannya adalah klik pada setiap aset Bayu, kemudian pada layar detail harta pilih pilihan yang sesuai dengan data yang seharusnya dilaporkan. Kemudian tekan tombol tambah.")
+                                        Text("Bayu memiliki 1 bidang tanah, 1 rumah, 1 mobil, dan 1 motor. Cara mendaftarkannya adalah klik pada setiap aset Bayu, kemudian pada layar detail harta pilih pilihan yang sesuai dengan data yang seharusnya dilaporkan. Kemudian tekan tombol tambah.")
                                             .font(.system(size: geoBot.size.width / 90, design: .rounded))
                                             .foregroundColor(Color("Dark Brown"))
                                             .bold()

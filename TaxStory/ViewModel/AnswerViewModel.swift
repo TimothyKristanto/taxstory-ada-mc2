@@ -11,7 +11,7 @@ class AnswerViewModel:NSObject, ObservableObject {
 //    73
     @Published var progress : CGFloat = 0
     //Making value with it's position
-    @Published var characters: [Word] = [Word(value: "1-1-391-911-2135", offsiteX: 0, offsiteY: 68), Word(value: "01.512.002.2", offsiteX: -156, offsiteY: -48), Word(value: "PT Apple Developer Academy", offsiteX: -312, offsiteY: 7), Word(value: "31-12-2023", offsiteX: -468, offsiteY: 136), Word(value: "Rp. 105,359", offsiteX: -623, offsiteY: 205)]
+    @Published var characters: [Word] = [Word(value: "1-1-391-911-2135", offsiteX: 0, offsiteY: 68), Word(value: "01.512.002.2", offsiteX: -156, offsiteY: -48), Word(value: "PT Apple Developer Academy", offsiteX: -312, offsiteY: 7), Word(value: "31-12-2023", offsiteX: -468, offsiteY: 136), Word(value: "Rp. 106,359", offsiteX: -623, offsiteY: 205)]
     @Published var shuffledRows: [[Word]] = []
     @Published var rows: [[Word]] = []
     @Published var animateWrongText = false
