@@ -53,7 +53,7 @@ struct ReportAssetTanahView: View {
                                             .scaledToFit()
                                     }
                                     .frame(width: geoScreen.size.width / 11)
-                                    .opacity(isPilihanTahun1Selected == true ? 1 : 0.5)
+                                    .opacity(isPilihanTahun1Selected == true ? 1 : 0.7)
                                     
                                     Button{
                                         isPilihanTahunBenar = true
@@ -66,7 +66,7 @@ struct ReportAssetTanahView: View {
                                             .scaledToFit()
                                     }
                                     .frame(width: geoScreen.size.width / 11)
-                                    .opacity(isPilihanTahun2Selected == true ? 1 : 0.5)
+                                    .opacity(isPilihanTahun2Selected == true ? 1 : 0.7)
                                     
                                 }
                                 .offset(x: geoScreen.size.width / 28, y: geoScreen.size.height / 30)
